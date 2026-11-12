@@ -1,0 +1,3089 @@
+{
+  "townhalls": {
+    "1": {
+      "max_walls": 350,
+      "giga_weapon_levels": 0,
+      "max_builder_count": 3
+    },
+    "2": {
+      "max_walls": 25,
+      "giga_weapon_levels": 0,
+      "max_builder_count": 3
+    },
+    "3": {
+      "max_walls": 50,
+      "giga_weapon_levels": 0,
+      "max_builder_count": 3
+    },
+    "4": {
+      "max_walls": 75,
+      "giga_weapon_levels": 0,
+      "max_builder_count": 3
+    },
+    "5": {
+      "max_walls": 100,
+      "giga_weapon_levels": 0,
+      "max_builder_count": 5
+    },
+    "6": {
+      "max_walls": 125,
+      "giga_weapon_levels": 0,
+      "max_builder_count": 5
+    },
+    "7": {
+      "max_walls": 175,
+      "giga_weapon_levels": 0,
+      "max_builder_count": 5
+    },
+    "8": {
+      "max_walls": 225,
+      "giga_weapon_levels": 0,
+      "max_builder_count": 5
+    },
+    "9": {
+      "max_walls": 250,
+      "giga_weapon_levels": 0,
+      "max_builder_count": 6
+    },
+    "10": {
+      "max_walls": 275,
+      "giga_weapon_levels": 0,
+      "max_builder_count": 6
+    },
+    "11": {
+      "max_walls": 300,
+      "giga_weapon_levels": 0,
+      "max_builder_count": 6
+    },
+    "12": {
+      "max_walls": 300,
+      "giga_weapon_levels": 5,
+      "max_builder_count": 6
+    },
+    "13": {
+      "max_walls": 325,
+      "giga_weapon_levels": 5,
+      "max_builder_count": 6
+    },
+    "14": {
+      "max_walls": 325,
+      "giga_weapon_levels": 5,
+      "max_builder_count": 6
+    },
+    "15": {
+      "max_walls": 325,
+      "giga_weapon_levels": 5,
+      "max_builder_count": 6
+    },
+    "16": {
+      "max_walls": 325,
+      "giga_weapon_levels": 5,
+      "max_builder_count": 6
+    },
+    "17": {
+      "max_walls": 325,
+      "giga_weapon_levels": 5,
+      "max_builder_count": 6
+    },
+    "18": {
+      "max_walls": 350,
+      "giga_weapon_levels": 5,
+      "max_builder_count": 6
+    },
+    "19": {
+      "max_walls": 350,
+      "giga_weapon_levels": 5,
+      "max_builder_count": 6
+    }
+  },
+  "entities": {
+    "1000000": {
+      "id": 1000000,
+      "name": "Cannon",
+      "category": "defense",
+      "resource": "gold",
+      "th_caps": {
+        "1": 2,
+        "2": 3,
+        "3": 4,
+        "4": 5,
+        "5": 7,
+        "6": 8,
+        "7": 9,
+        "8": 10,
+        "9": 11,
+        "10": 13,
+        "11": 15,
+        "12": 17,
+        "13": 19,
+        "14": 20,
+        "15": 21,
+        "16": 21,
+        "17": 22,
+        "18": 23,
+        "19": 24
+      },
+      "levels": {
+        "1": {
+          "cost": 438,
+          "duration": 50,
+          "resource": "gold"
+        },
+        "2": {
+          "cost": 766,
+          "duration": 85,
+          "resource": "gold"
+        },
+        "3": {
+          "cost": 1340,
+          "duration": 142,
+          "resource": "gold"
+        },
+        "4": {
+          "cost": 2345,
+          "duration": 239,
+          "resource": "gold"
+        },
+        "5": {
+          "cost": 4103,
+          "duration": 401,
+          "resource": "gold"
+        },
+        "6": {
+          "cost": 7181,
+          "duration": 674,
+          "resource": "gold"
+        },
+        "7": {
+          "cost": 12566,
+          "duration": 1133,
+          "resource": "gold"
+        },
+        "8": {
+          "cost": 21991,
+          "duration": 1904,
+          "resource": "gold"
+        },
+        "9": {
+          "cost": 38484,
+          "duration": 3198,
+          "resource": "gold"
+        },
+        "10": {
+          "cost": 67347,
+          "duration": 5373,
+          "resource": "gold"
+        },
+        "11": {
+          "cost": 117858,
+          "duration": 9027,
+          "resource": "gold"
+        },
+        "12": {
+          "cost": 206251,
+          "duration": 15165,
+          "resource": "gold"
+        },
+        "13": {
+          "cost": 360940,
+          "duration": 25477,
+          "resource": "gold"
+        },
+        "14": {
+          "cost": 631644,
+          "duration": 42801,
+          "resource": "gold"
+        },
+        "15": {
+          "cost": 1105378,
+          "duration": 71905,
+          "resource": "gold"
+        },
+        "16": {
+          "cost": 1934411,
+          "duration": 120801,
+          "resource": "gold"
+        },
+        "17": {
+          "cost": 3385220,
+          "duration": 202945,
+          "resource": "gold"
+        },
+        "18": {
+          "cost": 5924134,
+          "duration": 340948,
+          "resource": "gold"
+        },
+        "19": {
+          "cost": 10367235,
+          "duration": 572793,
+          "resource": "gold"
+        },
+        "20": {
+          "cost": 18142661,
+          "duration": 962292,
+          "resource": "gold"
+        },
+        "21": {
+          "cost": 21000000,
+          "duration": 1209600,
+          "resource": "gold"
+        },
+        "22": {
+          "cost": 21000000,
+          "duration": 1209600,
+          "resource": "gold"
+        },
+        "23": {
+          "cost": 21000000,
+          "duration": 1209600,
+          "resource": "gold"
+        }
+      }
+    },
+    "1000002": {
+      "id": 1000002,
+      "name": "Gold Storage",
+      "category": "resources",
+      "resource": "elixir",
+      "th_caps": {
+        "1": 1,
+        "2": 2,
+        "3": 4,
+        "4": 6,
+        "5": 8,
+        "6": 9,
+        "7": 10,
+        "8": 11,
+        "9": 12,
+        "10": 13,
+        "11": 14,
+        "12": 15,
+        "13": 15,
+        "14": 15,
+        "15": 16,
+        "16": 17,
+        "17": 18,
+        "18": 19,
+        "19": 20
+      },
+      "levels": {
+        "1": {
+          "cost": 540,
+          "duration": 192,
+          "resource": "elixir"
+        },
+        "2": {
+          "cost": 972,
+          "duration": 307,
+          "resource": "elixir"
+        },
+        "3": {
+          "cost": 1750,
+          "duration": 492,
+          "resource": "elixir"
+        },
+        "4": {
+          "cost": 3149,
+          "duration": 786,
+          "resource": "elixir"
+        },
+        "5": {
+          "cost": 5669,
+          "duration": 1258,
+          "resource": "elixir"
+        },
+        "6": {
+          "cost": 10204,
+          "duration": 2013,
+          "resource": "elixir"
+        },
+        "7": {
+          "cost": 18367,
+          "duration": 3221,
+          "resource": "elixir"
+        },
+        "8": {
+          "cost": 33060,
+          "duration": 5154,
+          "resource": "elixir"
+        },
+        "9": {
+          "cost": 59508,
+          "duration": 8246,
+          "resource": "elixir"
+        },
+        "10": {
+          "cost": 107114,
+          "duration": 13194,
+          "resource": "elixir"
+        },
+        "11": {
+          "cost": 192805,
+          "duration": 21111,
+          "resource": "elixir"
+        },
+        "12": {
+          "cost": 347049,
+          "duration": 33777,
+          "resource": "elixir"
+        },
+        "13": {
+          "cost": 624689,
+          "duration": 54043,
+          "resource": "elixir"
+        },
+        "14": {
+          "cost": 1124440,
+          "duration": 86469,
+          "resource": "elixir"
+        },
+        "15": {
+          "cost": 2023992,
+          "duration": 138351,
+          "resource": "elixir"
+        },
+        "16": {
+          "cost": 4500000,
+          "duration": 691200,
+          "resource": "elixir"
+        },
+        "17": {
+          "cost": 5500000,
+          "duration": 820800,
+          "resource": "elixir"
+        },
+        "18": {
+          "cost": 6500000,
+          "duration": 950400,
+          "resource": "elixir"
+        }
+      }
+    },
+    "1000004": {
+      "id": 1000004,
+      "name": "Air Defense",
+      "category": "defense",
+      "resource": "gold",
+      "th_caps": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 1,
+        "5": 1,
+        "6": 2,
+        "7": 3,
+        "8": 4,
+        "9": 4,
+        "10": 4,
+        "11": 4,
+        "12": 4,
+        "13": 4,
+        "14": 4,
+        "15": 4,
+        "16": 16,
+        "17": 17,
+        "18": 18,
+        "19": 19
+      },
+      "levels": {
+        "1": {
+          "cost": 37125,
+          "duration": 2790,
+          "resource": "gold"
+        },
+        "2": {
+          "cost": 61256,
+          "duration": 4325,
+          "resource": "gold"
+        },
+        "3": {
+          "cost": 101073,
+          "duration": 6703,
+          "resource": "gold"
+        },
+        "4": {
+          "cost": 166770,
+          "duration": 10390,
+          "resource": "gold"
+        },
+        "5": {
+          "cost": 275171,
+          "duration": 16104,
+          "resource": "gold"
+        },
+        "6": {
+          "cost": 454032,
+          "duration": 24961,
+          "resource": "gold"
+        },
+        "7": {
+          "cost": 749152,
+          "duration": 38690,
+          "resource": "gold"
+        },
+        "8": {
+          "cost": 1236101,
+          "duration": 59969,
+          "resource": "gold"
+        },
+        "9": {
+          "cost": 2039567,
+          "duration": 92952,
+          "resource": "gold"
+        },
+        "10": {
+          "cost": 3365286,
+          "duration": 144075,
+          "resource": "gold"
+        },
+        "11": {
+          "cost": 5552722,
+          "duration": 223317,
+          "resource": "gold"
+        },
+        "12": {
+          "cost": 9161991,
+          "duration": 346141,
+          "resource": "gold"
+        },
+        "13": {
+          "cost": 15117285,
+          "duration": 536518,
+          "resource": "gold"
+        },
+        "14": {
+          "cost": 22000000,
+          "duration": 831603,
+          "resource": "gold"
+        },
+        "15": {
+          "cost": 22000000,
+          "duration": 1209600,
+          "resource": "gold"
+        },
+        "16": {
+          "cost": 22000000,
+          "duration": 1209600,
+          "resource": "gold"
+        }
+      }
+    },
+    "1000008": {
+      "id": 1000008,
+      "name": "Archer Tower",
+      "category": "defense",
+      "resource": "gold",
+      "th_caps": {
+        "1": 0,
+        "2": 2,
+        "3": 3,
+        "4": 4,
+        "5": 6,
+        "6": 7,
+        "7": 8,
+        "8": 10,
+        "9": 11,
+        "10": 13,
+        "11": 15,
+        "12": 17,
+        "13": 19,
+        "14": 20,
+        "15": 21,
+        "16": 21,
+        "17": 22,
+        "18": 23,
+        "19": 24
+      },
+      "levels": {
+        "1": {
+          "cost": 500,
+          "duration": 60,
+          "resource": "gold"
+        },
+        "2": {
+          "cost": 900,
+          "duration": 102,
+          "resource": "gold"
+        },
+        "3": {
+          "cost": 1620,
+          "duration": 173,
+          "resource": "gold"
+        },
+        "4": {
+          "cost": 2916,
+          "duration": 295,
+          "resource": "gold"
+        },
+        "5": {
+          "cost": 5249,
+          "duration": 501,
+          "resource": "gold"
+        },
+        "6": {
+          "cost": 9448,
+          "duration": 852,
+          "resource": "gold"
+        },
+        "7": {
+          "cost": 17006,
+          "duration": 1448,
+          "resource": "gold"
+        },
+        "8": {
+          "cost": 30611,
+          "duration": 2462,
+          "resource": "gold"
+        },
+        "9": {
+          "cost": 55100,
+          "duration": 4185,
+          "resource": "gold"
+        },
+        "10": {
+          "cost": 99180,
+          "duration": 7115,
+          "resource": "gold"
+        },
+        "11": {
+          "cost": 178523,
+          "duration": 12096,
+          "resource": "gold"
+        },
+        "12": {
+          "cost": 321342,
+          "duration": 20563,
+          "resource": "gold"
+        },
+        "13": {
+          "cost": 578416,
+          "duration": 34957,
+          "resource": "gold"
+        },
+        "14": {
+          "cost": 1041148,
+          "duration": 59427,
+          "resource": "gold"
+        },
+        "15": {
+          "cost": 1874067,
+          "duration": 101027,
+          "resource": "gold"
+        },
+        "16": {
+          "cost": 3373320,
+          "duration": 171745,
+          "resource": "gold"
+        },
+        "17": {
+          "cost": 6071977,
+          "duration": 291967,
+          "resource": "gold"
+        },
+        "18": {
+          "cost": 10929558,
+          "duration": 496344,
+          "resource": "gold"
+        },
+        "19": {
+          "cost": 19673204,
+          "duration": 843785,
+          "resource": "gold"
+        },
+        "20": {
+          "cost": 35411767,
+          "duration": 1434435,
+          "resource": "gold"
+        },
+        "21": {
+          "cost": 17000000,
+          "duration": 1036800,
+          "resource": "gold"
+        },
+        "22": {
+          "cost": 18500000,
+          "duration": 1123200,
+          "resource": "gold"
+        },
+        "23": {
+          "cost": 20000000,
+          "duration": 1209600,
+          "resource": "gold"
+        },
+        "24": {
+          "cost": 21500000,
+          "duration": 1296000,
+          "resource": "gold"
+        }
+      }
+    },
+    "1000010": {
+      "id": 1000010,
+      "name": "Walls",
+      "category": "walls",
+      "resource": "gold",
+      "th_caps": {
+        "1": 0,
+        "2": 2,
+        "3": 3,
+        "4": 4,
+        "5": 5,
+        "6": 6,
+        "7": 7,
+        "8": 8,
+        "9": 9,
+        "10": 10,
+        "11": 11,
+        "12": 12,
+        "13": 13,
+        "14": 14,
+        "15": 15,
+        "16": 17,
+        "17": 18,
+        "18": 19,
+        "19": 19
+      },
+      "levels": {
+        "1": {
+          "cost": 200,
+          "duration": 0,
+          "resource": "gold"
+        },
+        "2": {
+          "cost": 1000,
+          "duration": 0,
+          "resource": "gold"
+        },
+        "3": {
+          "cost": 5000,
+          "duration": 0,
+          "resource": "gold"
+        },
+        "4": {
+          "cost": 10000,
+          "duration": 0,
+          "resource": "gold"
+        },
+        "5": {
+          "cost": 30000,
+          "duration": 0,
+          "resource": "gold"
+        },
+        "6": {
+          "cost": 75000,
+          "duration": 0,
+          "resource": "gold"
+        },
+        "7": {
+          "cost": 200000,
+          "duration": 0,
+          "resource": "gold"
+        },
+        "8": {
+          "cost": 500000,
+          "duration": 0,
+          "resource": "gold"
+        },
+        "9": {
+          "cost": 1000000,
+          "duration": 0,
+          "resource": "gold"
+        },
+        "10": {
+          "cost": 1500000,
+          "duration": 0,
+          "resource": "gold"
+        },
+        "11": {
+          "cost": 2000000,
+          "duration": 0,
+          "resource": "gold"
+        },
+        "12": {
+          "cost": 3000000,
+          "duration": 0,
+          "resource": "gold"
+        },
+        "13": {
+          "cost": 4000000,
+          "duration": 0,
+          "resource": "gold"
+        },
+        "14": {
+          "cost": 5000000,
+          "duration": 0,
+          "resource": "gold"
+        },
+        "15": {
+          "cost": 7000000,
+          "duration": 0,
+          "resource": "gold"
+        },
+        "16": {
+          "cost": 8000000,
+          "duration": 0,
+          "resource": "gold"
+        },
+        "17": {
+          "cost": 9000000,
+          "duration": 0,
+          "resource": "gold"
+        },
+        "18": {
+          "cost": 9500000,
+          "duration": 0,
+          "resource": "gold"
+        },
+        "19": {
+          "cost": 10000000,
+          "duration": 0,
+          "resource": "gold"
+        }
+      }
+    },
+    "1000012": {
+      "id": 1000012,
+      "name": "Inferno Tower",
+      "category": "defense",
+      "resource": "gold",
+      "th_caps": {
+        "10": 3,
+        "11": 5,
+        "12": 6,
+        "13": 7,
+        "14": 8,
+        "15": 9,
+        "16": 10,
+        "17": 11,
+        "18": 12,
+        "19": 13
+      },
+      "levels": {
+        "1": {
+          "cost": 5000000,
+          "duration": 432000,
+          "resource": "gold"
+        },
+        "2": {
+          "cost": 6500000,
+          "duration": 518400,
+          "resource": "gold"
+        },
+        "3": {
+          "cost": 8000000,
+          "duration": 604800,
+          "resource": "gold"
+        },
+        "4": {
+          "cost": 9500000,
+          "duration": 691200,
+          "resource": "gold"
+        },
+        "5": {
+          "cost": 11000000,
+          "duration": 777600,
+          "resource": "gold"
+        },
+        "6": {
+          "cost": 13000000,
+          "duration": 864000,
+          "resource": "gold"
+        },
+        "7": {
+          "cost": 15500000,
+          "duration": 950400,
+          "resource": "gold"
+        },
+        "8": {
+          "cost": 18000000,
+          "duration": 1036800,
+          "resource": "gold"
+        },
+        "9": {
+          "cost": 20000000,
+          "duration": 1123200,
+          "resource": "gold"
+        },
+        "10": {
+          "cost": 22000000,
+          "duration": 1209600,
+          "resource": "gold"
+        },
+        "11": {
+          "cost": 24000000,
+          "duration": 1296000,
+          "resource": "gold"
+        }
+      }
+    },
+    "1000013": {
+      "id": 1000013,
+      "name": "Eagle Artillery",
+      "category": "defense",
+      "resource": "gold",
+      "th_caps": {
+        "11": 2,
+        "12": 3,
+        "13": 4,
+        "14": 5,
+        "15": 6,
+        "16": 7,
+        "17": 8,
+        "18": 9,
+        "19": 10
+      },
+      "levels": {
+        "1": {
+          "cost": 8000000,
+          "duration": 604800,
+          "resource": "gold"
+        },
+        "2": {
+          "cost": 10000000,
+          "duration": 691200,
+          "resource": "gold"
+        },
+        "3": {
+          "cost": 12000000,
+          "duration": 777600,
+          "resource": "gold"
+        },
+        "4": {
+          "cost": 15000000,
+          "duration": 864000,
+          "resource": "gold"
+        },
+        "5": {
+          "cost": 18000000,
+          "duration": 950400,
+          "resource": "gold"
+        },
+        "6": {
+          "cost": 20000000,
+          "duration": 1036800,
+          "resource": "gold"
+        },
+        "7": {
+          "cost": 22000000,
+          "duration": 1123200,
+          "resource": "gold"
+        },
+        "8": {
+          "cost": 23500000,
+          "duration": 1209600,
+          "resource": "gold"
+        },
+        "9": {
+          "cost": 25000000,
+          "duration": 1296000,
+          "resource": "gold"
+        }
+      }
+    },
+    "1000016": {
+      "id": 1000016,
+      "name": "Monolith",
+      "category": "defense",
+      "resource": "dark_elixir",
+      "th_caps": {
+        "15": 2,
+        "16": 3,
+        "17": 4,
+        "18": 5,
+        "19": 6
+      },
+      "levels": {
+        "1": {
+          "cost": 300000,
+          "duration": 1036800,
+          "resource": "dark_elixir"
+        },
+        "2": {
+          "cost": 330000,
+          "duration": 1123200,
+          "resource": "dark_elixir"
+        },
+        "3": {
+          "cost": 360000,
+          "duration": 1209600,
+          "resource": "dark_elixir"
+        },
+        "4": {
+          "cost": 390000,
+          "duration": 1296000,
+          "resource": "dark_elixir"
+        }
+      }
+    },
+    "1000024": {
+      "id": 1000024,
+      "name": "Elixir Storage",
+      "category": "resources",
+      "resource": "gold",
+      "th_caps": {
+        "1": 1,
+        "2": 2,
+        "3": 4,
+        "4": 6,
+        "5": 8,
+        "6": 9,
+        "7": 10,
+        "8": 11,
+        "9": 12,
+        "10": 13,
+        "11": 14,
+        "12": 15,
+        "13": 15,
+        "14": 15,
+        "15": 16,
+        "16": 17,
+        "17": 18,
+        "18": 19,
+        "19": 20
+      },
+      "levels": {
+        "1": {
+          "cost": 540,
+          "duration": 192,
+          "resource": "gold"
+        },
+        "2": {
+          "cost": 972,
+          "duration": 307,
+          "resource": "gold"
+        },
+        "3": {
+          "cost": 1750,
+          "duration": 492,
+          "resource": "gold"
+        },
+        "4": {
+          "cost": 3149,
+          "duration": 786,
+          "resource": "gold"
+        },
+        "5": {
+          "cost": 5669,
+          "duration": 1258,
+          "resource": "gold"
+        },
+        "6": {
+          "cost": 10204,
+          "duration": 2013,
+          "resource": "gold"
+        },
+        "7": {
+          "cost": 18367,
+          "duration": 3221,
+          "resource": "gold"
+        },
+        "8": {
+          "cost": 33060,
+          "duration": 5154,
+          "resource": "gold"
+        },
+        "9": {
+          "cost": 59508,
+          "duration": 8246,
+          "resource": "gold"
+        },
+        "10": {
+          "cost": 107114,
+          "duration": 13194,
+          "resource": "gold"
+        },
+        "11": {
+          "cost": 192805,
+          "duration": 21111,
+          "resource": "gold"
+        },
+        "12": {
+          "cost": 347049,
+          "duration": 33777,
+          "resource": "gold"
+        },
+        "13": {
+          "cost": 624689,
+          "duration": 54043,
+          "resource": "gold"
+        },
+        "14": {
+          "cost": 1124440,
+          "duration": 86469,
+          "resource": "gold"
+        },
+        "15": {
+          "cost": 2023992,
+          "duration": 138351,
+          "resource": "gold"
+        },
+        "16": {
+          "cost": 4500000,
+          "duration": 691200,
+          "resource": "gold"
+        },
+        "17": {
+          "cost": 5500000,
+          "duration": 820800,
+          "resource": "gold"
+        },
+        "18": {
+          "cost": 6500000,
+          "duration": 950400,
+          "resource": "gold"
+        }
+      }
+    },
+    "1000026": {
+      "id": 1000026,
+      "name": "Clan Castle",
+      "category": "offense",
+      "resource": "elixir",
+      "th_caps": {
+        "1": 0,
+        "2": 1,
+        "3": 1,
+        "4": 2,
+        "5": 2,
+        "6": 3,
+        "7": 3,
+        "8": 4,
+        "9": 5,
+        "10": 6,
+        "11": 7,
+        "12": 8,
+        "13": 9,
+        "14": 10,
+        "15": 11,
+        "16": 12,
+        "17": 12,
+        "18": 13,
+        "19": 13
+      },
+      "levels": {
+        "1": {
+          "cost": 170000,
+          "duration": 11520,
+          "resource": "elixir"
+        },
+        "2": {
+          "cost": 289000,
+          "duration": 18432,
+          "resource": "elixir"
+        },
+        "3": {
+          "cost": 491300,
+          "duration": 29491,
+          "resource": "elixir"
+        },
+        "4": {
+          "cost": 835210,
+          "duration": 47186,
+          "resource": "elixir"
+        },
+        "5": {
+          "cost": 1419857,
+          "duration": 75497,
+          "resource": "elixir"
+        },
+        "6": {
+          "cost": 2413757,
+          "duration": 120796,
+          "resource": "elixir"
+        },
+        "7": {
+          "cost": 4103387,
+          "duration": 193274,
+          "resource": "elixir"
+        },
+        "8": {
+          "cost": 6975757,
+          "duration": 309238,
+          "resource": "elixir"
+        },
+        "9": {
+          "cost": 11858788,
+          "duration": 494780,
+          "resource": "elixir"
+        },
+        "10": {
+          "cost": 20159939,
+          "duration": 791648,
+          "resource": "elixir"
+        },
+        "11": {
+          "cost": 22000000,
+          "duration": 1209600,
+          "resource": "elixir"
+        },
+        "12": {
+          "cost": 22000000,
+          "duration": 1209600,
+          "resource": "elixir"
+        },
+        "13": {
+          "cost": 22000000,
+          "duration": 1209600,
+          "resource": "elixir"
+        }
+      }
+    },
+    "1000030": {
+      "id": 1000030,
+      "name": "Laboratory",
+      "category": "offense",
+      "resource": "elixir",
+      "th_caps": {
+        "1": 0,
+        "2": 0,
+        "3": 1,
+        "4": 2,
+        "5": 3,
+        "6": 4,
+        "7": 5,
+        "8": 6,
+        "9": 7,
+        "10": 8,
+        "11": 9,
+        "12": 10,
+        "13": 11,
+        "14": 12,
+        "15": 13,
+        "16": 14,
+        "17": 15,
+        "18": 16,
+        "19": 17
+      },
+      "levels": {
+        "1": {
+          "cost": 40000,
+          "duration": 2700,
+          "resource": "elixir"
+        },
+        "2": {
+          "cost": 64000,
+          "duration": 4050,
+          "resource": "elixir"
+        },
+        "3": {
+          "cost": 102400,
+          "duration": 6075,
+          "resource": "elixir"
+        },
+        "4": {
+          "cost": 163840,
+          "duration": 9113,
+          "resource": "elixir"
+        },
+        "5": {
+          "cost": 262144,
+          "duration": 13669,
+          "resource": "elixir"
+        },
+        "6": {
+          "cost": 419430,
+          "duration": 20503,
+          "resource": "elixir"
+        },
+        "7": {
+          "cost": 671089,
+          "duration": 30755,
+          "resource": "elixir"
+        },
+        "8": {
+          "cost": 1073742,
+          "duration": 46132,
+          "resource": "elixir"
+        },
+        "9": {
+          "cost": 1717987,
+          "duration": 69198,
+          "resource": "elixir"
+        },
+        "10": {
+          "cost": 2748779,
+          "duration": 103797,
+          "resource": "elixir"
+        },
+        "11": {
+          "cost": 4398047,
+          "duration": 155696,
+          "resource": "elixir"
+        },
+        "12": {
+          "cost": 7036874,
+          "duration": 233543,
+          "resource": "elixir"
+        },
+        "13": {
+          "cost": 11258999,
+          "duration": 350315,
+          "resource": "elixir"
+        },
+        "14": {
+          "cost": 16000000,
+          "duration": 525473,
+          "resource": "elixir"
+        },
+        "15": {
+          "cost": 16000000,
+          "duration": 788209,
+          "resource": "elixir"
+        },
+        "16": {
+          "cost": 16000000,
+          "duration": 1036800,
+          "resource": "elixir"
+        }
+      }
+    },
+    "1000031": {
+      "id": 1000031,
+      "name": "Army Camp",
+      "category": "offense",
+      "resource": "elixir",
+      "th_caps": {
+        "1": 1,
+        "2": 2,
+        "3": 3,
+        "4": 4,
+        "5": 5,
+        "6": 6,
+        "7": 7,
+        "8": 8,
+        "9": 9,
+        "10": 10,
+        "11": 11,
+        "12": 12,
+        "13": 12,
+        "14": 12,
+        "15": 13,
+        "16": 13,
+        "17": 14,
+        "18": 14,
+        "19": 15
+      },
+      "levels": {
+        "1": {
+          "cost": 82500,
+          "duration": 5580,
+          "resource": "elixir"
+        },
+        "2": {
+          "cost": 136125,
+          "duration": 8649,
+          "resource": "elixir"
+        },
+        "3": {
+          "cost": 224606,
+          "duration": 13406,
+          "resource": "elixir"
+        },
+        "4": {
+          "cost": 370600,
+          "duration": 20779,
+          "resource": "elixir"
+        },
+        "5": {
+          "cost": 611491,
+          "duration": 32208,
+          "resource": "elixir"
+        },
+        "6": {
+          "cost": 1008959,
+          "duration": 49922,
+          "resource": "elixir"
+        },
+        "7": {
+          "cost": 1664783,
+          "duration": 77379,
+          "resource": "elixir"
+        },
+        "8": {
+          "cost": 2746892,
+          "duration": 119938,
+          "resource": "elixir"
+        },
+        "9": {
+          "cost": 4532372,
+          "duration": 185904,
+          "resource": "elixir"
+        },
+        "10": {
+          "cost": 7478413,
+          "duration": 288151,
+          "resource": "elixir"
+        },
+        "11": {
+          "cost": 12339381,
+          "duration": 446633,
+          "resource": "elixir"
+        },
+        "12": {
+          "cost": 19000000,
+          "duration": 692282,
+          "resource": "elixir"
+        },
+        "13": {
+          "cost": 19000000,
+          "duration": 1073037,
+          "resource": "elixir"
+        },
+        "14": {
+          "cost": 19000000,
+          "duration": 1209600,
+          "resource": "elixir"
+        }
+      }
+    },
+    "4000095": {
+      "id": 4000095,
+      "name": "Electro Titan",
+      "category": "lab",
+      "resource": "elixir",
+      "th_caps": {
+        "14": 1,
+        "15": 3,
+        "16": 4,
+        "17": 5,
+        "18": 5,
+        "19": 6
+      },
+      "levels": {
+        "1": {
+          "cost": 18000000,
+          "duration": 432000,
+          "resource": "elixir"
+        },
+        "2": {
+          "cost": 19500000,
+          "duration": 583200,
+          "resource": "elixir"
+        },
+        "3": {
+          "cost": 20500000,
+          "duration": 691200,
+          "resource": "elixir"
+        },
+        "4": {
+          "cost": 21500000,
+          "duration": 777600,
+          "resource": "elixir"
+        },
+        "5": {
+          "cost": 22500000,
+          "duration": 864000,
+          "resource": "elixir"
+        }
+      }
+    },
+    "28000000": {
+      "id": 28000000,
+      "name": "Barbarian King",
+      "category": "heroes",
+      "resource": "dark_elixir",
+      "th_caps": {
+        "7": 5,
+        "8": 10,
+        "9": 30,
+        "10": 40,
+        "11": 50,
+        "12": 65,
+        "13": 75,
+        "14": 80,
+        "15": 90,
+        "16": 95,
+        "17": 100,
+        "18": 105,
+        "19": 110
+      },
+      "levels": {
+        "1": {
+          "cost": 13200,
+          "duration": 45600,
+          "resource": "dark_elixir"
+        },
+        "2": {
+          "cost": 16400,
+          "duration": 48000,
+          "resource": "dark_elixir"
+        },
+        "3": {
+          "cost": 19600,
+          "duration": 50400,
+          "resource": "dark_elixir"
+        },
+        "4": {
+          "cost": 22800,
+          "duration": 52800,
+          "resource": "dark_elixir"
+        },
+        "5": {
+          "cost": 26000,
+          "duration": 55200,
+          "resource": "dark_elixir"
+        },
+        "6": {
+          "cost": 29200,
+          "duration": 57600,
+          "resource": "dark_elixir"
+        },
+        "7": {
+          "cost": 32400,
+          "duration": 60000,
+          "resource": "dark_elixir"
+        },
+        "8": {
+          "cost": 35600,
+          "duration": 62400,
+          "resource": "dark_elixir"
+        },
+        "9": {
+          "cost": 38800,
+          "duration": 64800,
+          "resource": "dark_elixir"
+        },
+        "10": {
+          "cost": 42000,
+          "duration": 67200,
+          "resource": "dark_elixir"
+        },
+        "11": {
+          "cost": 45200,
+          "duration": 69600,
+          "resource": "dark_elixir"
+        },
+        "12": {
+          "cost": 48400,
+          "duration": 72000,
+          "resource": "dark_elixir"
+        },
+        "13": {
+          "cost": 51600,
+          "duration": 74400,
+          "resource": "dark_elixir"
+        },
+        "14": {
+          "cost": 54800,
+          "duration": 76800,
+          "resource": "dark_elixir"
+        },
+        "15": {
+          "cost": 58000,
+          "duration": 79200,
+          "resource": "dark_elixir"
+        },
+        "16": {
+          "cost": 61200,
+          "duration": 81600,
+          "resource": "dark_elixir"
+        },
+        "17": {
+          "cost": 64400,
+          "duration": 84000,
+          "resource": "dark_elixir"
+        },
+        "18": {
+          "cost": 67600,
+          "duration": 86400,
+          "resource": "dark_elixir"
+        },
+        "19": {
+          "cost": 70800,
+          "duration": 88800,
+          "resource": "dark_elixir"
+        },
+        "20": {
+          "cost": 74000,
+          "duration": 91200,
+          "resource": "dark_elixir"
+        },
+        "21": {
+          "cost": 77200,
+          "duration": 93600,
+          "resource": "dark_elixir"
+        },
+        "22": {
+          "cost": 80400,
+          "duration": 96000,
+          "resource": "dark_elixir"
+        },
+        "23": {
+          "cost": 83600,
+          "duration": 98400,
+          "resource": "dark_elixir"
+        },
+        "24": {
+          "cost": 86800,
+          "duration": 100800,
+          "resource": "dark_elixir"
+        },
+        "25": {
+          "cost": 90000,
+          "duration": 103200,
+          "resource": "dark_elixir"
+        },
+        "26": {
+          "cost": 93200,
+          "duration": 105600,
+          "resource": "dark_elixir"
+        },
+        "27": {
+          "cost": 96400,
+          "duration": 108000,
+          "resource": "dark_elixir"
+        },
+        "28": {
+          "cost": 99600,
+          "duration": 110400,
+          "resource": "dark_elixir"
+        },
+        "29": {
+          "cost": 102800,
+          "duration": 112800,
+          "resource": "dark_elixir"
+        },
+        "30": {
+          "cost": 106000,
+          "duration": 115200,
+          "resource": "dark_elixir"
+        },
+        "31": {
+          "cost": 109200,
+          "duration": 117600,
+          "resource": "dark_elixir"
+        },
+        "32": {
+          "cost": 112400,
+          "duration": 120000,
+          "resource": "dark_elixir"
+        },
+        "33": {
+          "cost": 115600,
+          "duration": 122400,
+          "resource": "dark_elixir"
+        },
+        "34": {
+          "cost": 118800,
+          "duration": 124800,
+          "resource": "dark_elixir"
+        },
+        "35": {
+          "cost": 122000,
+          "duration": 127200,
+          "resource": "dark_elixir"
+        },
+        "36": {
+          "cost": 125200,
+          "duration": 129600,
+          "resource": "dark_elixir"
+        },
+        "37": {
+          "cost": 128400,
+          "duration": 132000,
+          "resource": "dark_elixir"
+        },
+        "38": {
+          "cost": 131600,
+          "duration": 134400,
+          "resource": "dark_elixir"
+        },
+        "39": {
+          "cost": 134800,
+          "duration": 136800,
+          "resource": "dark_elixir"
+        },
+        "40": {
+          "cost": 138000,
+          "duration": 139200,
+          "resource": "dark_elixir"
+        },
+        "41": {
+          "cost": 141200,
+          "duration": 141600,
+          "resource": "dark_elixir"
+        },
+        "42": {
+          "cost": 144400,
+          "duration": 144000,
+          "resource": "dark_elixir"
+        },
+        "43": {
+          "cost": 147600,
+          "duration": 146400,
+          "resource": "dark_elixir"
+        },
+        "44": {
+          "cost": 150800,
+          "duration": 148800,
+          "resource": "dark_elixir"
+        },
+        "45": {
+          "cost": 154000,
+          "duration": 151200,
+          "resource": "dark_elixir"
+        },
+        "46": {
+          "cost": 157200,
+          "duration": 153600,
+          "resource": "dark_elixir"
+        },
+        "47": {
+          "cost": 160400,
+          "duration": 156000,
+          "resource": "dark_elixir"
+        },
+        "48": {
+          "cost": 163600,
+          "duration": 158400,
+          "resource": "dark_elixir"
+        },
+        "49": {
+          "cost": 166800,
+          "duration": 160800,
+          "resource": "dark_elixir"
+        },
+        "50": {
+          "cost": 170000,
+          "duration": 163200,
+          "resource": "dark_elixir"
+        },
+        "51": {
+          "cost": 173200,
+          "duration": 165600,
+          "resource": "dark_elixir"
+        },
+        "52": {
+          "cost": 176400,
+          "duration": 168000,
+          "resource": "dark_elixir"
+        },
+        "53": {
+          "cost": 179600,
+          "duration": 170400,
+          "resource": "dark_elixir"
+        },
+        "54": {
+          "cost": 182800,
+          "duration": 172800,
+          "resource": "dark_elixir"
+        },
+        "55": {
+          "cost": 186000,
+          "duration": 175200,
+          "resource": "dark_elixir"
+        },
+        "56": {
+          "cost": 189200,
+          "duration": 177600,
+          "resource": "dark_elixir"
+        },
+        "57": {
+          "cost": 192400,
+          "duration": 180000,
+          "resource": "dark_elixir"
+        },
+        "58": {
+          "cost": 195600,
+          "duration": 182400,
+          "resource": "dark_elixir"
+        },
+        "59": {
+          "cost": 198800,
+          "duration": 184800,
+          "resource": "dark_elixir"
+        },
+        "60": {
+          "cost": 202000,
+          "duration": 187200,
+          "resource": "dark_elixir"
+        },
+        "61": {
+          "cost": 205200,
+          "duration": 189600,
+          "resource": "dark_elixir"
+        },
+        "62": {
+          "cost": 208400,
+          "duration": 192000,
+          "resource": "dark_elixir"
+        },
+        "63": {
+          "cost": 211600,
+          "duration": 194400,
+          "resource": "dark_elixir"
+        },
+        "64": {
+          "cost": 214800,
+          "duration": 196800,
+          "resource": "dark_elixir"
+        },
+        "65": {
+          "cost": 218000,
+          "duration": 199200,
+          "resource": "dark_elixir"
+        },
+        "66": {
+          "cost": 221200,
+          "duration": 201600,
+          "resource": "dark_elixir"
+        },
+        "67": {
+          "cost": 224400,
+          "duration": 204000,
+          "resource": "dark_elixir"
+        },
+        "68": {
+          "cost": 227600,
+          "duration": 206400,
+          "resource": "dark_elixir"
+        },
+        "69": {
+          "cost": 230800,
+          "duration": 208800,
+          "resource": "dark_elixir"
+        },
+        "70": {
+          "cost": 234000,
+          "duration": 211200,
+          "resource": "dark_elixir"
+        },
+        "71": {
+          "cost": 237200,
+          "duration": 213600,
+          "resource": "dark_elixir"
+        },
+        "72": {
+          "cost": 240400,
+          "duration": 216000,
+          "resource": "dark_elixir"
+        },
+        "73": {
+          "cost": 243600,
+          "duration": 218400,
+          "resource": "dark_elixir"
+        },
+        "74": {
+          "cost": 246800,
+          "duration": 220800,
+          "resource": "dark_elixir"
+        },
+        "75": {
+          "cost": 250000,
+          "duration": 223200,
+          "resource": "dark_elixir"
+        },
+        "76": {
+          "cost": 253200,
+          "duration": 225600,
+          "resource": "dark_elixir"
+        },
+        "77": {
+          "cost": 256400,
+          "duration": 228000,
+          "resource": "dark_elixir"
+        },
+        "78": {
+          "cost": 259600,
+          "duration": 230400,
+          "resource": "dark_elixir"
+        },
+        "79": {
+          "cost": 262800,
+          "duration": 232800,
+          "resource": "dark_elixir"
+        },
+        "80": {
+          "cost": 266000,
+          "duration": 235200,
+          "resource": "dark_elixir"
+        },
+        "81": {
+          "cost": 269200,
+          "duration": 237600,
+          "resource": "dark_elixir"
+        },
+        "82": {
+          "cost": 272400,
+          "duration": 240000,
+          "resource": "dark_elixir"
+        },
+        "83": {
+          "cost": 275600,
+          "duration": 242400,
+          "resource": "dark_elixir"
+        },
+        "84": {
+          "cost": 278800,
+          "duration": 244800,
+          "resource": "dark_elixir"
+        },
+        "85": {
+          "cost": 282000,
+          "duration": 247200,
+          "resource": "dark_elixir"
+        },
+        "86": {
+          "cost": 285200,
+          "duration": 249600,
+          "resource": "dark_elixir"
+        },
+        "87": {
+          "cost": 288400,
+          "duration": 252000,
+          "resource": "dark_elixir"
+        },
+        "88": {
+          "cost": 291600,
+          "duration": 254400,
+          "resource": "dark_elixir"
+        },
+        "89": {
+          "cost": 294800,
+          "duration": 256800,
+          "resource": "dark_elixir"
+        },
+        "90": {
+          "cost": 298000,
+          "duration": 259200,
+          "resource": "dark_elixir"
+        },
+        "91": {
+          "cost": 310000,
+          "duration": 267010,
+          "resource": "dark_elixir"
+        },
+        "92": {
+          "cost": 304400,
+          "duration": 264000,
+          "resource": "dark_elixir"
+        },
+        "93": {
+          "cost": 307600,
+          "duration": 266400,
+          "resource": "dark_elixir"
+        },
+        "94": {
+          "cost": 310800,
+          "duration": 268800,
+          "resource": "dark_elixir"
+        },
+        "95": {
+          "cost": 314000,
+          "duration": 271200,
+          "resource": "dark_elixir"
+        },
+        "96": {
+          "cost": 317200,
+          "duration": 273600,
+          "resource": "dark_elixir"
+        },
+        "97": {
+          "cost": 320400,
+          "duration": 276000,
+          "resource": "dark_elixir"
+        },
+        "98": {
+          "cost": 323600,
+          "duration": 278400,
+          "resource": "dark_elixir"
+        },
+        "99": {
+          "cost": 326800,
+          "duration": 280800,
+          "resource": "dark_elixir"
+        },
+        "100": {
+          "cost": 330000,
+          "duration": 283200,
+          "resource": "dark_elixir"
+        }
+      }
+    },
+    "28000001": {
+      "id": 28000001,
+      "name": "Archer Queen",
+      "category": "heroes",
+      "resource": "dark_elixir",
+      "th_caps": {
+        "7": 5,
+        "8": 10,
+        "9": 30,
+        "10": 40,
+        "11": 50,
+        "12": 65,
+        "13": 75,
+        "14": 80,
+        "15": 90,
+        "16": 95,
+        "17": 100,
+        "18": 105,
+        "19": 110
+      },
+      "levels": {
+        "1": {
+          "cost": 18300,
+          "duration": 45600,
+          "resource": "dark_elixir"
+        },
+        "2": {
+          "cost": 21600,
+          "duration": 48000,
+          "resource": "dark_elixir"
+        },
+        "3": {
+          "cost": 24900,
+          "duration": 50400,
+          "resource": "dark_elixir"
+        },
+        "4": {
+          "cost": 28200,
+          "duration": 52800,
+          "resource": "dark_elixir"
+        },
+        "5": {
+          "cost": 31500,
+          "duration": 55200,
+          "resource": "dark_elixir"
+        },
+        "6": {
+          "cost": 34800,
+          "duration": 57600,
+          "resource": "dark_elixir"
+        },
+        "7": {
+          "cost": 38100,
+          "duration": 60000,
+          "resource": "dark_elixir"
+        },
+        "8": {
+          "cost": 41400,
+          "duration": 62400,
+          "resource": "dark_elixir"
+        },
+        "9": {
+          "cost": 44700,
+          "duration": 64800,
+          "resource": "dark_elixir"
+        },
+        "10": {
+          "cost": 48000,
+          "duration": 67200,
+          "resource": "dark_elixir"
+        },
+        "11": {
+          "cost": 51300,
+          "duration": 69600,
+          "resource": "dark_elixir"
+        },
+        "12": {
+          "cost": 54600,
+          "duration": 72000,
+          "resource": "dark_elixir"
+        },
+        "13": {
+          "cost": 57900,
+          "duration": 74400,
+          "resource": "dark_elixir"
+        },
+        "14": {
+          "cost": 61200,
+          "duration": 76800,
+          "resource": "dark_elixir"
+        },
+        "15": {
+          "cost": 64500,
+          "duration": 79200,
+          "resource": "dark_elixir"
+        },
+        "16": {
+          "cost": 67800,
+          "duration": 81600,
+          "resource": "dark_elixir"
+        },
+        "17": {
+          "cost": 71100,
+          "duration": 84000,
+          "resource": "dark_elixir"
+        },
+        "18": {
+          "cost": 74400,
+          "duration": 86400,
+          "resource": "dark_elixir"
+        },
+        "19": {
+          "cost": 77700,
+          "duration": 88800,
+          "resource": "dark_elixir"
+        },
+        "20": {
+          "cost": 81000,
+          "duration": 91200,
+          "resource": "dark_elixir"
+        },
+        "21": {
+          "cost": 84300,
+          "duration": 93600,
+          "resource": "dark_elixir"
+        },
+        "22": {
+          "cost": 87600,
+          "duration": 96000,
+          "resource": "dark_elixir"
+        },
+        "23": {
+          "cost": 90900,
+          "duration": 98400,
+          "resource": "dark_elixir"
+        },
+        "24": {
+          "cost": 94200,
+          "duration": 100800,
+          "resource": "dark_elixir"
+        },
+        "25": {
+          "cost": 97500,
+          "duration": 103200,
+          "resource": "dark_elixir"
+        },
+        "26": {
+          "cost": 100800,
+          "duration": 105600,
+          "resource": "dark_elixir"
+        },
+        "27": {
+          "cost": 104100,
+          "duration": 108000,
+          "resource": "dark_elixir"
+        },
+        "28": {
+          "cost": 107400,
+          "duration": 110400,
+          "resource": "dark_elixir"
+        },
+        "29": {
+          "cost": 110700,
+          "duration": 112800,
+          "resource": "dark_elixir"
+        },
+        "30": {
+          "cost": 114000,
+          "duration": 115200,
+          "resource": "dark_elixir"
+        },
+        "31": {
+          "cost": 117300,
+          "duration": 117600,
+          "resource": "dark_elixir"
+        },
+        "32": {
+          "cost": 120600,
+          "duration": 120000,
+          "resource": "dark_elixir"
+        },
+        "33": {
+          "cost": 123900,
+          "duration": 122400,
+          "resource": "dark_elixir"
+        },
+        "34": {
+          "cost": 127200,
+          "duration": 124800,
+          "resource": "dark_elixir"
+        },
+        "35": {
+          "cost": 130500,
+          "duration": 127200,
+          "resource": "dark_elixir"
+        },
+        "36": {
+          "cost": 133800,
+          "duration": 129600,
+          "resource": "dark_elixir"
+        },
+        "37": {
+          "cost": 137100,
+          "duration": 132000,
+          "resource": "dark_elixir"
+        },
+        "38": {
+          "cost": 140400,
+          "duration": 134400,
+          "resource": "dark_elixir"
+        },
+        "39": {
+          "cost": 143700,
+          "duration": 136800,
+          "resource": "dark_elixir"
+        },
+        "40": {
+          "cost": 147000,
+          "duration": 139200,
+          "resource": "dark_elixir"
+        },
+        "41": {
+          "cost": 150300,
+          "duration": 141600,
+          "resource": "dark_elixir"
+        },
+        "42": {
+          "cost": 153600,
+          "duration": 144000,
+          "resource": "dark_elixir"
+        },
+        "43": {
+          "cost": 156900,
+          "duration": 146400,
+          "resource": "dark_elixir"
+        },
+        "44": {
+          "cost": 160200,
+          "duration": 148800,
+          "resource": "dark_elixir"
+        },
+        "45": {
+          "cost": 163500,
+          "duration": 151200,
+          "resource": "dark_elixir"
+        },
+        "46": {
+          "cost": 166800,
+          "duration": 153600,
+          "resource": "dark_elixir"
+        },
+        "47": {
+          "cost": 170100,
+          "duration": 156000,
+          "resource": "dark_elixir"
+        },
+        "48": {
+          "cost": 173400,
+          "duration": 158400,
+          "resource": "dark_elixir"
+        },
+        "49": {
+          "cost": 176700,
+          "duration": 160800,
+          "resource": "dark_elixir"
+        },
+        "50": {
+          "cost": 180000,
+          "duration": 163200,
+          "resource": "dark_elixir"
+        },
+        "51": {
+          "cost": 183300,
+          "duration": 165600,
+          "resource": "dark_elixir"
+        },
+        "52": {
+          "cost": 186600,
+          "duration": 168000,
+          "resource": "dark_elixir"
+        },
+        "53": {
+          "cost": 189900,
+          "duration": 170400,
+          "resource": "dark_elixir"
+        },
+        "54": {
+          "cost": 193200,
+          "duration": 172800,
+          "resource": "dark_elixir"
+        },
+        "55": {
+          "cost": 196500,
+          "duration": 175200,
+          "resource": "dark_elixir"
+        },
+        "56": {
+          "cost": 199800,
+          "duration": 177600,
+          "resource": "dark_elixir"
+        },
+        "57": {
+          "cost": 203100,
+          "duration": 180000,
+          "resource": "dark_elixir"
+        },
+        "58": {
+          "cost": 206400,
+          "duration": 182400,
+          "resource": "dark_elixir"
+        },
+        "59": {
+          "cost": 209700,
+          "duration": 184800,
+          "resource": "dark_elixir"
+        },
+        "60": {
+          "cost": 213000,
+          "duration": 187200,
+          "resource": "dark_elixir"
+        },
+        "61": {
+          "cost": 216300,
+          "duration": 189600,
+          "resource": "dark_elixir"
+        },
+        "62": {
+          "cost": 219600,
+          "duration": 192000,
+          "resource": "dark_elixir"
+        },
+        "63": {
+          "cost": 222900,
+          "duration": 194400,
+          "resource": "dark_elixir"
+        },
+        "64": {
+          "cost": 226200,
+          "duration": 196800,
+          "resource": "dark_elixir"
+        },
+        "65": {
+          "cost": 229500,
+          "duration": 199200,
+          "resource": "dark_elixir"
+        },
+        "66": {
+          "cost": 232800,
+          "duration": 201600,
+          "resource": "dark_elixir"
+        },
+        "67": {
+          "cost": 236100,
+          "duration": 204000,
+          "resource": "dark_elixir"
+        },
+        "68": {
+          "cost": 239400,
+          "duration": 206400,
+          "resource": "dark_elixir"
+        },
+        "69": {
+          "cost": 242700,
+          "duration": 208800,
+          "resource": "dark_elixir"
+        },
+        "70": {
+          "cost": 246000,
+          "duration": 211200,
+          "resource": "dark_elixir"
+        },
+        "71": {
+          "cost": 249300,
+          "duration": 213600,
+          "resource": "dark_elixir"
+        },
+        "72": {
+          "cost": 252600,
+          "duration": 216000,
+          "resource": "dark_elixir"
+        },
+        "73": {
+          "cost": 255900,
+          "duration": 218400,
+          "resource": "dark_elixir"
+        },
+        "74": {
+          "cost": 259200,
+          "duration": 220800,
+          "resource": "dark_elixir"
+        },
+        "75": {
+          "cost": 262500,
+          "duration": 223200,
+          "resource": "dark_elixir"
+        },
+        "76": {
+          "cost": 265800,
+          "duration": 225600,
+          "resource": "dark_elixir"
+        },
+        "77": {
+          "cost": 269100,
+          "duration": 228000,
+          "resource": "dark_elixir"
+        },
+        "78": {
+          "cost": 272400,
+          "duration": 230400,
+          "resource": "dark_elixir"
+        },
+        "79": {
+          "cost": 275700,
+          "duration": 232800,
+          "resource": "dark_elixir"
+        },
+        "80": {
+          "cost": 279000,
+          "duration": 235200,
+          "resource": "dark_elixir"
+        },
+        "81": {
+          "cost": 282300,
+          "duration": 237600,
+          "resource": "dark_elixir"
+        },
+        "82": {
+          "cost": 285600,
+          "duration": 240000,
+          "resource": "dark_elixir"
+        },
+        "83": {
+          "cost": 288900,
+          "duration": 242400,
+          "resource": "dark_elixir"
+        },
+        "84": {
+          "cost": 292200,
+          "duration": 244800,
+          "resource": "dark_elixir"
+        },
+        "85": {
+          "cost": 295500,
+          "duration": 247200,
+          "resource": "dark_elixir"
+        },
+        "86": {
+          "cost": 298800,
+          "duration": 249600,
+          "resource": "dark_elixir"
+        },
+        "87": {
+          "cost": 302100,
+          "duration": 252000,
+          "resource": "dark_elixir"
+        },
+        "88": {
+          "cost": 305400,
+          "duration": 254400,
+          "resource": "dark_elixir"
+        },
+        "89": {
+          "cost": 308700,
+          "duration": 256800,
+          "resource": "dark_elixir"
+        },
+        "90": {
+          "cost": 312000,
+          "duration": 259200,
+          "resource": "dark_elixir"
+        },
+        "91": {
+          "cost": 315300,
+          "duration": 261600,
+          "resource": "dark_elixir"
+        },
+        "92": {
+          "cost": 318600,
+          "duration": 264000,
+          "resource": "dark_elixir"
+        },
+        "93": {
+          "cost": 321900,
+          "duration": 266400,
+          "resource": "dark_elixir"
+        },
+        "94": {
+          "cost": 325200,
+          "duration": 268800,
+          "resource": "dark_elixir"
+        },
+        "95": {
+          "cost": 328500,
+          "duration": 271200,
+          "resource": "dark_elixir"
+        },
+        "96": {
+          "cost": 331800,
+          "duration": 273600,
+          "resource": "dark_elixir"
+        },
+        "97": {
+          "cost": 335100,
+          "duration": 276000,
+          "resource": "dark_elixir"
+        },
+        "98": {
+          "cost": 338400,
+          "duration": 278400,
+          "resource": "dark_elixir"
+        },
+        "99": {
+          "cost": 341700,
+          "duration": 280800,
+          "resource": "dark_elixir"
+        },
+        "100": {
+          "cost": 345000,
+          "duration": 283200,
+          "resource": "dark_elixir"
+        }
+      }
+    },
+    "28000002": {
+      "id": 28000002,
+      "name": "Grand Warden",
+      "category": "heroes",
+      "resource": "elixir",
+      "th_caps": {
+        "11": 20,
+        "12": 40,
+        "13": 50,
+        "14": 55,
+        "15": 65,
+        "16": 70,
+        "17": 75,
+        "18": 80,
+        "19": 85
+      },
+      "levels": {
+        "1": {
+          "cost": 4250000,
+          "duration": 88400,
+          "resource": "elixir"
+        },
+        "2": {
+          "cost": 4500000,
+          "duration": 90400,
+          "resource": "elixir"
+        },
+        "3": {
+          "cost": 4750000,
+          "duration": 92400,
+          "resource": "elixir"
+        },
+        "4": {
+          "cost": 5000000,
+          "duration": 94400,
+          "resource": "elixir"
+        },
+        "5": {
+          "cost": 5250000,
+          "duration": 96400,
+          "resource": "elixir"
+        },
+        "6": {
+          "cost": 5500000,
+          "duration": 98400,
+          "resource": "elixir"
+        },
+        "7": {
+          "cost": 5750000,
+          "duration": 100400,
+          "resource": "elixir"
+        },
+        "8": {
+          "cost": 6000000,
+          "duration": 102400,
+          "resource": "elixir"
+        },
+        "9": {
+          "cost": 6250000,
+          "duration": 104400,
+          "resource": "elixir"
+        },
+        "10": {
+          "cost": 6500000,
+          "duration": 106400,
+          "resource": "elixir"
+        },
+        "11": {
+          "cost": 6750000,
+          "duration": 108400,
+          "resource": "elixir"
+        },
+        "12": {
+          "cost": 7000000,
+          "duration": 110400,
+          "resource": "elixir"
+        },
+        "13": {
+          "cost": 7250000,
+          "duration": 112400,
+          "resource": "elixir"
+        },
+        "14": {
+          "cost": 7500000,
+          "duration": 114400,
+          "resource": "elixir"
+        },
+        "15": {
+          "cost": 7750000,
+          "duration": 116400,
+          "resource": "elixir"
+        },
+        "16": {
+          "cost": 8000000,
+          "duration": 118400,
+          "resource": "elixir"
+        },
+        "17": {
+          "cost": 8250000,
+          "duration": 120400,
+          "resource": "elixir"
+        },
+        "18": {
+          "cost": 8500000,
+          "duration": 122400,
+          "resource": "elixir"
+        },
+        "19": {
+          "cost": 8750000,
+          "duration": 124400,
+          "resource": "elixir"
+        },
+        "20": {
+          "cost": 9000000,
+          "duration": 126400,
+          "resource": "elixir"
+        },
+        "21": {
+          "cost": 9250000,
+          "duration": 128400,
+          "resource": "elixir"
+        },
+        "22": {
+          "cost": 9500000,
+          "duration": 130400,
+          "resource": "elixir"
+        },
+        "23": {
+          "cost": 9750000,
+          "duration": 132400,
+          "resource": "elixir"
+        },
+        "24": {
+          "cost": 10000000,
+          "duration": 134400,
+          "resource": "elixir"
+        },
+        "25": {
+          "cost": 10250000,
+          "duration": 136400,
+          "resource": "elixir"
+        },
+        "26": {
+          "cost": 10500000,
+          "duration": 138400,
+          "resource": "elixir"
+        },
+        "27": {
+          "cost": 10750000,
+          "duration": 140400,
+          "resource": "elixir"
+        },
+        "28": {
+          "cost": 11000000,
+          "duration": 142400,
+          "resource": "elixir"
+        },
+        "29": {
+          "cost": 11250000,
+          "duration": 144400,
+          "resource": "elixir"
+        },
+        "30": {
+          "cost": 11500000,
+          "duration": 146400,
+          "resource": "elixir"
+        },
+        "31": {
+          "cost": 11750000,
+          "duration": 148400,
+          "resource": "elixir"
+        },
+        "32": {
+          "cost": 12000000,
+          "duration": 150400,
+          "resource": "elixir"
+        },
+        "33": {
+          "cost": 12250000,
+          "duration": 152400,
+          "resource": "elixir"
+        },
+        "34": {
+          "cost": 12500000,
+          "duration": 154400,
+          "resource": "elixir"
+        },
+        "35": {
+          "cost": 12750000,
+          "duration": 156400,
+          "resource": "elixir"
+        },
+        "36": {
+          "cost": 13000000,
+          "duration": 158400,
+          "resource": "elixir"
+        },
+        "37": {
+          "cost": 13250000,
+          "duration": 160400,
+          "resource": "elixir"
+        },
+        "38": {
+          "cost": 13500000,
+          "duration": 162400,
+          "resource": "elixir"
+        },
+        "39": {
+          "cost": 13750000,
+          "duration": 164400,
+          "resource": "elixir"
+        },
+        "40": {
+          "cost": 14000000,
+          "duration": 166400,
+          "resource": "elixir"
+        },
+        "41": {
+          "cost": 14250000,
+          "duration": 168400,
+          "resource": "elixir"
+        },
+        "42": {
+          "cost": 14500000,
+          "duration": 170400,
+          "resource": "elixir"
+        },
+        "43": {
+          "cost": 14750000,
+          "duration": 172400,
+          "resource": "elixir"
+        },
+        "44": {
+          "cost": 15000000,
+          "duration": 174400,
+          "resource": "elixir"
+        },
+        "45": {
+          "cost": 15250000,
+          "duration": 176400,
+          "resource": "elixir"
+        },
+        "46": {
+          "cost": 15500000,
+          "duration": 178400,
+          "resource": "elixir"
+        },
+        "47": {
+          "cost": 15750000,
+          "duration": 180400,
+          "resource": "elixir"
+        },
+        "48": {
+          "cost": 16000000,
+          "duration": 182400,
+          "resource": "elixir"
+        },
+        "49": {
+          "cost": 16250000,
+          "duration": 184400,
+          "resource": "elixir"
+        },
+        "50": {
+          "cost": 16500000,
+          "duration": 186400,
+          "resource": "elixir"
+        },
+        "51": {
+          "cost": 16750000,
+          "duration": 188400,
+          "resource": "elixir"
+        },
+        "52": {
+          "cost": 17000000,
+          "duration": 190400,
+          "resource": "elixir"
+        },
+        "53": {
+          "cost": 17250000,
+          "duration": 192400,
+          "resource": "elixir"
+        },
+        "54": {
+          "cost": 17500000,
+          "duration": 194400,
+          "resource": "elixir"
+        },
+        "55": {
+          "cost": 17750000,
+          "duration": 196400,
+          "resource": "elixir"
+        },
+        "56": {
+          "cost": 18000000,
+          "duration": 198400,
+          "resource": "elixir"
+        },
+        "57": {
+          "cost": 18250000,
+          "duration": 200400,
+          "resource": "elixir"
+        },
+        "58": {
+          "cost": 18500000,
+          "duration": 202400,
+          "resource": "elixir"
+        },
+        "59": {
+          "cost": 18750000,
+          "duration": 204400,
+          "resource": "elixir"
+        },
+        "60": {
+          "cost": 19000000,
+          "duration": 206400,
+          "resource": "elixir"
+        },
+        "61": {
+          "cost": 19250000,
+          "duration": 208400,
+          "resource": "elixir"
+        },
+        "62": {
+          "cost": 19500000,
+          "duration": 210400,
+          "resource": "elixir"
+        },
+        "63": {
+          "cost": 19750000,
+          "duration": 212400,
+          "resource": "elixir"
+        },
+        "64": {
+          "cost": 20000000,
+          "duration": 214400,
+          "resource": "elixir"
+        },
+        "65": {
+          "cost": 20250000,
+          "duration": 216400,
+          "resource": "elixir"
+        },
+        "66": {
+          "cost": 20500000,
+          "duration": 218400,
+          "resource": "elixir"
+        },
+        "67": {
+          "cost": 20750000,
+          "duration": 220400,
+          "resource": "elixir"
+        },
+        "68": {
+          "cost": 21000000,
+          "duration": 222400,
+          "resource": "elixir"
+        },
+        "69": {
+          "cost": 21250000,
+          "duration": 224400,
+          "resource": "elixir"
+        },
+        "70": {
+          "cost": 21500000,
+          "duration": 226400,
+          "resource": "elixir"
+        },
+        "71": {
+          "cost": 21750000,
+          "duration": 228400,
+          "resource": "elixir"
+        },
+        "72": {
+          "cost": 22000000,
+          "duration": 230400,
+          "resource": "elixir"
+        },
+        "73": {
+          "cost": 22000000,
+          "duration": 232400,
+          "resource": "elixir"
+        },
+        "74": {
+          "cost": 22000000,
+          "duration": 234400,
+          "resource": "elixir"
+        },
+        "75": {
+          "cost": 22000000,
+          "duration": 236400,
+          "resource": "elixir"
+        }
+      }
+    },
+    "28000003": {
+      "id": 28000003,
+      "name": "Royal Champion",
+      "category": "heroes",
+      "resource": "dark_elixir",
+      "th_caps": {
+        "13": 25,
+        "14": 30,
+        "15": 40,
+        "16": 45,
+        "17": 50,
+        "18": 55,
+        "19": 60
+      },
+      "levels": {
+        "1": {
+          "cost": 105000,
+          "duration": 132100,
+          "resource": "dark_elixir"
+        },
+        "2": {
+          "cost": 110000,
+          "duration": 134600,
+          "resource": "dark_elixir"
+        },
+        "3": {
+          "cost": 115000,
+          "duration": 137100,
+          "resource": "dark_elixir"
+        },
+        "4": {
+          "cost": 120000,
+          "duration": 139600,
+          "resource": "dark_elixir"
+        },
+        "5": {
+          "cost": 125000,
+          "duration": 142100,
+          "resource": "dark_elixir"
+        },
+        "6": {
+          "cost": 130000,
+          "duration": 144600,
+          "resource": "dark_elixir"
+        },
+        "7": {
+          "cost": 135000,
+          "duration": 147100,
+          "resource": "dark_elixir"
+        },
+        "8": {
+          "cost": 140000,
+          "duration": 149600,
+          "resource": "dark_elixir"
+        },
+        "9": {
+          "cost": 145000,
+          "duration": 152100,
+          "resource": "dark_elixir"
+        },
+        "10": {
+          "cost": 150000,
+          "duration": 154600,
+          "resource": "dark_elixir"
+        },
+        "11": {
+          "cost": 155000,
+          "duration": 157100,
+          "resource": "dark_elixir"
+        },
+        "12": {
+          "cost": 160000,
+          "duration": 159600,
+          "resource": "dark_elixir"
+        },
+        "13": {
+          "cost": 165000,
+          "duration": 162100,
+          "resource": "dark_elixir"
+        },
+        "14": {
+          "cost": 170000,
+          "duration": 164600,
+          "resource": "dark_elixir"
+        },
+        "15": {
+          "cost": 175000,
+          "duration": 167100,
+          "resource": "dark_elixir"
+        },
+        "16": {
+          "cost": 180000,
+          "duration": 169600,
+          "resource": "dark_elixir"
+        },
+        "17": {
+          "cost": 185000,
+          "duration": 172100,
+          "resource": "dark_elixir"
+        },
+        "18": {
+          "cost": 190000,
+          "duration": 174600,
+          "resource": "dark_elixir"
+        },
+        "19": {
+          "cost": 195000,
+          "duration": 177100,
+          "resource": "dark_elixir"
+        },
+        "20": {
+          "cost": 200000,
+          "duration": 179600,
+          "resource": "dark_elixir"
+        },
+        "21": {
+          "cost": 205000,
+          "duration": 182100,
+          "resource": "dark_elixir"
+        },
+        "22": {
+          "cost": 210000,
+          "duration": 184600,
+          "resource": "dark_elixir"
+        },
+        "23": {
+          "cost": 215000,
+          "duration": 187100,
+          "resource": "dark_elixir"
+        },
+        "24": {
+          "cost": 220000,
+          "duration": 189600,
+          "resource": "dark_elixir"
+        },
+        "25": {
+          "cost": 225000,
+          "duration": 192100,
+          "resource": "dark_elixir"
+        },
+        "26": {
+          "cost": 230000,
+          "duration": 194600,
+          "resource": "dark_elixir"
+        },
+        "27": {
+          "cost": 235000,
+          "duration": 197100,
+          "resource": "dark_elixir"
+        },
+        "28": {
+          "cost": 240000,
+          "duration": 199600,
+          "resource": "dark_elixir"
+        },
+        "29": {
+          "cost": 245000,
+          "duration": 202100,
+          "resource": "dark_elixir"
+        },
+        "30": {
+          "cost": 250000,
+          "duration": 204600,
+          "resource": "dark_elixir"
+        },
+        "31": {
+          "cost": 255000,
+          "duration": 207100,
+          "resource": "dark_elixir"
+        },
+        "32": {
+          "cost": 260000,
+          "duration": 209600,
+          "resource": "dark_elixir"
+        },
+        "33": {
+          "cost": 265000,
+          "duration": 212100,
+          "resource": "dark_elixir"
+        },
+        "34": {
+          "cost": 270000,
+          "duration": 214600,
+          "resource": "dark_elixir"
+        },
+        "35": {
+          "cost": 275000,
+          "duration": 217100,
+          "resource": "dark_elixir"
+        },
+        "36": {
+          "cost": 280000,
+          "duration": 219600,
+          "resource": "dark_elixir"
+        },
+        "37": {
+          "cost": 285000,
+          "duration": 222100,
+          "resource": "dark_elixir"
+        },
+        "38": {
+          "cost": 290000,
+          "duration": 224600,
+          "resource": "dark_elixir"
+        },
+        "39": {
+          "cost": 295000,
+          "duration": 227100,
+          "resource": "dark_elixir"
+        },
+        "40": {
+          "cost": 300000,
+          "duration": 229600,
+          "resource": "dark_elixir"
+        },
+        "41": {
+          "cost": 305000,
+          "duration": 232100,
+          "resource": "dark_elixir"
+        },
+        "42": {
+          "cost": 310000,
+          "duration": 234600,
+          "resource": "dark_elixir"
+        },
+        "43": {
+          "cost": 315000,
+          "duration": 237100,
+          "resource": "dark_elixir"
+        },
+        "44": {
+          "cost": 320000,
+          "duration": 239600,
+          "resource": "dark_elixir"
+        },
+        "45": {
+          "cost": 325000,
+          "duration": 242100,
+          "resource": "dark_elixir"
+        },
+        "46": {
+          "cost": 330000,
+          "duration": 244600,
+          "resource": "dark_elixir"
+        },
+        "47": {
+          "cost": 335000,
+          "duration": 247100,
+          "resource": "dark_elixir"
+        },
+        "48": {
+          "cost": 340000,
+          "duration": 249600,
+          "resource": "dark_elixir"
+        },
+        "49": {
+          "cost": 345000,
+          "duration": 252100,
+          "resource": "dark_elixir"
+        },
+        "50": {
+          "cost": 350000,
+          "duration": 254600,
+          "resource": "dark_elixir"
+        }
+      }
+    }
+  }
+}
