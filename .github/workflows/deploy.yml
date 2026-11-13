@@ -23,6 +23,17 @@ jobs:
       - name: Build PWA Bundle
         run: npm run build
 
+      - name: Check Cloudflare Secrets
+        run: |
+          if [ -z "${{ secrets.CLOUDFLARE_API_TOKEN }}" ]; then
+            echo "::error::Secret CLOUDFLARE_API_TOKEN is not set or empty! Go to Repository Settings -> Secrets and variables -> Actions to add it."
+            exit 1
+          fi
+          if [ -z "${{ secrets.CLOUDFLARE_ACCOUNT_ID }}" ]; then
+            echo "::error::Secret CLOUDFLARE_ACCOUNT_ID is not set or empty! Go to Repository Settings -> Secrets and variables -> Actions to add it."
+            exit 1
+          fi
+
       - name: Deploy to Cloudflare Pages
         run: npx wrangler pages deploy dist --project-name=clash-tracker-pwa
         env:
