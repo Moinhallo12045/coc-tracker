@@ -9,7 +9,7 @@ export default defineConfig({
     react(),
     VitePWA({
       registerType: 'autoUpdate',
-      includeAssets: ['favicon.ico', 'assets/**/*'],
+      includeAssets: ['favicon.ico'],
       manifest: {
         name: 'Clash Upgrade Tracker',
         short_name: 'ClashTracker',
@@ -32,15 +32,28 @@ export default defineConfig({
         ]
       },
       workbox: {
+        cleanupOutdatedCaches: true,
+        skipWaiting: true,
+        clientsClaim: true,
         runtimeCaching: [
           {
-            urlPattern: /\/assets\/.*\.(webp|png|svg)$/,
-            handler: 'CacheFirst',
+            // NetworkFirst for HTML / App navigation so new deployments load instantly
+            urlPattern: ({ request }) => request.mode === 'navigate',
+            handler: 'NetworkFirst',
             options: {
-              cacheName: 'coc-game-assets-v1',
+              cacheName: 'app-navigation-cache',
+              networkTimeoutSeconds: 3
+            }
+          },
+          {
+            // Game assets: stale-while-revalidate so updates show without cache killing
+            urlPattern: /\/assets\/.*\.(webp|png|svg)$/,
+            handler: 'StaleWhileRevalidate',
+            options: {
+              cacheName: 'coc-game-assets-v2',
               expiration: {
                 maxEntries: 1000,
-                maxAgeSeconds: 60 * 60 * 24 * 60 // 60 Tage Offline-Gültigkeit
+                maxAgeSeconds: 60 * 60 * 24 * 30
               }
             }
           }
