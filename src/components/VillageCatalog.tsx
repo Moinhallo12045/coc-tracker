@@ -11,7 +11,7 @@ import {
   formatCost,
   formatDuration
 } from '../services/catalog';
-import { Shield, Swords, Crown, Blocks, Database, FlaskConical, Check, ArrowUpRight, Search } from 'lucide-react';
+import { Shield, Swords, Crown, Blocks, Database, FlaskConical, Check, ArrowUpRight, Search, EyeOff, Eye, Lock } from 'lucide-react';
 
 interface VillageCatalogProps {
   entities: VillageEntity[];
@@ -32,6 +32,7 @@ export const VillageCatalog: React.FC<VillageCatalogProps> = ({
 }) => {
   const [activeTab, setActiveTab] = useState<EntityCategory>('defense');
   const [searchQuery, setSearchQuery] = useState('');
+  const [hideUnavailable, setHideUnavailable] = useState(true); // Toggle to hide unupgradable/locked buildings
 
   // Group multiple instances of the same entity (e.g. 2x Cannon L21, 1x Geared Cannon L21)
   const groupedEntities = new Map<number, { levels: Array<{ level: number; count: number; gearUp?: number }>; totalCount: number; maxLevel: number }>();
@@ -57,6 +58,23 @@ export const VillageCatalog: React.FC<VillageCatalogProps> = ({
 
   const filteredEntities = Object.values(catalog.entities).filter(ent => {
     if (ent.category !== activeTab) return false;
+
+    const userGroup = groupedEntities.get(ent.id);
+    const currentLevel = userGroup ? userGroup.maxLevel : 0;
+    const maxLevelForTH = getMaxLevelForTH(ent.id, townHallLevel);
+
+    // If hideUnavailable is active:
+    if (hideUnavailable) {
+      // 1. Hide buildings not yet unlocked at this Town Hall (maxLevelForTH === 0)
+      if (maxLevelForTH === 0) return false;
+
+      // 2. Hide buildings not owned in this village (userGroup === undefined) unless it can be built
+      if (!userGroup && maxLevelForTH === 0) return false;
+
+      // 3. Hide already maxed buildings for this Town Hall
+      if (currentLevel >= maxLevelForTH && maxLevelForTH > 0) return false;
+    }
+
     if (searchQuery.trim()) {
       return ent.name.toLowerCase().includes(searchQuery.toLowerCase());
     }
@@ -75,20 +93,37 @@ export const VillageCatalog: React.FC<VillageCatalogProps> = ({
           </p>
         </div>
 
-        {/* Search */}
-        <div className="relative w-full sm:w-64">
-          <Search className="w-4 h-4 text-slate-400 absolute left-3 top-2.5" />
-          <input
-            type="text"
-            placeholder="Gebäude oder Truppe suchen..."
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full bg-slate-900 border border-slate-800 rounded-xl pl-9 pr-3 py-1.5 text-xs text-slate-200 placeholder:text-slate-500 focus:outline-none focus:border-amber-500/50"
-          />
+        {/* Filter & Search Controls */}
+        <div className="flex items-center gap-2 w-full sm:w-auto">
+          {/* Hide / Show Unavailable Toggle */}
+          <button
+            onClick={() => setHideUnavailable(!hideUnavailable)}
+            className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-bold transition-all border shrink-0 ${
+              hideUnavailable
+                ? 'bg-amber-500/15 text-amber-400 border-amber-500/30'
+                : 'bg-slate-800 text-slate-400 border-slate-700 hover:text-slate-200'
+            }`}
+            title="Nicht verfügbare / voll ausgebaute Gebäude ein- oder ausblenden"
+          >
+            {hideUnavailable ? <EyeOff className="w-3.5 h-3.5" /> : <Eye className="w-3.5 h-3.5" />}
+            <span>{hideUnavailable ? 'Nur verfügbare Upgrades' : 'Alle anzeigen'}</span>
+          </button>
+
+          {/* Search Input */}
+          <div className="relative flex-1 sm:w-60">
+            <Search className="w-4 h-4 text-slate-400 absolute left-3 top-2.5" />
+            <input
+              type="text"
+              placeholder="Suchen..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              className="w-full bg-slate-900 border border-slate-800 rounded-xl pl-9 pr-3 py-1.5 text-xs text-slate-200 placeholder:text-slate-500 focus:outline-none focus:border-amber-500/50"
+            />
+          </div>
         </div>
       </div>
 
-      {/* Tabs */}
+      {/* Category Tabs */}
       <div className="flex gap-2 overflow-x-auto pb-2 no-scrollbar px-1">
         {tabs.map(tab => (
           <button
@@ -110,12 +145,35 @@ export const VillageCatalog: React.FC<VillageCatalogProps> = ({
         ))}
       </div>
 
+      {/* Empty State */}
+      {filteredEntities.length === 0 && (
+        <div className="bg-slate-900/40 border border-slate-800 rounded-2xl p-8 text-center my-4">
+          <Check className="w-8 h-8 text-emerald-400 mx-auto mb-2" />
+          <h3 className="text-sm font-bold text-slate-200">
+            {hideUnavailable
+              ? `Keine offenen Upgrades in dieser Kategorie für Rathaus ${townHallLevel}!`
+              : 'Keine Gebäude gefunden.'}
+          </h3>
+          <p className="text-xs text-slate-400 mt-1">
+            {hideUnavailable && (
+              <button
+                onClick={() => setHideUnavailable(false)}
+                className="text-amber-400 hover:underline font-semibold"
+              >
+                Klicke hier, um auch voll ausgebaute Gebäude einzublenden.
+              </button>
+            )}
+          </p>
+        </div>
+      )}
+
       {/* Entity Cards Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3.5 mt-4">
         {filteredEntities.map(ent => {
           const userGroup = groupedEntities.get(ent.id);
           const currentLevel = userGroup ? userGroup.maxLevel : 0;
           const maxLevel = getMaxLevelForTH(ent.id, townHallLevel);
+          const isLocked = maxLevel === 0;
           const isMaxed = currentLevel >= maxLevel && maxLevel > 0;
           const isUpgrading = ongoingUpgradeIds.has(ent.id);
           const targetLevel = currentLevel + 1;
@@ -129,7 +187,9 @@ export const VillageCatalog: React.FC<VillageCatalogProps> = ({
             <div
               key={ent.id}
               className={`bg-slate-900/80 border rounded-2xl p-4 flex flex-col justify-between shadow-md transition-all ${
-                isMaxed
+                isLocked
+                  ? 'border-slate-800/40 opacity-50 bg-slate-950/20'
+                  : isMaxed
                   ? 'border-emerald-500/30 bg-emerald-950/10'
                   : isUpgrading
                   ? 'border-amber-500/40 bg-amber-950/10'
@@ -170,7 +230,12 @@ export const VillageCatalog: React.FC<VillageCatalogProps> = ({
 
                   {/* Status Badges */}
                   <div>
-                    {isMaxed ? (
+                    {isLocked ? (
+                      <span className="inline-flex items-center gap-1 text-[10px] font-bold bg-slate-800 text-slate-500 border border-slate-700 px-2 py-0.5 rounded-full">
+                        <Lock className="w-3 h-3" />
+                        Ab TH{Object.entries(ent.th_caps).find(([, cap]) => cap > 0)?.[0] || '?'}
+                      </span>
+                    ) : isMaxed ? (
                       <span className="inline-flex items-center gap-1 text-[10px] font-black bg-emerald-500/15 text-emerald-400 border border-emerald-500/30 px-2 py-0.5 rounded-full">
                         <Check className="w-3 h-3" />
                         Max TH{townHallLevel}
@@ -183,7 +248,7 @@ export const VillageCatalog: React.FC<VillageCatalogProps> = ({
                   </div>
                 </div>
 
-                {/* Instance breakdown if multiple levels exist (e.g. Cannon 1x Gear-Up L21, 2x normal L21) */}
+                {/* Instance breakdown if multiple levels exist */}
                 {userGroup && userGroup.levels.length > 1 && (
                   <div className="my-2 bg-slate-950/60 p-2 rounded-lg border border-slate-800/80 flex flex-wrap gap-1.5 text-[11px]">
                     {userGroup.levels.map((inst, i) => (
@@ -194,8 +259,8 @@ export const VillageCatalog: React.FC<VillageCatalogProps> = ({
                   </div>
                 )}
 
-                {/* Next Level Info (if not maxed) */}
-                {!isMaxed && nextLevelData && (
+                {/* Next Level Info (if not maxed and not locked) */}
+                {!isMaxed && !isLocked && nextLevelData && (
                   <div className="mt-3 pt-3 border-t border-slate-800/80 flex items-center justify-between text-xs">
                     <div className="flex items-center gap-2 font-mono">
                       <div className="flex items-center gap-1 text-slate-200">
@@ -232,7 +297,7 @@ export const VillageCatalog: React.FC<VillageCatalogProps> = ({
                   </span>
                   <button
                     onClick={() => onSetEntityLevel(ent.id, Math.min(maxLevel || 30, currentLevel + 1))}
-                    disabled={isMaxed}
+                    disabled={isMaxed || isLocked}
                     className="w-6 h-6 rounded bg-slate-800 hover:bg-slate-700 disabled:opacity-30 text-xs font-bold text-slate-300 flex items-center justify-center transition-colors"
                   >
                     +
@@ -240,7 +305,7 @@ export const VillageCatalog: React.FC<VillageCatalogProps> = ({
                 </div>
 
                 {/* Upgrade Button */}
-                {!isMaxed && (
+                {!isMaxed && !isLocked && (
                   <button
                     onClick={() => onStartManualUpgrade(ent, targetLevel)}
                     disabled={isUpgrading}
