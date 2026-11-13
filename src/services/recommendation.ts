@@ -79,6 +79,11 @@ export function calculateRecommendationScores(ctx: RecommendationContext): Recom
       continue;
     }
 
+    // Skip non-upgradable structures like B.O.B Hut in Home Village
+    if (entityDef.id === 1000064) {
+      continue;
+    }
+
     // Skip if already being upgraded in a slot
     if (ongoingUpgradeIds.has(entityDef.id)) {
       continue;

@@ -14,7 +14,7 @@ const homeEntities = [
   { id: 1000026, name: 'Dark Barracks', category: 'offense', resource: 'elixir', slug: 'dark_barracks', maxLvl: 11 },
   { id: 1000029, name: 'Dark Spell Factory', category: 'offense', resource: 'elixir', slug: 'dark_spell_factory', maxLvl: 7 },
   { id: 1000059, name: 'Workshop', category: 'offense', resource: 'elixir', slug: 'workshop', maxLvl: 8 },
-  { id: 1000064, name: 'B.O.B Hut', category: 'defense', resource: 'gold', slug: 'bob_control', maxLvl: 5 },
+  { id: 1000064, name: 'B.O.B Hut', category: 'defense', resource: 'gold', slug: 'bob_control', maxLvl: 1 },
   { id: 1000068, name: 'Pet House', category: 'offense', resource: 'elixir', slug: 'pet_house', maxLvl: 11 },
   { id: 1000070, name: 'Blacksmith', category: 'offense', resource: 'elixir', slug: 'blacksmith', maxLvl: 10 },
   { id: 1000071, name: 'Hero Hall', category: 'offense', resource: 'elixir', slug: 'hero_hall', maxLvl: 11 },
@@ -227,6 +227,12 @@ function processList(list, villageType) {
       for (let th = 1; th <= 17; th++) th_caps[th] = 0;
       th_caps[18] = 2;
       th_caps[19] = 3;
+    }
+
+    // B.O.B Hut in Home Village is level 1 max, unlocked at TH10+ via BB
+    if (ent.id === 1000064) {
+      for (let th = 1; th <= 9; th++) th_caps[th] = 0;
+      for (let th = 10; th <= 19; th++) th_caps[th] = 1;
     }
 
     catalog.entities[ent.id] = {
