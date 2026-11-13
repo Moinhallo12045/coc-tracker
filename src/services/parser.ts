@@ -1,50 +1,33 @@
 import { db, type AccountProfile, type VillageEntity, type ActiveTimer } from '../db/db';
-import { getEntityById } from './catalog';
 
-export interface ClashNinjaExportRaw {
-  timestamp?: number;
+export interface ClashNinjaExportItem {
+  data?: number;
+  id?: number;
+  dataId?: number;
+  lvl?: number;
+  level?: number;
+  cnt?: number;
+  count?: number;
+  timer?: number;
+  gear_up?: number;
+  gearUp?: number;
+  weapon?: number;
+}
+
+export interface ClashNinjaExportFull {
   tag?: string;
   playerTag?: string;
   name?: string;
-  playerName?: string;
-  townHallLevel?: number;
-  th?: number;
-  buildings?: Array<{
-    id?: number;
-    dataId?: number;
-    lvl?: number;
-    level?: number;
-    count?: number;
-    timer?: number;
-    gearUp?: number;
-  }>;
-  heroes?: Array<{
-    id?: number;
-    dataId?: number;
-    lvl?: number;
-    level?: number;
-    timer?: number;
-  }>;
-  lab?: Array<{
-    id?: number;
-    dataId?: number;
-    lvl?: number;
-    level?: number;
-    timer?: number;
-  }>;
-  pets?: Array<{
-    id?: number;
-    dataId?: number;
-    lvl?: number;
-    level?: number;
-    timer?: number;
-  }>;
-  entities?: Array<{
-    dataId: number;
-    level: number;
-    count?: number;
-    timer?: number;
-  }>;
+  timestamp?: number;
+  buildings?: ClashNinjaExportItem[];
+  traps?: ClashNinjaExportItem[];
+  heroes?: ClashNinjaExportItem[];
+  units?: ClashNinjaExportItem[];
+  spells?: ClashNinjaExportItem[];
+  pets?: ClashNinjaExportItem[];
+  siege_machines?: ClashNinjaExportItem[];
+  equipment?: ClashNinjaExportItem[];
+  helpers?: ClashNinjaExportItem[];
 }
 
 export interface ParseResult {
@@ -55,20 +38,25 @@ export interface ParseResult {
 }
 
 export async function parseAndIngestClashNinjaJson(rawJson: string | object): Promise<ParseResult> {
-  const json: ClashNinjaExportRaw = typeof rawJson === 'string' ? JSON.parse(rawJson) : rawJson;
+  const json: ClashNinjaExportFull = typeof rawJson === 'string' ? JSON.parse(rawJson) : rawJson;
 
-  // 1. Calculate time delta Δt = floor(Date.now() / 1000) - json.timestamp
   const nowMs = Date.now();
   const currentTimestampSec = Math.floor(nowMs / 1000);
   const jsonTimestamp = json.timestamp || currentTimestampSec;
   const deltaSeconds = Math.max(0, currentTimestampSec - jsonTimestamp);
 
-  // 2. Multi-Account Mapping
   const tag = (json.tag || json.playerTag || '#Q9C0YQYJR').toUpperCase().trim();
-  const name = json.name || json.playerName || `Chief ${tag.replace('#', '')}`;
-  const townHallLevel = Math.max(1, Math.min(19, Number(json.townHallLevel || json.th || 16)));
+  const name = json.name || `Chief ${tag.replace('#', '')}`;
 
-  // Deactivate other accounts and set this one as active
+  // Deduce Town Hall level from buildings array (ID 1000001)
+  let townHallLevel = 16;
+  if (Array.isArray(json.buildings)) {
+    const thItem = json.buildings.find(b => (b.data || b.id) === 1000001);
+    if (thItem && (thItem.lvl || thItem.level)) {
+      townHallLevel = Number(thItem.lvl || thItem.level);
+    }
+  }
+
   await db.transaction('rw', db.accounts, db.entities, db.timers, async () => {
     await db.accounts.toCollection().modify({ isActive: false });
 
@@ -87,7 +75,7 @@ export async function parseAndIngestClashNinjaJson(rawJson: string | object): Pr
       await db.accounts.add(accountProfile);
     }
 
-    // Clear previous entities and timers for this account to guarantee a clean sync
+    // Clean previous records for this account
     await db.entities.where('accountTag').equals(tag).delete();
     await db.timers.where('accountTag').equals(tag).delete();
 
@@ -96,28 +84,26 @@ export async function parseAndIngestClashNinjaJson(rawJson: string | object): Pr
 
     let builderSlotCounter = 1;
 
-    // Helper to process list of items
-    const processItem = (
-      item: { id?: number; dataId?: number; lvl?: number; level?: number; count?: number; timer?: number; gearUp?: number },
-      slotType: 'builder' | 'lab' | 'pet'
-    ) => {
-      const dataId = Number(item.id || item.dataId || 0);
+    const processItem = (item: ClashNinjaExportItem, slotType: 'builder' | 'lab' | 'pet') => {
+      const dataId = Number(item.data || item.id || item.dataId || 0);
       if (!dataId) return;
 
       const level = Number(item.lvl ?? item.level ?? 1);
-      const count = Number(item.count ?? 1);
-      const gearUp = item.gearUp ? 1 : 0;
+      const count = Number(item.cnt ?? item.count ?? 1);
+      const gearUp = (item.gear_up || item.gearUp) ? 1 : 0;
+      const weaponLevel = item.weapon ? Number(item.weapon) : undefined;
 
       entitiesToInsert.push({
-        id: `${tag}_${dataId}`,
+        id: `${tag}_${dataId}_${level}_${entitiesToInsert.length}`,
         accountTag: tag,
         dataId,
         level,
         count,
-        gearUp
+        gearUp,
+        weaponLevel
       });
 
-      // Timer delta calculation
+      // Timer delta sync
       if (item.timer && item.timer > 0) {
         const remainingSeconds = Math.max(0, item.timer - deltaSeconds);
         if (remainingSeconds > 0) {
@@ -143,25 +129,27 @@ export async function parseAndIngestClashNinjaJson(rawJson: string | object): Pr
       }
     };
 
-    // Process all categories
+    // Parse all Clash Ninja categories
     if (Array.isArray(json.buildings)) {
       for (const b of json.buildings) processItem(b, 'builder');
+    }
+    if (Array.isArray(json.traps)) {
+      for (const t of json.traps) processItem(t, 'builder');
     }
     if (Array.isArray(json.heroes)) {
       for (const h of json.heroes) processItem(h, 'builder');
     }
-    if (Array.isArray(json.lab)) {
-      for (const l of json.lab) processItem(l, 'lab');
+    if (Array.isArray(json.units)) {
+      for (const u of json.units) processItem(u, 'lab');
+    }
+    if (Array.isArray(json.spells)) {
+      for (const s of json.spells) processItem(s, 'lab');
+    }
+    if (Array.isArray(json.siege_machines)) {
+      for (const sm of json.siege_machines) processItem(sm, 'lab');
     }
     if (Array.isArray(json.pets)) {
       for (const p of json.pets) processItem(p, 'pet');
-    }
-    if (Array.isArray(json.entities)) {
-      for (const e of json.entities) {
-        const entityMeta = getEntityById(e.dataId);
-        const slotType = entityMeta?.category === 'lab' ? 'lab' : (entityMeta?.category === 'pets' ? 'pet' : 'builder');
-        processItem(e, slotType);
-      }
     }
 
     if (entitiesToInsert.length > 0) {
@@ -184,38 +172,89 @@ export async function parseAndIngestClashNinjaJson(rawJson: string | object): Pr
   };
 }
 
-// Generate sample Clash Ninja JSON matching the architectural plan
+// User export as default demo sample
 export function getSampleClashNinjaJson(): string {
-  const now = Math.floor(Date.now() / 1000);
   return JSON.stringify(
     {
-      timestamp: now - 3600, // Exported 1 hour ago
-      tag: "#Q9C0YQYJR",
-      name: "Main (#Q9C0YQYJR)",
-      townHallLevel: 16,
-      buildings: [
-        { id: 1000008, lvl: 21, count: 6, timer: 138120 }, // Archer Tower -> L22, remaining ~1d 14h 22m
-        { id: 1000000, lvl: 21, count: 7 }, // Cannon
-        { id: 1000004, lvl: 16, count: 4 }, // Air Defense L16 (4/4 Max)
-        { id: 1000002, lvl: 16, count: 4 }, // Gold Storage L16 -> can upgrade to L17
-        { id: 1000024, lvl: 16, count: 4 }, // Elixir Storage L16
-        { id: 1000025, lvl: 10, count: 1 }, // Dark Elixir Storage L10
-        { id: 1000010, lvl: 17, count: 325 }, // Walls L17 (325/325)
-        { id: 1000030, lvl: 14, count: 1 }, // Laboratory
-        { id: 1000031, lvl: 13, count: 4 }, // Army Camp
-        { id: 1000026, lvl: 12, count: 1 }, // Clan Castle
-        { id: 1000013, lvl: 6, count: 1 }, // Eagle Artillery
-        { id: 1000012, lvl: 9, count: 3 }, // Inferno Tower
-        { id: 1000016, lvl: 2, count: 1 } // Monolith
+      "tag": "#Q9C0YQYJR",
+      "name": "Main (#Q9C0YQYJR)",
+      "timestamp": Math.floor(Date.now() / 1000) - 120,
+      "buildings": [
+        {"data": 1000001, "lvl": 16, "weapon": 1},
+        {"data": 1000008, "lvl": 21, "gear_up": 1},
+        {"data": 1000009, "lvl": 21, "gear_up": 1},
+        {"data": 1000013, "lvl": 16, "gear_up": 1},
+        {"data": 1000000, "lvl": 12, "cnt": 4},
+        {"data": 1000002, "lvl": 17, "cnt": 7},
+        {"data": 1000003, "lvl": 17, "cnt": 4},
+        {"data": 1000004, "lvl": 17, "cnt": 7},
+        {"data": 1000005, "lvl": 17, "cnt": 4},
+        {"data": 1000006, "lvl": 18, "cnt": 1},
+        {"data": 1000007, "lvl": 14, "cnt": 1},
+        {"data": 1000008, "lvl": 21, "cnt": 2},
+        {"data": 1000009, "lvl": 21, "cnt": 3},
+        {"data": 1000010, "lvl": 17, "cnt": 325},
+        {"data": 1000011, "lvl": 16, "cnt": 5},
+        {"data": 1000012, "lvl": 14, "cnt": 4},
+        {"data": 1000013, "lvl": 16, "cnt": 3},
+        {"data": 1000014, "lvl": 12, "cnt": 1},
+        {"data": 1000015, "lvl": 6, "cnt": 5},
+        {"data": 1000019, "lvl": 15, "cnt": 5},
+        {"data": 1000020, "lvl": 9, "cnt": 1},
+        {"data": 1000021, "lvl": 11, "cnt": 4},
+        {"data": 1000023, "lvl": 11, "cnt": 3},
+        {"data": 1000024, "lvl": 11, "cnt": 1},
+        {"data": 1000026, "lvl": 13, "cnt": 1},
+        {"data": 1000027, "lvl": 10, "cnt": 3},
+        {"data": 1000028, "lvl": 7, "cnt": 2},
+        {"data": 1000029, "lvl": 8, "cnt": 1},
+        {"data": 1000031, "lvl": 7, "cnt": 1},
+        {"data": 1000032, "lvl": 11, "cnt": 2},
+        {"data": 1000059, "lvl": 8, "cnt": 1},
+        {"data": 1000067, "lvl": 5, "cnt": 2},
+        {"data": 1000068, "lvl": 10, "cnt": 1},
+        {"data": 1000070, "lvl": 9, "cnt": 1},
+        {"data": 1000071, "lvl": 10, "cnt": 1},
+        {"data": 1000072, "lvl": 3, "cnt": 2},
+        {"data": 1000077, "lvl": 3, "cnt": 1},
+        {"data": 1000084, "lvl": 2, "cnt": 2},
+        {"data": 1000085, "lvl": 2, "cnt": 2}
       ],
-      heroes: [
-        { id: 28000000, lvl: 90, timer: 267010 }, // Barbarian King -> L91, remaining ~3d 02h 10m
-        { id: 28000001, lvl: 90 }, // Archer Queen
-        { id: 28000002, lvl: 70 }, // Grand Warden
-        { id: 28000003, lvl: 40 }  // Royal Champion
+      "traps": [
+        {"data": 12000002, "lvl": 9, "timer": 100251},
+        {"data": 12000001, "lvl": 10, "timer": 23488},
+        {"data": 12000006, "lvl": 5, "timer": 5134},
+        {"data": 12000006, "lvl": 5, "timer": 31556},
+        {"data": 12000000, "lvl": 12, "cnt": 8},
+        {"data": 12000001, "lvl": 10, "cnt": 1},
+        {"data": 12000001, "lvl": 11, "cnt": 7},
+        {"data": 12000002, "lvl": 9, "cnt": 3},
+        {"data": 12000002, "lvl": 10, "cnt": 3},
+        {"data": 12000005, "lvl": 10, "cnt": 3},
+        {"data": 12000005, "lvl": 11, "cnt": 4},
+        {"data": 12000006, "lvl": 5, "cnt": 1},
+        {"data": 12000006, "lvl": 6, "cnt": 5},
+        {"data": 12000008, "lvl": 4, "cnt": 4},
+        {"data": 12000016, "lvl": 3, "cnt": 1}
       ],
-      lab: [
-        { id: 4000095, lvl: 1, timer: 583200 } // Electro Titan -> L2, remaining ~6d 18h
+      "heroes": [
+        {"data": 28000000, "lvl": 90, "timer": 31138},
+        {"data": 28000001, "lvl": 91, "timer": 7256},
+        {"data": 28000002, "lvl": 66},
+        {"data": 28000004, "lvl": 41},
+        {"data": 28000006, "lvl": 72},
+        {"data": 28000007, "lvl": 12}
+      ],
+      "units": [
+        {"data": 4000006, "lvl": 10, "timer": 192982},
+        {"data": 4000000, "lvl": 10},
+        {"data": 4000008, "lvl": 11},
+        {"data": 4000095, "lvl": 2}
+      ],
+      "pets": [
+        {"data": 73000011, "lvl": 5, "timer": 208671},
+        {"data": 73000000, "lvl": 11},
+        {"data": 73000001, "lvl": 10}
       ]
     },
     null,

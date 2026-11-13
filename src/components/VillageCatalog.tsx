@@ -33,9 +33,15 @@ export const VillageCatalog: React.FC<VillageCatalogProps> = ({
   const [activeTab, setActiveTab] = useState<EntityCategory>('defense');
   const [searchQuery, setSearchQuery] = useState('');
 
-  const entityMap = new Map<number, VillageEntity>();
+  // Group multiple instances of the same entity (e.g. 2x Cannon L21, 1x Geared Cannon L21)
+  const groupedEntities = new Map<number, { levels: Array<{ level: number; count: number; gearUp?: number }>; totalCount: number; maxLevel: number }>();
+
   for (const ent of entities) {
-    entityMap.set(ent.dataId, ent);
+    const existing = groupedEntities.get(ent.dataId) || { levels: [], totalCount: 0, maxLevel: 0 };
+    existing.levels.push({ level: ent.level, count: ent.count, gearUp: ent.gearUp });
+    existing.totalCount += ent.count;
+    if (ent.level > existing.maxLevel) existing.maxLevel = ent.level;
+    groupedEntities.set(ent.dataId, existing);
   }
 
   const ongoingUpgradeIds = new Set(activeTimers.map(t => t.entityId));
@@ -65,7 +71,7 @@ export const VillageCatalog: React.FC<VillageCatalogProps> = ({
             Katalog & Dorf-Übersicht
           </h2>
           <p className="text-xs text-slate-400 mt-0.5">
-            Stufen, Max-Caps und Upgrades für Rathaus {townHallLevel}
+            Gebäude, Instanzen-Anzahl & Upgrades für Rathaus {townHallLevel}
           </p>
         </div>
 
@@ -107,8 +113,8 @@ export const VillageCatalog: React.FC<VillageCatalogProps> = ({
       {/* Entity Cards Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3.5 mt-4">
         {filteredEntities.map(ent => {
-          const userEnt = entityMap.get(ent.id);
-          const currentLevel = userEnt ? userEnt.level : 0;
+          const userGroup = groupedEntities.get(ent.id);
+          const currentLevel = userGroup ? userGroup.maxLevel : 0;
           const maxLevel = getMaxLevelForTH(ent.id, townHallLevel);
           const isMaxed = currentLevel >= maxLevel && maxLevel > 0;
           const isUpgrading = ongoingUpgradeIds.has(ent.id);
@@ -153,9 +159,9 @@ export const VillageCatalog: React.FC<VillageCatalogProps> = ({
                         <span className="text-xs text-slate-400 font-mono">
                           Stufe {currentLevel} / {maxLevel}
                         </span>
-                        {userEnt?.count && userEnt.count > 1 && (
-                          <span className="text-[10px] bg-slate-800 text-slate-300 px-1.5 py-0.2 rounded font-mono">
-                            {userEnt.count}x
+                        {userGroup && userGroup.totalCount > 1 && (
+                          <span className="text-[10px] bg-slate-800 text-amber-300 font-bold px-1.5 py-0.2 rounded border border-slate-700">
+                            {userGroup.totalCount}x im Dorf
                           </span>
                         )}
                       </div>
@@ -176,6 +182,17 @@ export const VillageCatalog: React.FC<VillageCatalogProps> = ({
                     ) : null}
                   </div>
                 </div>
+
+                {/* Instance breakdown if multiple levels exist (e.g. Cannon 1x Gear-Up L21, 2x normal L21) */}
+                {userGroup && userGroup.levels.length > 1 && (
+                  <div className="my-2 bg-slate-950/60 p-2 rounded-lg border border-slate-800/80 flex flex-wrap gap-1.5 text-[11px]">
+                    {userGroup.levels.map((inst, i) => (
+                      <span key={i} className="bg-slate-800/90 text-slate-300 px-2 py-0.5 rounded border border-slate-700">
+                        {inst.count}x L{inst.level} {inst.gearUp ? '⚡ Geared' : ''}
+                      </span>
+                    ))}
+                  </div>
+                )}
 
                 {/* Next Level Info (if not maxed) */}
                 {!isMaxed && nextLevelData && (
