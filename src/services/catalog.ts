@@ -73,7 +73,62 @@ const entitySlugMap: Record<number, { path: string; slug: string }> = {
   73000008: { path: 'pets', slug: 'diggy' },
   73000009: { path: 'pets', slug: 'frosty' },
   73000010: { path: 'pets', slug: 'spirit_fox' },
-  73000011: { path: 'pets', slug: 'angry_jelly' }
+  73000011: { path: 'pets', slug: 'angry_jelly' },
+
+  // Builder Base Buildings
+  1000040: { path: 'buildings/builder-base', slug: 'builder_hall' },
+  1000033: { path: 'buildings/builder-base', slug: 'wall' },
+  1000034: { path: 'buildings/builder-base', slug: 'cannon' },
+  1000035: { path: 'buildings/builder-base', slug: 'archer_tower' },
+  1000036: { path: 'buildings/builder-base', slug: 'double_cannon' },
+  1000037: { path: 'buildings/builder-base', slug: 'hidden_tesla' },
+  1000038: { path: 'buildings/builder-base', slug: 'firecrackers' },
+  1000039: { path: 'buildings/builder-base', slug: 'crusher' },
+  1000041: { path: 'buildings/builder-base', slug: 'guard_post' },
+  1000042: { path: 'buildings/builder-base', slug: 'army_camp' },
+  1000043: { path: 'buildings/builder-base', slug: 'elixir_collector' },
+  1000044: { path: 'buildings/builder-base', slug: 'gold_mine' },
+  1000045: { path: 'buildings/builder-base', slug: 'elixir_storage' },
+  1000046: { path: 'buildings/builder-base', slug: 'gold_storage' },
+  1000048: { path: 'buildings/builder-base', slug: 'air_bombs' },
+  1000049: { path: 'buildings/builder-base', slug: 'builder_barracks' },
+  1000050: { path: 'traps/builder-base', slug: 'push_trap' },
+  1000051: { path: 'buildings/builder-base', slug: 'multi_mortar' },
+  1000052: { path: 'buildings/builder-base', slug: 'star_laboratory' },
+  1000053: { path: 'buildings/builder-base', slug: 'clock_tower' },
+  1000054: { path: 'buildings/builder-base', slug: 'roaster' },
+  1000055: { path: 'buildings/builder-base', slug: 'giant_cannon' },
+  1000056: { path: 'buildings/builder-base', slug: 'mega_tesla' },
+  1000057: { path: 'buildings/builder-base', slug: 'gem_mine' },
+  1000058: { path: 'buildings/builder-base', slug: 'lava_launcher' },
+  1000063: { path: 'buildings/builder-base', slug: 'healing_hut' },
+  1000065: { path: 'buildings/builder-base', slug: "otto's_outpost" },
+  1000078: { path: 'buildings/builder-base', slug: 'x-bow' },
+  1000080: { path: 'buildings/builder-base', slug: 'bob_control' },
+  1000082: { path: 'buildings/builder-base', slug: 'army_camp' },
+
+  // Builder Base Traps
+  12000010: { path: 'traps/builder-base', slug: 'mine' },
+  12000011: { path: 'traps/builder-base', slug: 'mega_mine' },
+  12000013: { path: 'traps/builder-base', slug: 'push_trap' },
+  12000014: { path: 'traps/builder-base', slug: 'spring_trap' },
+
+  // Builder Base Heroes
+  28000003: { path: 'heroes', slug: 'battle_machine' },
+  28000005: { path: 'heroes', slug: 'battle_copter' },
+
+  // Builder Base Troops
+  4000031: { path: 'troops', slug: 'raged_barbarian' },
+  4000032: { path: 'troops', slug: 'sneaky_archer' },
+  4000033: { path: 'troops', slug: 'boxer_giant' },
+  4000034: { path: 'troops', slug: 'beta_minion' },
+  4000035: { path: 'troops', slug: 'bomber' },
+  4000036: { path: 'troops', slug: 'baby_dragon' },
+  4000037: { path: 'troops', slug: 'cannon_cart' },
+  4000038: { path: 'troops', slug: 'night_witch' },
+  4000041: { path: 'troops', slug: 'drop_ship' },
+  4000042: { path: 'troops', slug: 'power_P.E.K.K.A' },
+  4000070: { path: 'troops', slug: 'hog_glider' }
 };
 
 export function getEntityById(dataId: number): CatalogEntity | undefined {
@@ -84,14 +139,18 @@ export function getAllEntities(): CatalogEntity[] {
   return Object.values(catalog.entities);
 }
 
-export function getEntitiesByCategory(category: EntityCategory): CatalogEntity[] {
-  return Object.values(catalog.entities).filter(e => e.category === category);
+export function getEntitiesByVillage(village: 'home' | 'builderBase'): CatalogEntity[] {
+  return Object.values(catalog.entities).filter(e => (e.villageType || 'home') === village);
 }
 
-export function getMaxLevelForTH(dataId: number, townHallLevel: number): number {
+export function getEntitiesByCategory(category: EntityCategory, village: 'home' | 'builderBase' = 'home'): CatalogEntity[] {
+  return Object.values(catalog.entities).filter(e => e.category === category && (e.villageType || 'home') === village);
+}
+
+export function getMaxLevelForTH(dataId: number, hallLevel: number): number {
   const ent = getEntityById(dataId);
   if (!ent) return 0;
-  return ent.th_caps[townHallLevel] || 0;
+  return ent.th_caps[hallLevel] || 0;
 }
 
 export function getLevelData(dataId: number, level: number) {
@@ -103,8 +162,10 @@ export function getLevelData(dataId: number, level: number) {
 export function getResourceAsset(resource: ResourceType | string): string {
   switch (resource) {
     case 'gold':
+    case 'builder_gold':
       return '/assets/resources/gold.webp';
     case 'elixir':
+    case 'builder_elixir':
       return '/assets/resources/elixir.webp';
     case 'dark_elixir':
       return '/assets/resources/dark_elixir.webp';
@@ -124,10 +185,19 @@ export function getTownHallAsset(level: number): string {
   return `/assets/townhalls/th_${clamped}.webp`;
 }
 
-export function getBuilderAsset(slotType: 'builder' | 'lab' | 'pet', slotNumber?: number, isHelper?: boolean): string {
+export function getBuilderHallAsset(level: number): string {
+  const clamped = Math.max(1, Math.min(10, level || 1));
+  return `https://assets.clashk.ing/buildings/builder-base/builder_hall/level_${clamped}.webp`;
+}
+
+export function getBuilderAsset(slotType: 'builder' | 'lab' | 'pet', slotNumber?: number, isHelper?: boolean, village: 'home' | 'builderBase' = 'home'): string {
   if (slotType === 'lab') return '/assets/builders/lab.webp';
   if (slotType === 'pet') return '/assets/builders/pet.webp';
   if (isHelper) return '/assets/builders/goblin_builder.webp';
+  if (village === 'builderBase') {
+    if (slotNumber === 2) return 'https://assets.clashk.ing/buildings/builder-base/bob_control/level_1.webp';
+    return '/assets/builders/master_builder.webp';
+  }
   if (slotNumber === 6) return '/assets/builders/master_builder.webp';
   return '/assets/builders/builder_head.webp';
 }
@@ -158,8 +228,22 @@ export function getEntityAsset(dataId: number, level: number): string {
     if (meta.path === 'pets') {
       return `https://assets.clashk.ing/pets/${meta.slug}/icon.webp`;
     }
+    if (meta.path === 'troops') {
+      return `https://assets.clashk.ing/troops/${meta.slug}/icon.webp`;
+    }
     if (meta.path === 'buildings/home-village') {
       return `https://assets.clashk.ing/buildings/home-village/${meta.slug}/level_${level}.webp`;
+    }
+    if (meta.path === 'buildings/builder-base') {
+      const clamped = Math.min(10, Math.max(1, level));
+      return `https://assets.clashk.ing/buildings/builder-base/${meta.slug}/level_${clamped}.webp`;
+    }
+    if (meta.path === 'traps/builder-base') {
+      const clamped = Math.min(10, Math.max(1, level));
+      return `https://assets.clashk.ing/traps/builder-base/${meta.slug}/level_${clamped}.webp`;
+    }
+    if (meta.path === 'traps') {
+      return `https://assets.clashk.ing/traps/${meta.slug}/level_${level}.webp`;
     }
   }
   // Local fallback

@@ -15,7 +15,9 @@ import { Shield, Swords, Crown, Blocks, Database, FlaskConical, Check, ArrowUpRi
 
 interface VillageCatalogProps {
   entities: VillageEntity[];
-  townHallLevel: number;
+  townHallLevel?: number;
+  hallLevel?: number;
+  village?: 'home' | 'builderBase';
   activeTimers: ActiveTimer[];
   onStartManualUpgrade: (entity: CatalogEntity, targetLevel: number) => void;
   onSetEntityLevel: (dataId: number, newLevel: number) => void;
@@ -24,20 +26,26 @@ interface VillageCatalogProps {
 
 export const VillageCatalog: React.FC<VillageCatalogProps> = ({
   entities,
-  townHallLevel,
+  townHallLevel = 16,
+  hallLevel,
+  village = 'home',
   activeTimers,
   onStartManualUpgrade,
   onSetEntityLevel,
   isHammerJamActive
 }) => {
+  const effectiveHall = hallLevel || townHallLevel;
+  const isBB = village === 'builderBase';
+
   const [activeTab, setActiveTab] = useState<EntityCategory>('defense');
   const [searchQuery, setSearchQuery] = useState('');
   const [hideUnavailable, setHideUnavailable] = useState(true); // Toggle to hide unupgradable/locked buildings
 
-  // Group multiple instances of the same entity (e.g. 2x Cannon L21, 1x Geared Cannon L21)
+  // Group multiple instances of the same entity for this village
   const groupedEntities = new Map<number, { levels: Array<{ level: number; count: number; gearUp?: number }>; totalCount: number; maxLevel: number }>();
 
   for (const ent of entities) {
+    if ((ent.villageType || 'home') !== village) continue;
     const existing = groupedEntities.get(ent.dataId) || { levels: [], totalCount: 0, maxLevel: 0 };
     existing.levels.push({ level: ent.level, count: ent.count, gearUp: ent.gearUp });
     existing.totalCount += ent.count;
@@ -45,7 +53,11 @@ export const VillageCatalog: React.FC<VillageCatalogProps> = ({
     groupedEntities.set(ent.dataId, existing);
   }
 
-  const ongoingUpgradeIds = new Set(activeTimers.map(t => t.entityId));
+  const ongoingUpgradeIds = new Set(
+    activeTimers
+      .filter(t => (t.villageType || 'home') === village)
+      .map(t => t.entityId)
+  );
 
   const tabs: Array<{ key: EntityCategory; label: string; icon: React.ReactNode; asset: string }> = [
     { key: 'defense', label: 'Verteidigung', icon: <Shield className="w-4 h-4" />, asset: getCategoryAsset('defense') },
@@ -53,25 +65,27 @@ export const VillageCatalog: React.FC<VillageCatalogProps> = ({
     { key: 'heroes', label: 'Helden', icon: <Crown className="w-4 h-4" />, asset: getCategoryAsset('heroes') },
     { key: 'walls', label: 'Mauern', icon: <Blocks className="w-4 h-4" />, asset: getCategoryAsset('walls') },
     { key: 'resources', label: 'Ressourcen', icon: <Database className="w-4 h-4" />, asset: getCategoryAsset('resources') },
-    { key: 'lab', label: 'Labor', icon: <FlaskConical className="w-4 h-4" />, asset: '/assets/builders/lab.webp' }
+    { key: 'lab', label: isBB ? 'Sternenlabor' : 'Labor', icon: <FlaskConical className="w-4 h-4" />, asset: isBB ? 'https://assets.clashk.ing/buildings/builder-base/star_laboratory/level_1.webp' : '/assets/builders/lab.webp' }
   ];
 
   const filteredEntities = Object.values(catalog.entities).filter(ent => {
+    // Check village match
+    if ((ent.villageType || 'home') !== village) return false;
     if (ent.category !== activeTab) return false;
 
     const userGroup = groupedEntities.get(ent.id);
     const currentLevel = userGroup ? userGroup.maxLevel : 0;
-    const maxLevelForTH = getMaxLevelForTH(ent.id, townHallLevel);
+    const maxLevelForTH = getMaxLevelForTH(ent.id, effectiveHall);
 
     // If hideUnavailable is active:
     if (hideUnavailable) {
-      // 1. Hide buildings not yet unlocked at this Town Hall (maxLevelForTH === 0)
+      // 1. Hide buildings not yet unlocked at this Hall (maxLevelForTH === 0)
       if (maxLevelForTH === 0) return false;
 
       // 2. Hide buildings not owned in this village (userGroup === undefined) unless it can be built
       if (!userGroup && maxLevelForTH === 0) return false;
 
-      // 3. Hide already maxed buildings for this Town Hall
+      // 3. Hide already maxed buildings for this Hall
       if (currentLevel >= maxLevelForTH && maxLevelForTH > 0) return false;
     }
 
@@ -86,10 +100,10 @@ export const VillageCatalog: React.FC<VillageCatalogProps> = ({
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 mb-4 px-1">
         <div>
           <h2 className="text-base sm:text-lg font-black tracking-wide uppercase text-slate-200">
-            Katalog & Dorf-Übersicht
+            {isBB ? 'Bauarbeiterbasis Katalog' : 'Katalog & Dorf-Übersicht'}
           </h2>
           <p className="text-xs text-slate-400 mt-0.5">
-            Gebäude, Instanzen-Anzahl & Upgrades für Rathaus {townHallLevel}
+            Gebäude, Instanzen-Anzahl & Upgrades für {isBB ? `Bauarbeiterbasis ${effectiveHall}` : `Rathaus ${effectiveHall}`}
           </p>
         </div>
 

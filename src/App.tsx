@@ -10,7 +10,7 @@ import { JsonImportModal } from './components/JsonImportModal';
 import { calculateRecommendationScores, startUpgradeTimer } from './services/recommendation';
 import { parseAndIngestClashNinjaJson, getSampleClashNinjaJson, type ParseResult } from './services/parser';
 import { catalog, getMaxLevelForTH } from './services/catalog';
-import type { CatalogEntity, RecommendationScore } from './types';
+import type { CatalogEntity, RecommendationScore, VillageMode } from './types';
 import confetti from 'canvas-confetti';
 
 export function App() {
@@ -18,6 +18,7 @@ export function App() {
 
   const [accounts, setAccounts] = useState<AccountProfile[]>([]);
   const [currentAccount, setCurrentAccount] = useState<AccountProfile | null>(null);
+  const [currentVillageMode, setCurrentVillageMode] = useState<VillageMode>('home');
   const [entities, setEntities] = useState<VillageEntity[]>([]);
   const [timers, setTimers] = useState<ActiveTimer[]>([]);
   const [events, setEvents] = useState<GlobalEvent[]>([]);
@@ -85,20 +86,27 @@ export function App() {
     return events.some(e => e.isActive && (e.discountCost > 0 || e.name.toLowerCase().includes('hammer jam')));
   }, [events]);
 
-  // Calculate TH Progress %
+  const isHome = currentVillageMode === 'home';
+  const hallLevel = isHome
+    ? (currentAccount?.townHallLevel || 16)
+    : (currentAccount?.builderHallLevel || 10);
+
+  // Calculate Hall Progress % for active village
   const progressPercent = useMemo(() => {
     if (!currentAccount) return 0;
-    const th = currentAccount.townHallLevel;
     let totalMaxLevels = 0;
     let totalCurrentLevels = 0;
 
     const entityMap = new Map<number, VillageEntity>();
     for (const e of entities) {
-      entityMap.set(e.dataId, e);
+      if ((e.villageType || 'home') === currentVillageMode) {
+        entityMap.set(e.dataId, e);
+      }
     }
 
     for (const ent of Object.values(catalog.entities)) {
-      const maxLvl = getMaxLevelForTH(ent.id, th);
+      if ((ent.villageType || 'home') !== currentVillageMode) continue;
+      const maxLvl = getMaxLevelForTH(ent.id, hallLevel);
       if (maxLvl > 0) {
         totalMaxLevels += maxLvl;
         const current = entityMap.get(ent.id)?.level || 0;
@@ -108,19 +116,21 @@ export function App() {
 
     if (totalMaxLevels === 0) return 100;
     return Math.min(100, (totalCurrentLevels / totalMaxLevels) * 100);
-  }, [currentAccount, entities]);
+  }, [currentAccount, entities, currentVillageMode, hallLevel]);
 
-  // Calculate Smart Recommendations
+  // Calculate Smart Recommendations for active village
   const recommendations = useMemo(() => {
     if (!currentAccount) return [];
     return calculateRecommendationScores({
       accountTag: currentAccount.tag,
       townHallLevel: currentAccount.townHallLevel,
+      builderHallLevel: currentAccount.builderHallLevel || 10,
+      villageType: currentVillageMode,
       activeTimers: timers,
       entities,
       activeEvents: events
     });
-  }, [currentAccount, timers, entities, events]);
+  }, [currentAccount, currentVillageMode, timers, entities, events]);
 
   // Trigger mobile haptic feedback if supported
   const triggerHaptics = () => {
@@ -184,7 +194,7 @@ export function App() {
 
   const handleStartUpgrade = async (rec: RecommendationScore) => {
     if (!currentAccount) return;
-    await startUpgradeTimer(currentAccount.tag, rec);
+    await startUpgradeTimer(currentAccount.tag, rec, currentVillageMode);
     triggerHaptics();
     setBannerMessage(`Upgrade für ${rec.entityName} (➔ L${rec.targetLevel}) gestartet!`);
     setTimeout(() => setBannerMessage(null), 3500);
@@ -203,6 +213,7 @@ export function App() {
     await db.timers.add({
       id: crypto.randomUUID(),
       accountTag: currentAccount.tag,
+      villageType: currentVillageMode,
       entityId: entity.id,
       targetLevel,
       endsAt: Date.now() + duration * 1000,
@@ -218,13 +229,16 @@ export function App() {
 
   const handleSetEntityLevel = async (dataId: number, newLevel: number) => {
     if (!currentAccount) return;
-    const existing = entities.find(e => e.dataId === dataId);
+    const existing = entities.find(
+      e => e.dataId === dataId && (e.villageType || 'home') === currentVillageMode
+    );
     if (existing) {
       await db.entities.update(existing.id, { level: newLevel });
     } else {
       await db.entities.add({
-        id: `${currentAccount.tag}_${dataId}`,
+        id: `${currentAccount.tag}_${currentVillageMode}_${dataId}`,
         accountTag: currentAccount.tag,
+        villageType: currentVillageMode,
         dataId,
         level: newLevel,
         count: 1
@@ -236,16 +250,20 @@ export function App() {
 
   const handleFinishTimer = async (timer: ActiveTimer) => {
     if (!currentAccount) return;
+    const vType = timer.villageType || 'home';
 
     await db.transaction('rw', db.entities, db.timers, async () => {
       // Update entity level
-      const existing = entities.find(e => e.dataId === timer.entityId);
+      const existing = entities.find(
+        e => e.dataId === timer.entityId && (e.villageType || 'home') === vType
+      );
       if (existing) {
         await db.entities.update(existing.id, { level: timer.targetLevel });
       } else {
         await db.entities.add({
-          id: `${currentAccount.tag}_${timer.entityId}`,
+          id: `${currentAccount.tag}_${vType}_${timer.entityId}`,
           accountTag: currentAccount.tag,
+          villageType: vType,
           dataId: timer.entityId,
           level: timer.targetLevel,
           count: 1
@@ -277,13 +295,17 @@ export function App() {
     refreshDbState();
   };
 
-  const maxBuilders = currentAccount ? (catalog.townhalls[currentAccount.townHallLevel]?.max_builder_count || 6) : 6;
+  const maxBuilders = currentVillageMode === 'builderBase'
+    ? 2
+    : (currentAccount ? (catalog.townhalls[currentAccount.townHallLevel]?.max_builder_count || 6) : 6);
 
   return (
     <div className="min-h-screen bg-[#0B0F19] text-slate-100 flex flex-col selection:bg-amber-500 selection:text-slate-950">
       {/* Header */}
       <Header
         currentAccount={currentAccount}
+        currentVillageMode={currentVillageMode}
+        onSelectVillageMode={setCurrentVillageMode}
         progressPercent={progressPercent}
         activeEvents={events}
         onOpenAccountModal={() => setIsAccountModalOpen(true)}
@@ -302,6 +324,7 @@ export function App() {
       <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 py-4 safe-area-bottom">
         {/* Builder & Lab Dock */}
         <BuilderLabDock
+          village={currentVillageMode}
           timers={timers}
           currentTimestamp={currentTimestamp}
           maxBuilders={maxBuilders}
@@ -322,8 +345,9 @@ export function App() {
 
         {/* Village Catalog & Overview */}
         <VillageCatalog
+          village={currentVillageMode}
+          hallLevel={hallLevel}
           entities={entities}
-          townHallLevel={currentAccount?.townHallLevel || 16}
           activeTimers={timers}
           onStartManualUpgrade={handleStartManualUpgrade}
           onSetEntityLevel={handleSetEntityLevel}

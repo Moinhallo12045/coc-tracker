@@ -96,31 +96,94 @@
       "max_builder_count": 6
     }
   },
+  "builderhalls": {
+    "1": {
+      "max_walls": 25,
+      "giga_weapon_levels": 0,
+      "max_builder_count": 2
+    },
+    "2": {
+      "max_walls": 50,
+      "giga_weapon_levels": 0,
+      "max_builder_count": 2
+    },
+    "3": {
+      "max_walls": 75,
+      "giga_weapon_levels": 0,
+      "max_builder_count": 2
+    },
+    "4": {
+      "max_walls": 100,
+      "giga_weapon_levels": 0,
+      "max_builder_count": 2
+    },
+    "5": {
+      "max_walls": 125,
+      "giga_weapon_levels": 0,
+      "max_builder_count": 2
+    },
+    "6": {
+      "max_walls": 150,
+      "giga_weapon_levels": 0,
+      "max_builder_count": 2
+    },
+    "7": {
+      "max_walls": 175,
+      "giga_weapon_levels": 0,
+      "max_builder_count": 2
+    },
+    "8": {
+      "max_walls": 200,
+      "giga_weapon_levels": 0,
+      "max_builder_count": 2
+    },
+    "9": {
+      "max_walls": 225,
+      "giga_weapon_levels": 0,
+      "max_builder_count": 2
+    },
+    "10": {
+      "max_walls": 250,
+      "giga_weapon_levels": 0,
+      "max_builder_count": 2
+    },
+    "11": {
+      "max_walls": 275,
+      "giga_weapon_levels": 0,
+      "max_builder_count": 2
+    },
+    "12": {
+      "max_walls": 300,
+      "giga_weapon_levels": 0,
+      "max_builder_count": 2
+    }
+  },
   "entities": {
     "1000000": {
       "id": 1000000,
       "name": "Army Camp",
+      "villageType": "home",
       "category": "offense",
       "resource": "elixir",
       "th_caps": {
         "1": 1,
-        "2": 2,
+        "2": 1,
         "3": 2,
         "4": 3,
         "5": 4,
-        "6": 5,
-        "7": 6,
-        "8": 7,
+        "6": 4,
+        "7": 5,
+        "8": 6,
         "9": 7,
-        "10": 8,
-        "11": 9,
-        "12": 10,
-        "13": 11,
-        "14": 12,
-        "15": 12,
+        "10": 7,
+        "11": 8,
+        "12": 9,
+        "13": 10,
+        "14": 10,
+        "15": 11,
         "16": 12,
         "17": 13,
-        "18": 14,
+        "18": 13,
         "19": 14
       },
       "levels": {
@@ -199,6 +262,7 @@
     "1000001": {
       "id": 1000001,
       "name": "Town Hall",
+      "villageType": "home",
       "category": "defense",
       "resource": "gold",
       "th_caps": {
@@ -210,16 +274,16 @@
         "6": 6,
         "7": 7,
         "8": 8,
-        "9": 10,
-        "10": 11,
-        "11": 12,
-        "12": 13,
-        "13": 14,
-        "14": 15,
-        "15": 16,
-        "16": 16,
-        "17": 17,
-        "18": 18,
+        "9": 9,
+        "10": 9,
+        "11": 10,
+        "12": 11,
+        "13": 12,
+        "14": 13,
+        "15": 14,
+        "16": 15,
+        "17": 16,
+        "18": 17,
         "19": 18
       },
       "levels": {
@@ -318,6 +382,7 @@
     "1000002": {
       "id": 1000002,
       "name": "Elixir Collector",
+      "villageType": "home",
       "category": "resources",
       "resource": "gold",
       "th_caps": {
@@ -325,20 +390,20 @@
         "2": 2,
         "3": 3,
         "4": 4,
-        "5": 5,
-        "6": 6,
-        "7": 7,
-        "8": 8,
-        "9": 9,
-        "10": 10,
-        "11": 11,
-        "12": 12,
-        "13": 13,
-        "14": 14,
-        "15": 15,
-        "16": 15,
-        "17": 16,
-        "18": 17,
+        "5": 4,
+        "6": 5,
+        "7": 6,
+        "8": 7,
+        "9": 8,
+        "10": 9,
+        "11": 10,
+        "12": 11,
+        "13": 12,
+        "14": 13,
+        "15": 13,
+        "16": 14,
+        "17": 15,
+        "18": 16,
         "19": 17
       },
       "levels": {
@@ -432,6 +497,7 @@
     "1000003": {
       "id": 1000003,
       "name": "Elixir Storage",
+      "villageType": "home",
       "category": "resources",
       "resource": "gold",
       "th_caps": {
@@ -443,16 +509,16 @@
         "6": 6,
         "7": 7,
         "8": 8,
-        "9": 10,
-        "10": 11,
-        "11": 12,
-        "12": 13,
-        "13": 14,
-        "14": 15,
-        "15": 16,
-        "16": 16,
-        "17": 17,
-        "18": 18,
+        "9": 9,
+        "10": 9,
+        "11": 10,
+        "12": 11,
+        "13": 12,
+        "14": 13,
+        "15": 14,
+        "16": 15,
+        "17": 16,
+        "18": 17,
         "19": 18
       },
       "levels": {
@@ -551,6 +617,7 @@
     "1000004": {
       "id": 1000004,
       "name": "Gold Mine",
+      "villageType": "home",
       "category": "resources",
       "resource": "elixir",
       "th_caps": {
@@ -558,20 +625,20 @@
         "2": 2,
         "3": 3,
         "4": 4,
-        "5": 5,
-        "6": 6,
-        "7": 7,
-        "8": 8,
-        "9": 9,
-        "10": 10,
-        "11": 11,
-        "12": 12,
-        "13": 13,
-        "14": 14,
-        "15": 15,
-        "16": 15,
-        "17": 16,
-        "18": 17,
+        "5": 4,
+        "6": 5,
+        "7": 6,
+        "8": 7,
+        "9": 8,
+        "10": 9,
+        "11": 10,
+        "12": 11,
+        "13": 12,
+        "14": 13,
+        "15": 13,
+        "16": 14,
+        "17": 15,
+        "18": 16,
         "19": 17
       },
       "levels": {
@@ -665,6 +732,7 @@
     "1000005": {
       "id": 1000005,
       "name": "Gold Storage",
+      "villageType": "home",
       "category": "resources",
       "resource": "elixir",
       "th_caps": {
@@ -676,16 +744,16 @@
         "6": 6,
         "7": 7,
         "8": 8,
-        "9": 10,
-        "10": 11,
-        "11": 12,
-        "12": 13,
-        "13": 14,
-        "14": 15,
-        "15": 16,
-        "16": 16,
-        "17": 17,
-        "18": 18,
+        "9": 9,
+        "10": 9,
+        "11": 10,
+        "12": 11,
+        "13": 12,
+        "14": 13,
+        "15": 14,
+        "16": 15,
+        "17": 16,
+        "18": 17,
         "19": 18
       },
       "levels": {
@@ -784,6 +852,7 @@
     "1000006": {
       "id": 1000006,
       "name": "Barracks",
+      "villageType": "home",
       "category": "offense",
       "resource": "elixir",
       "th_caps": {
@@ -795,16 +864,16 @@
         "6": 6,
         "7": 7,
         "8": 8,
-        "9": 10,
-        "10": 11,
-        "11": 12,
-        "12": 13,
-        "13": 14,
-        "14": 15,
-        "15": 16,
-        "16": 16,
-        "17": 17,
-        "18": 18,
+        "9": 9,
+        "10": 9,
+        "11": 10,
+        "12": 11,
+        "13": 12,
+        "14": 13,
+        "15": 14,
+        "16": 15,
+        "17": 16,
+        "18": 17,
         "19": 18
       },
       "levels": {
@@ -903,27 +972,28 @@
     "1000007": {
       "id": 1000007,
       "name": "Laboratory",
+      "villageType": "home",
       "category": "offense",
       "resource": "elixir",
       "th_caps": {
         "1": 1,
         "2": 2,
-        "3": 3,
-        "4": 4,
+        "3": 2,
+        "4": 3,
         "5": 4,
         "6": 5,
         "7": 6,
-        "8": 7,
-        "9": 8,
-        "10": 9,
-        "11": 10,
-        "12": 11,
-        "13": 11,
-        "14": 12,
-        "15": 13,
+        "8": 6,
+        "9": 7,
+        "10": 8,
+        "11": 9,
+        "12": 9,
+        "13": 10,
+        "14": 11,
+        "15": 12,
         "16": 13,
-        "17": 14,
-        "18": 15,
+        "17": 13,
+        "18": 14,
         "19": 15
       },
       "levels": {
@@ -1007,27 +1077,28 @@
     "1000008": {
       "id": 1000008,
       "name": "Cannon",
+      "villageType": "home",
       "category": "defense",
       "resource": "gold",
       "th_caps": {
         "1": 1,
-        "2": 3,
+        "2": 2,
         "3": 4,
         "4": 5,
-        "5": 7,
-        "6": 8,
-        "7": 9,
-        "8": 11,
-        "9": 12,
-        "10": 14,
-        "11": 15,
-        "12": 16,
-        "13": 18,
-        "14": 19,
-        "15": 20,
-        "16": 21,
-        "17": 22,
-        "18": 23,
+        "5": 6,
+        "6": 7,
+        "7": 8,
+        "8": 10,
+        "9": 11,
+        "10": 12,
+        "11": 13,
+        "12": 15,
+        "13": 16,
+        "14": 17,
+        "15": 18,
+        "16": 19,
+        "17": 21,
+        "18": 22,
         "19": 23
       },
       "levels": {
@@ -1151,27 +1222,28 @@
     "1000009": {
       "id": 1000009,
       "name": "Archer Tower",
+      "villageType": "home",
       "category": "defense",
       "resource": "gold",
       "th_caps": {
         "1": 1,
-        "2": 3,
+        "2": 2,
         "3": 4,
         "4": 5,
-        "5": 7,
-        "6": 8,
-        "7": 9,
-        "8": 11,
-        "9": 12,
-        "10": 14,
-        "11": 15,
-        "12": 16,
-        "13": 18,
-        "14": 19,
-        "15": 20,
-        "16": 21,
-        "17": 22,
-        "18": 23,
+        "5": 6,
+        "6": 7,
+        "7": 8,
+        "8": 10,
+        "9": 11,
+        "10": 12,
+        "11": 13,
+        "12": 15,
+        "13": 16,
+        "14": 17,
+        "15": 18,
+        "16": 19,
+        "17": 21,
+        "18": 22,
         "19": 23
       },
       "levels": {
@@ -1295,6 +1367,7 @@
     "1000010": {
       "id": 1000010,
       "name": "Walls",
+      "villageType": "home",
       "category": "walls",
       "resource": "gold",
       "th_caps": {
@@ -1302,20 +1375,20 @@
         "2": 2,
         "3": 3,
         "4": 4,
-        "5": 6,
-        "6": 7,
-        "7": 8,
-        "8": 9,
-        "9": 10,
-        "10": 11,
-        "11": 12,
-        "12": 13,
-        "13": 15,
-        "14": 16,
-        "15": 17,
-        "16": 17,
-        "17": 18,
-        "18": 19,
+        "5": 5,
+        "6": 6,
+        "7": 7,
+        "8": 8,
+        "9": 9,
+        "10": 10,
+        "11": 11,
+        "12": 12,
+        "13": 13,
+        "14": 14,
+        "15": 15,
+        "16": 16,
+        "17": 17,
+        "18": 18,
         "19": 19
       },
       "levels": {
@@ -1419,6 +1492,7 @@
     "1000011": {
       "id": 1000011,
       "name": "Wizard Tower",
+      "villageType": "home",
       "category": "defense",
       "resource": "gold",
       "th_caps": {
@@ -1426,20 +1500,20 @@
         "2": 0,
         "3": 3,
         "4": 4,
-        "5": 5,
-        "6": 6,
-        "7": 7,
-        "8": 8,
-        "9": 9,
-        "10": 10,
-        "11": 11,
-        "12": 12,
-        "13": 13,
-        "14": 14,
-        "15": 15,
-        "16": 15,
-        "17": 16,
-        "18": 17,
+        "5": 4,
+        "6": 5,
+        "7": 6,
+        "8": 7,
+        "9": 8,
+        "10": 9,
+        "11": 10,
+        "12": 11,
+        "13": 12,
+        "14": 13,
+        "15": 13,
+        "16": 14,
+        "17": 15,
+        "18": 16,
         "19": 17
       },
       "levels": {
@@ -1533,27 +1607,28 @@
     "1000012": {
       "id": 1000012,
       "name": "Air Defense",
+      "villageType": "home",
       "category": "defense",
       "resource": "gold",
       "th_caps": {
         "1": 0,
         "2": 0,
         "3": 3,
-        "4": 4,
-        "5": 5,
-        "6": 6,
-        "7": 7,
-        "8": 8,
+        "4": 3,
+        "5": 4,
+        "6": 5,
+        "7": 6,
+        "8": 7,
         "9": 8,
-        "10": 9,
-        "11": 10,
-        "12": 11,
-        "13": 12,
-        "14": 13,
-        "15": 14,
-        "16": 14,
-        "17": 15,
-        "18": 16,
+        "10": 8,
+        "11": 9,
+        "12": 10,
+        "13": 11,
+        "14": 12,
+        "15": 13,
+        "16": 13,
+        "17": 14,
+        "18": 15,
         "19": 16
       },
       "levels": {
@@ -1642,6 +1717,7 @@
     "1000013": {
       "id": 1000013,
       "name": "Mortar",
+      "villageType": "home",
       "category": "defense",
       "resource": "gold",
       "th_caps": {
@@ -1649,20 +1725,20 @@
         "2": 0,
         "3": 3,
         "4": 4,
-        "5": 5,
-        "6": 6,
-        "7": 7,
-        "8": 8,
-        "9": 9,
-        "10": 10,
-        "11": 11,
-        "12": 12,
-        "13": 13,
-        "14": 14,
-        "15": 15,
-        "16": 15,
-        "17": 16,
-        "18": 17,
+        "5": 4,
+        "6": 5,
+        "7": 6,
+        "8": 7,
+        "9": 8,
+        "10": 9,
+        "11": 10,
+        "12": 11,
+        "13": 12,
+        "14": 13,
+        "15": 13,
+        "16": 14,
+        "17": 15,
+        "18": 16,
         "19": 17
       },
       "levels": {
@@ -1756,27 +1832,28 @@
     "1000014": {
       "id": 1000014,
       "name": "Clan Castle",
+      "villageType": "home",
       "category": "offense",
       "resource": "elixir",
       "th_caps": {
         "1": 1,
-        "2": 2,
+        "2": 1,
         "3": 2,
         "4": 3,
-        "5": 4,
-        "6": 5,
+        "5": 3,
+        "6": 4,
         "7": 5,
-        "8": 6,
-        "9": 7,
-        "10": 8,
+        "8": 5,
+        "9": 6,
+        "10": 7,
         "11": 8,
-        "12": 9,
-        "13": 10,
-        "14": 11,
-        "15": 11,
+        "12": 8,
+        "13": 9,
+        "14": 10,
+        "15": 10,
         "16": 11,
         "17": 12,
-        "18": 13,
+        "18": 12,
         "19": 13
       },
       "levels": {
@@ -1850,25 +1927,26 @@
     "1000015": {
       "id": 1000015,
       "name": "Builders Hut",
+      "villageType": "home",
       "category": "defense",
       "resource": "gold",
       "th_caps": {
         "1": 0,
         "2": 0,
         "3": 1,
-        "4": 2,
+        "4": 1,
         "5": 2,
         "6": 2,
         "7": 3,
         "8": 3,
-        "9": 4,
+        "9": 3,
         "10": 4,
-        "11": 5,
-        "12": 5,
+        "11": 4,
+        "12": 4,
         "13": 5,
-        "14": 6,
+        "14": 5,
         "15": 6,
-        "16": 5,
+        "16": 6,
         "17": 6,
         "18": 7,
         "19": 7
@@ -1914,27 +1992,28 @@
     "1000019": {
       "id": 1000019,
       "name": "Hidden Tesla",
+      "villageType": "home",
       "category": "defense",
       "resource": "gold",
       "th_caps": {
         "1": 0,
         "2": 0,
         "3": 3,
-        "4": 4,
-        "5": 5,
-        "6": 6,
-        "7": 7,
-        "8": 8,
+        "4": 3,
+        "5": 4,
+        "6": 5,
+        "7": 6,
+        "8": 7,
         "9": 8,
-        "10": 9,
-        "11": 10,
-        "12": 11,
-        "13": 12,
-        "14": 13,
-        "15": 14,
-        "16": 14,
-        "17": 15,
-        "18": 16,
+        "10": 8,
+        "11": 9,
+        "12": 10,
+        "13": 11,
+        "14": 12,
+        "15": 13,
+        "16": 13,
+        "17": 14,
+        "18": 15,
         "19": 16
       },
       "levels": {
@@ -2023,6 +2102,7 @@
     "1000020": {
       "id": 1000020,
       "name": "Spell Factory",
+      "villageType": "home",
       "category": "offense",
       "resource": "elixir",
       "th_caps": {
@@ -2031,19 +2111,19 @@
         "3": 2,
         "4": 2,
         "5": 3,
-        "6": 4,
+        "6": 3,
         "7": 4,
-        "8": 5,
+        "8": 4,
         "9": 5,
-        "10": 6,
+        "10": 5,
         "11": 6,
-        "12": 7,
-        "13": 8,
-        "14": 8,
-        "15": 9,
+        "12": 6,
+        "13": 7,
+        "14": 7,
+        "15": 8,
         "16": 8,
         "17": 9,
-        "18": 10,
+        "18": 9,
         "19": 10
       },
       "levels": {
@@ -2102,6 +2182,7 @@
     "1000021": {
       "id": 1000021,
       "name": "X-Bow",
+      "villageType": "home",
       "category": "defense",
       "resource": "gold",
       "th_caps": {
@@ -2109,20 +2190,20 @@
         "2": 0,
         "3": 2,
         "4": 3,
-        "5": 4,
-        "6": 5,
+        "5": 3,
+        "6": 4,
         "7": 5,
-        "8": 6,
-        "9": 7,
-        "10": 8,
+        "8": 5,
+        "9": 6,
+        "10": 7,
         "11": 8,
-        "12": 9,
-        "13": 10,
-        "14": 11,
-        "15": 11,
+        "12": 8,
+        "13": 9,
+        "14": 10,
+        "15": 10,
         "16": 11,
         "17": 12,
-        "18": 13,
+        "18": 12,
         "19": 13
       },
       "levels": {
@@ -2196,27 +2277,28 @@
     "1000023": {
       "id": 1000023,
       "name": "Dark Elixir Drill",
+      "villageType": "home",
       "category": "resources",
       "resource": "elixir",
       "th_caps": {
         "1": 1,
         "2": 1,
         "3": 2,
-        "4": 3,
+        "4": 2,
         "5": 3,
-        "6": 4,
-        "7": 5,
+        "6": 3,
+        "7": 4,
         "8": 5,
-        "9": 6,
+        "9": 5,
         "10": 6,
-        "11": 7,
-        "12": 8,
+        "11": 6,
+        "12": 7,
         "13": 8,
-        "14": 9,
-        "15": 10,
+        "14": 8,
+        "15": 9,
         "16": 9,
         "17": 10,
-        "18": 11,
+        "18": 10,
         "19": 11
       },
       "levels": {
@@ -2280,6 +2362,7 @@
     "1000024": {
       "id": 1000024,
       "name": "Dark Elixir Storage",
+      "villageType": "home",
       "category": "resources",
       "resource": "elixir",
       "th_caps": {
@@ -2287,20 +2370,20 @@
         "2": 1,
         "3": 2,
         "4": 3,
-        "5": 4,
+        "5": 3,
         "6": 4,
-        "7": 5,
-        "8": 6,
+        "7": 4,
+        "8": 5,
         "9": 6,
-        "10": 7,
-        "11": 8,
+        "10": 6,
+        "11": 7,
         "12": 8,
-        "13": 9,
-        "14": 10,
-        "15": 11,
+        "13": 8,
+        "14": 9,
+        "15": 9,
         "16": 10,
         "17": 11,
-        "18": 12,
+        "18": 11,
         "19": 12
       },
       "levels": {
@@ -2369,27 +2452,28 @@
     "1000026": {
       "id": 1000026,
       "name": "Dark Barracks",
+      "villageType": "home",
       "category": "offense",
       "resource": "elixir",
       "th_caps": {
         "1": 1,
         "2": 1,
         "3": 2,
-        "4": 3,
+        "4": 2,
         "5": 3,
-        "6": 4,
-        "7": 5,
+        "6": 3,
+        "7": 4,
         "8": 5,
-        "9": 6,
+        "9": 5,
         "10": 6,
-        "11": 7,
-        "12": 8,
+        "11": 6,
+        "12": 7,
         "13": 8,
-        "14": 9,
-        "15": 10,
+        "14": 8,
+        "15": 9,
         "16": 9,
         "17": 10,
-        "18": 11,
+        "18": 10,
         "19": 11
       },
       "levels": {
@@ -2453,6 +2537,7 @@
     "1000027": {
       "id": 1000027,
       "name": "Inferno Tower",
+      "villageType": "home",
       "category": "defense",
       "resource": "gold",
       "th_caps": {
@@ -2460,20 +2545,20 @@
         "2": 0,
         "3": 2,
         "4": 3,
-        "5": 4,
+        "5": 3,
         "6": 4,
-        "7": 5,
-        "8": 6,
+        "7": 4,
+        "8": 5,
         "9": 6,
-        "10": 7,
-        "11": 8,
+        "10": 6,
+        "11": 7,
         "12": 8,
-        "13": 9,
-        "14": 10,
-        "15": 11,
+        "13": 8,
+        "14": 9,
+        "15": 9,
         "16": 10,
         "17": 11,
-        "18": 12,
+        "18": 11,
         "19": 12
       },
       "levels": {
@@ -2542,6 +2627,7 @@
     "1000028": {
       "id": 1000028,
       "name": "Air Sweeper",
+      "villageType": "home",
       "category": "defense",
       "resource": "gold",
       "th_caps": {
@@ -2552,15 +2638,15 @@
         "5": 2,
         "6": 3,
         "7": 3,
-        "8": 4,
+        "8": 3,
         "9": 4,
-        "10": 5,
+        "10": 4,
         "11": 5,
-        "12": 6,
-        "13": 6,
-        "14": 7,
-        "15": 7,
-        "16": 6,
+        "12": 5,
+        "13": 5,
+        "14": 6,
+        "15": 6,
+        "16": 7,
         "17": 7,
         "18": 8,
         "19": 8
@@ -2611,25 +2697,26 @@
     "1000029": {
       "id": 1000029,
       "name": "Dark Spell Factory",
+      "villageType": "home",
       "category": "offense",
       "resource": "elixir",
       "th_caps": {
         "1": 1,
         "2": 1,
         "3": 1,
-        "4": 2,
+        "4": 1,
         "5": 2,
         "6": 2,
         "7": 3,
         "8": 3,
-        "9": 4,
+        "9": 3,
         "10": 4,
-        "11": 5,
-        "12": 5,
+        "11": 4,
+        "12": 4,
         "13": 5,
-        "14": 6,
+        "14": 5,
         "15": 6,
-        "16": 5,
+        "16": 6,
         "17": 6,
         "18": 7,
         "19": 7
@@ -2675,6 +2762,7 @@
     "1000031": {
       "id": 1000031,
       "name": "Eagle Artillery",
+      "villageType": "home",
       "category": "defense",
       "resource": "gold",
       "th_caps": {
@@ -2685,15 +2773,15 @@
         "5": 2,
         "6": 3,
         "7": 3,
-        "8": 4,
+        "8": 3,
         "9": 4,
-        "10": 5,
+        "10": 4,
         "11": 5,
-        "12": 6,
-        "13": 6,
-        "14": 7,
-        "15": 7,
-        "16": 6,
+        "12": 5,
+        "13": 5,
+        "14": 6,
+        "15": 6,
+        "16": 7,
         "17": 7,
         "18": 8,
         "19": 8
@@ -2744,6 +2832,7 @@
     "1000032": {
       "id": 1000032,
       "name": "Bomb Tower",
+      "villageType": "home",
       "category": "defense",
       "resource": "gold",
       "th_caps": {
@@ -2751,20 +2840,20 @@
         "2": 0,
         "3": 2,
         "4": 3,
-        "5": 4,
+        "5": 3,
         "6": 4,
-        "7": 5,
-        "8": 6,
+        "7": 4,
+        "8": 5,
         "9": 6,
-        "10": 7,
-        "11": 8,
+        "10": 6,
+        "11": 7,
         "12": 8,
-        "13": 9,
-        "14": 10,
-        "15": 11,
+        "13": 8,
+        "14": 9,
+        "15": 9,
         "16": 10,
         "17": 11,
-        "18": 12,
+        "18": 11,
         "19": 12
       },
       "levels": {
@@ -2830,9 +2919,1800 @@
         }
       }
     },
+    "1000033": {
+      "id": 1000033,
+      "name": "Walls (BB)",
+      "villageType": "builderBase",
+      "category": "walls",
+      "resource": "builder_gold",
+      "th_caps": {
+        "1": 1,
+        "2": 2,
+        "3": 3,
+        "4": 3,
+        "5": 4,
+        "6": 5,
+        "7": 6,
+        "8": 7,
+        "9": 8,
+        "10": 8,
+        "11": 9,
+        "12": 10
+      },
+      "levels": {
+        "1": {
+          "cost": 135000,
+          "duration": 2376,
+          "resource": "builder_gold"
+        },
+        "2": {
+          "cost": 182250,
+          "duration": 3136,
+          "resource": "builder_gold"
+        },
+        "3": {
+          "cost": 246038,
+          "duration": 4140,
+          "resource": "builder_gold"
+        },
+        "4": {
+          "cost": 332151,
+          "duration": 5465,
+          "resource": "builder_gold"
+        },
+        "5": {
+          "cost": 448403,
+          "duration": 7213,
+          "resource": "builder_gold"
+        },
+        "6": {
+          "cost": 605345,
+          "duration": 9522,
+          "resource": "builder_gold"
+        },
+        "7": {
+          "cost": 817215,
+          "duration": 12569,
+          "resource": "builder_gold"
+        },
+        "8": {
+          "cost": 1103240,
+          "duration": 16591,
+          "resource": "builder_gold"
+        },
+        "9": {
+          "cost": 1489375,
+          "duration": 21900,
+          "resource": "builder_gold"
+        },
+        "10": {
+          "cost": 2010656,
+          "duration": 28908,
+          "resource": "builder_gold"
+        }
+      }
+    },
+    "1000034": {
+      "id": 1000034,
+      "name": "Cannon (BB)",
+      "villageType": "builderBase",
+      "category": "defense",
+      "resource": "builder_gold",
+      "th_caps": {
+        "1": 1,
+        "2": 2,
+        "3": 3,
+        "4": 3,
+        "5": 4,
+        "6": 5,
+        "7": 6,
+        "8": 7,
+        "9": 8,
+        "10": 8,
+        "11": 9,
+        "12": 10
+      },
+      "levels": {
+        "1": {
+          "cost": 135000,
+          "duration": 2376,
+          "resource": "builder_gold"
+        },
+        "2": {
+          "cost": 182250,
+          "duration": 3136,
+          "resource": "builder_gold"
+        },
+        "3": {
+          "cost": 246038,
+          "duration": 4140,
+          "resource": "builder_gold"
+        },
+        "4": {
+          "cost": 332151,
+          "duration": 5465,
+          "resource": "builder_gold"
+        },
+        "5": {
+          "cost": 448403,
+          "duration": 7213,
+          "resource": "builder_gold"
+        },
+        "6": {
+          "cost": 605345,
+          "duration": 9522,
+          "resource": "builder_gold"
+        },
+        "7": {
+          "cost": 817215,
+          "duration": 12569,
+          "resource": "builder_gold"
+        },
+        "8": {
+          "cost": 1103240,
+          "duration": 16591,
+          "resource": "builder_gold"
+        },
+        "9": {
+          "cost": 1489375,
+          "duration": 21900,
+          "resource": "builder_gold"
+        },
+        "10": {
+          "cost": 2010656,
+          "duration": 28908,
+          "resource": "builder_gold"
+        }
+      }
+    },
+    "1000035": {
+      "id": 1000035,
+      "name": "Archer Tower (BB)",
+      "villageType": "builderBase",
+      "category": "defense",
+      "resource": "builder_gold",
+      "th_caps": {
+        "1": 1,
+        "2": 2,
+        "3": 3,
+        "4": 3,
+        "5": 4,
+        "6": 5,
+        "7": 6,
+        "8": 7,
+        "9": 8,
+        "10": 8,
+        "11": 9,
+        "12": 10
+      },
+      "levels": {
+        "1": {
+          "cost": 135000,
+          "duration": 2376,
+          "resource": "builder_gold"
+        },
+        "2": {
+          "cost": 182250,
+          "duration": 3136,
+          "resource": "builder_gold"
+        },
+        "3": {
+          "cost": 246038,
+          "duration": 4140,
+          "resource": "builder_gold"
+        },
+        "4": {
+          "cost": 332151,
+          "duration": 5465,
+          "resource": "builder_gold"
+        },
+        "5": {
+          "cost": 448403,
+          "duration": 7213,
+          "resource": "builder_gold"
+        },
+        "6": {
+          "cost": 605345,
+          "duration": 9522,
+          "resource": "builder_gold"
+        },
+        "7": {
+          "cost": 817215,
+          "duration": 12569,
+          "resource": "builder_gold"
+        },
+        "8": {
+          "cost": 1103240,
+          "duration": 16591,
+          "resource": "builder_gold"
+        },
+        "9": {
+          "cost": 1489375,
+          "duration": 21900,
+          "resource": "builder_gold"
+        },
+        "10": {
+          "cost": 2010656,
+          "duration": 28908,
+          "resource": "builder_gold"
+        }
+      }
+    },
+    "1000036": {
+      "id": 1000036,
+      "name": "Double Cannon",
+      "villageType": "builderBase",
+      "category": "defense",
+      "resource": "builder_gold",
+      "th_caps": {
+        "1": 1,
+        "2": 2,
+        "3": 3,
+        "4": 3,
+        "5": 4,
+        "6": 5,
+        "7": 6,
+        "8": 7,
+        "9": 8,
+        "10": 8,
+        "11": 9,
+        "12": 10
+      },
+      "levels": {
+        "1": {
+          "cost": 135000,
+          "duration": 2376,
+          "resource": "builder_gold"
+        },
+        "2": {
+          "cost": 182250,
+          "duration": 3136,
+          "resource": "builder_gold"
+        },
+        "3": {
+          "cost": 246038,
+          "duration": 4140,
+          "resource": "builder_gold"
+        },
+        "4": {
+          "cost": 332151,
+          "duration": 5465,
+          "resource": "builder_gold"
+        },
+        "5": {
+          "cost": 448403,
+          "duration": 7213,
+          "resource": "builder_gold"
+        },
+        "6": {
+          "cost": 605345,
+          "duration": 9522,
+          "resource": "builder_gold"
+        },
+        "7": {
+          "cost": 817215,
+          "duration": 12569,
+          "resource": "builder_gold"
+        },
+        "8": {
+          "cost": 1103240,
+          "duration": 16591,
+          "resource": "builder_gold"
+        },
+        "9": {
+          "cost": 1489375,
+          "duration": 21900,
+          "resource": "builder_gold"
+        },
+        "10": {
+          "cost": 2010656,
+          "duration": 28908,
+          "resource": "builder_gold"
+        }
+      }
+    },
+    "1000037": {
+      "id": 1000037,
+      "name": "Hidden Tesla (BB)",
+      "villageType": "builderBase",
+      "category": "defense",
+      "resource": "builder_gold",
+      "th_caps": {
+        "1": 0,
+        "2": 0,
+        "3": 3,
+        "4": 3,
+        "5": 4,
+        "6": 5,
+        "7": 6,
+        "8": 7,
+        "9": 8,
+        "10": 8,
+        "11": 9,
+        "12": 10
+      },
+      "levels": {
+        "1": {
+          "cost": 135000,
+          "duration": 2376,
+          "resource": "builder_gold"
+        },
+        "2": {
+          "cost": 182250,
+          "duration": 3136,
+          "resource": "builder_gold"
+        },
+        "3": {
+          "cost": 246038,
+          "duration": 4140,
+          "resource": "builder_gold"
+        },
+        "4": {
+          "cost": 332151,
+          "duration": 5465,
+          "resource": "builder_gold"
+        },
+        "5": {
+          "cost": 448403,
+          "duration": 7213,
+          "resource": "builder_gold"
+        },
+        "6": {
+          "cost": 605345,
+          "duration": 9522,
+          "resource": "builder_gold"
+        },
+        "7": {
+          "cost": 817215,
+          "duration": 12569,
+          "resource": "builder_gold"
+        },
+        "8": {
+          "cost": 1103240,
+          "duration": 16591,
+          "resource": "builder_gold"
+        },
+        "9": {
+          "cost": 1489375,
+          "duration": 21900,
+          "resource": "builder_gold"
+        },
+        "10": {
+          "cost": 2010656,
+          "duration": 28908,
+          "resource": "builder_gold"
+        }
+      }
+    },
+    "1000038": {
+      "id": 1000038,
+      "name": "Firecrackers",
+      "villageType": "builderBase",
+      "category": "defense",
+      "resource": "builder_gold",
+      "th_caps": {
+        "1": 0,
+        "2": 0,
+        "3": 3,
+        "4": 3,
+        "5": 4,
+        "6": 5,
+        "7": 6,
+        "8": 7,
+        "9": 8,
+        "10": 8,
+        "11": 9,
+        "12": 10
+      },
+      "levels": {
+        "1": {
+          "cost": 135000,
+          "duration": 2376,
+          "resource": "builder_gold"
+        },
+        "2": {
+          "cost": 182250,
+          "duration": 3136,
+          "resource": "builder_gold"
+        },
+        "3": {
+          "cost": 246038,
+          "duration": 4140,
+          "resource": "builder_gold"
+        },
+        "4": {
+          "cost": 332151,
+          "duration": 5465,
+          "resource": "builder_gold"
+        },
+        "5": {
+          "cost": 448403,
+          "duration": 7213,
+          "resource": "builder_gold"
+        },
+        "6": {
+          "cost": 605345,
+          "duration": 9522,
+          "resource": "builder_gold"
+        },
+        "7": {
+          "cost": 817215,
+          "duration": 12569,
+          "resource": "builder_gold"
+        },
+        "8": {
+          "cost": 1103240,
+          "duration": 16591,
+          "resource": "builder_gold"
+        },
+        "9": {
+          "cost": 1489375,
+          "duration": 21900,
+          "resource": "builder_gold"
+        },
+        "10": {
+          "cost": 2010656,
+          "duration": 28908,
+          "resource": "builder_gold"
+        }
+      }
+    },
+    "1000039": {
+      "id": 1000039,
+      "name": "Crusher",
+      "villageType": "builderBase",
+      "category": "defense",
+      "resource": "builder_gold",
+      "th_caps": {
+        "1": 0,
+        "2": 0,
+        "3": 3,
+        "4": 3,
+        "5": 4,
+        "6": 5,
+        "7": 6,
+        "8": 7,
+        "9": 8,
+        "10": 8,
+        "11": 9,
+        "12": 10
+      },
+      "levels": {
+        "1": {
+          "cost": 135000,
+          "duration": 2376,
+          "resource": "builder_gold"
+        },
+        "2": {
+          "cost": 182250,
+          "duration": 3136,
+          "resource": "builder_gold"
+        },
+        "3": {
+          "cost": 246038,
+          "duration": 4140,
+          "resource": "builder_gold"
+        },
+        "4": {
+          "cost": 332151,
+          "duration": 5465,
+          "resource": "builder_gold"
+        },
+        "5": {
+          "cost": 448403,
+          "duration": 7213,
+          "resource": "builder_gold"
+        },
+        "6": {
+          "cost": 605345,
+          "duration": 9522,
+          "resource": "builder_gold"
+        },
+        "7": {
+          "cost": 817215,
+          "duration": 12569,
+          "resource": "builder_gold"
+        },
+        "8": {
+          "cost": 1103240,
+          "duration": 16591,
+          "resource": "builder_gold"
+        },
+        "9": {
+          "cost": 1489375,
+          "duration": 21900,
+          "resource": "builder_gold"
+        },
+        "10": {
+          "cost": 2010656,
+          "duration": 28908,
+          "resource": "builder_gold"
+        }
+      }
+    },
+    "1000040": {
+      "id": 1000040,
+      "name": "Builder Hall",
+      "villageType": "builderBase",
+      "category": "defense",
+      "resource": "builder_gold",
+      "th_caps": {
+        "1": 0,
+        "2": 0,
+        "3": 3,
+        "4": 3,
+        "5": 4,
+        "6": 5,
+        "7": 6,
+        "8": 7,
+        "9": 8,
+        "10": 8,
+        "11": 9,
+        "12": 10
+      },
+      "levels": {
+        "1": {
+          "cost": 135000,
+          "duration": 2376,
+          "resource": "builder_gold"
+        },
+        "2": {
+          "cost": 182250,
+          "duration": 3136,
+          "resource": "builder_gold"
+        },
+        "3": {
+          "cost": 246038,
+          "duration": 4140,
+          "resource": "builder_gold"
+        },
+        "4": {
+          "cost": 332151,
+          "duration": 5465,
+          "resource": "builder_gold"
+        },
+        "5": {
+          "cost": 448403,
+          "duration": 7213,
+          "resource": "builder_gold"
+        },
+        "6": {
+          "cost": 605345,
+          "duration": 9522,
+          "resource": "builder_gold"
+        },
+        "7": {
+          "cost": 817215,
+          "duration": 12569,
+          "resource": "builder_gold"
+        },
+        "8": {
+          "cost": 1103240,
+          "duration": 16591,
+          "resource": "builder_gold"
+        },
+        "9": {
+          "cost": 1489375,
+          "duration": 21900,
+          "resource": "builder_gold"
+        },
+        "10": {
+          "cost": 2010656,
+          "duration": 28908,
+          "resource": "builder_gold"
+        }
+      }
+    },
+    "1000041": {
+      "id": 1000041,
+      "name": "Guard Post",
+      "villageType": "builderBase",
+      "category": "defense",
+      "resource": "builder_gold",
+      "th_caps": {
+        "1": 0,
+        "2": 0,
+        "3": 3,
+        "4": 3,
+        "5": 4,
+        "6": 5,
+        "7": 6,
+        "8": 7,
+        "9": 8,
+        "10": 8,
+        "11": 9,
+        "12": 10
+      },
+      "levels": {
+        "1": {
+          "cost": 135000,
+          "duration": 2376,
+          "resource": "builder_gold"
+        },
+        "2": {
+          "cost": 182250,
+          "duration": 3136,
+          "resource": "builder_gold"
+        },
+        "3": {
+          "cost": 246038,
+          "duration": 4140,
+          "resource": "builder_gold"
+        },
+        "4": {
+          "cost": 332151,
+          "duration": 5465,
+          "resource": "builder_gold"
+        },
+        "5": {
+          "cost": 448403,
+          "duration": 7213,
+          "resource": "builder_gold"
+        },
+        "6": {
+          "cost": 605345,
+          "duration": 9522,
+          "resource": "builder_gold"
+        },
+        "7": {
+          "cost": 817215,
+          "duration": 12569,
+          "resource": "builder_gold"
+        },
+        "8": {
+          "cost": 1103240,
+          "duration": 16591,
+          "resource": "builder_gold"
+        },
+        "9": {
+          "cost": 1489375,
+          "duration": 21900,
+          "resource": "builder_gold"
+        },
+        "10": {
+          "cost": 2010656,
+          "duration": 28908,
+          "resource": "builder_gold"
+        }
+      }
+    },
+    "1000042": {
+      "id": 1000042,
+      "name": "Army Camp (BB)",
+      "villageType": "builderBase",
+      "category": "offense",
+      "resource": "builder_elixir",
+      "th_caps": {
+        "1": 1,
+        "2": 1,
+        "3": 1,
+        "4": 1,
+        "5": 1,
+        "6": 1,
+        "7": 1,
+        "8": 1,
+        "9": 1,
+        "10": 1,
+        "11": 1,
+        "12": 1
+      },
+      "levels": {
+        "1": {
+          "cost": 135000,
+          "duration": 2376,
+          "resource": "builder_elixir"
+        }
+      }
+    },
+    "1000043": {
+      "id": 1000043,
+      "name": "Elixir Collector (BB)",
+      "villageType": "builderBase",
+      "category": "resources",
+      "resource": "builder_gold",
+      "th_caps": {
+        "1": 1,
+        "2": 2,
+        "3": 3,
+        "4": 3,
+        "5": 4,
+        "6": 5,
+        "7": 6,
+        "8": 7,
+        "9": 8,
+        "10": 8,
+        "11": 9,
+        "12": 10
+      },
+      "levels": {
+        "1": {
+          "cost": 135000,
+          "duration": 2376,
+          "resource": "builder_gold"
+        },
+        "2": {
+          "cost": 182250,
+          "duration": 3136,
+          "resource": "builder_gold"
+        },
+        "3": {
+          "cost": 246038,
+          "duration": 4140,
+          "resource": "builder_gold"
+        },
+        "4": {
+          "cost": 332151,
+          "duration": 5465,
+          "resource": "builder_gold"
+        },
+        "5": {
+          "cost": 448403,
+          "duration": 7213,
+          "resource": "builder_gold"
+        },
+        "6": {
+          "cost": 605345,
+          "duration": 9522,
+          "resource": "builder_gold"
+        },
+        "7": {
+          "cost": 817215,
+          "duration": 12569,
+          "resource": "builder_gold"
+        },
+        "8": {
+          "cost": 1103240,
+          "duration": 16591,
+          "resource": "builder_gold"
+        },
+        "9": {
+          "cost": 1489375,
+          "duration": 21900,
+          "resource": "builder_gold"
+        },
+        "10": {
+          "cost": 2010656,
+          "duration": 28908,
+          "resource": "builder_gold"
+        }
+      }
+    },
+    "1000044": {
+      "id": 1000044,
+      "name": "Gold Mine (BB)",
+      "villageType": "builderBase",
+      "category": "resources",
+      "resource": "builder_elixir",
+      "th_caps": {
+        "1": 1,
+        "2": 2,
+        "3": 3,
+        "4": 3,
+        "5": 4,
+        "6": 5,
+        "7": 6,
+        "8": 7,
+        "9": 8,
+        "10": 8,
+        "11": 9,
+        "12": 10
+      },
+      "levels": {
+        "1": {
+          "cost": 135000,
+          "duration": 2376,
+          "resource": "builder_elixir"
+        },
+        "2": {
+          "cost": 182250,
+          "duration": 3136,
+          "resource": "builder_elixir"
+        },
+        "3": {
+          "cost": 246038,
+          "duration": 4140,
+          "resource": "builder_elixir"
+        },
+        "4": {
+          "cost": 332151,
+          "duration": 5465,
+          "resource": "builder_elixir"
+        },
+        "5": {
+          "cost": 448403,
+          "duration": 7213,
+          "resource": "builder_elixir"
+        },
+        "6": {
+          "cost": 605345,
+          "duration": 9522,
+          "resource": "builder_elixir"
+        },
+        "7": {
+          "cost": 817215,
+          "duration": 12569,
+          "resource": "builder_elixir"
+        },
+        "8": {
+          "cost": 1103240,
+          "duration": 16591,
+          "resource": "builder_elixir"
+        },
+        "9": {
+          "cost": 1489375,
+          "duration": 21900,
+          "resource": "builder_elixir"
+        },
+        "10": {
+          "cost": 2010656,
+          "duration": 28908,
+          "resource": "builder_elixir"
+        }
+      }
+    },
+    "1000045": {
+      "id": 1000045,
+      "name": "Elixir Storage (BB)",
+      "villageType": "builderBase",
+      "category": "resources",
+      "resource": "builder_gold",
+      "th_caps": {
+        "1": 1,
+        "2": 2,
+        "3": 3,
+        "4": 3,
+        "5": 4,
+        "6": 5,
+        "7": 6,
+        "8": 7,
+        "9": 8,
+        "10": 8,
+        "11": 9,
+        "12": 10
+      },
+      "levels": {
+        "1": {
+          "cost": 135000,
+          "duration": 2376,
+          "resource": "builder_gold"
+        },
+        "2": {
+          "cost": 182250,
+          "duration": 3136,
+          "resource": "builder_gold"
+        },
+        "3": {
+          "cost": 246038,
+          "duration": 4140,
+          "resource": "builder_gold"
+        },
+        "4": {
+          "cost": 332151,
+          "duration": 5465,
+          "resource": "builder_gold"
+        },
+        "5": {
+          "cost": 448403,
+          "duration": 7213,
+          "resource": "builder_gold"
+        },
+        "6": {
+          "cost": 605345,
+          "duration": 9522,
+          "resource": "builder_gold"
+        },
+        "7": {
+          "cost": 817215,
+          "duration": 12569,
+          "resource": "builder_gold"
+        },
+        "8": {
+          "cost": 1103240,
+          "duration": 16591,
+          "resource": "builder_gold"
+        },
+        "9": {
+          "cost": 1489375,
+          "duration": 21900,
+          "resource": "builder_gold"
+        },
+        "10": {
+          "cost": 2010656,
+          "duration": 28908,
+          "resource": "builder_gold"
+        }
+      }
+    },
+    "1000046": {
+      "id": 1000046,
+      "name": "Gold Storage (BB)",
+      "villageType": "builderBase",
+      "category": "resources",
+      "resource": "builder_elixir",
+      "th_caps": {
+        "1": 1,
+        "2": 2,
+        "3": 3,
+        "4": 3,
+        "5": 4,
+        "6": 5,
+        "7": 6,
+        "8": 7,
+        "9": 8,
+        "10": 8,
+        "11": 9,
+        "12": 10
+      },
+      "levels": {
+        "1": {
+          "cost": 135000,
+          "duration": 2376,
+          "resource": "builder_elixir"
+        },
+        "2": {
+          "cost": 182250,
+          "duration": 3136,
+          "resource": "builder_elixir"
+        },
+        "3": {
+          "cost": 246038,
+          "duration": 4140,
+          "resource": "builder_elixir"
+        },
+        "4": {
+          "cost": 332151,
+          "duration": 5465,
+          "resource": "builder_elixir"
+        },
+        "5": {
+          "cost": 448403,
+          "duration": 7213,
+          "resource": "builder_elixir"
+        },
+        "6": {
+          "cost": 605345,
+          "duration": 9522,
+          "resource": "builder_elixir"
+        },
+        "7": {
+          "cost": 817215,
+          "duration": 12569,
+          "resource": "builder_elixir"
+        },
+        "8": {
+          "cost": 1103240,
+          "duration": 16591,
+          "resource": "builder_elixir"
+        },
+        "9": {
+          "cost": 1489375,
+          "duration": 21900,
+          "resource": "builder_elixir"
+        },
+        "10": {
+          "cost": 2010656,
+          "duration": 28908,
+          "resource": "builder_elixir"
+        }
+      }
+    },
+    "1000048": {
+      "id": 1000048,
+      "name": "Air Bombs (BB)",
+      "villageType": "builderBase",
+      "category": "defense",
+      "resource": "builder_gold",
+      "th_caps": {
+        "1": 0,
+        "2": 0,
+        "3": 3,
+        "4": 3,
+        "5": 4,
+        "6": 5,
+        "7": 6,
+        "8": 7,
+        "9": 8,
+        "10": 8,
+        "11": 9,
+        "12": 10
+      },
+      "levels": {
+        "1": {
+          "cost": 135000,
+          "duration": 2376,
+          "resource": "builder_gold"
+        },
+        "2": {
+          "cost": 182250,
+          "duration": 3136,
+          "resource": "builder_gold"
+        },
+        "3": {
+          "cost": 246038,
+          "duration": 4140,
+          "resource": "builder_gold"
+        },
+        "4": {
+          "cost": 332151,
+          "duration": 5465,
+          "resource": "builder_gold"
+        },
+        "5": {
+          "cost": 448403,
+          "duration": 7213,
+          "resource": "builder_gold"
+        },
+        "6": {
+          "cost": 605345,
+          "duration": 9522,
+          "resource": "builder_gold"
+        },
+        "7": {
+          "cost": 817215,
+          "duration": 12569,
+          "resource": "builder_gold"
+        },
+        "8": {
+          "cost": 1103240,
+          "duration": 16591,
+          "resource": "builder_gold"
+        },
+        "9": {
+          "cost": 1489375,
+          "duration": 21900,
+          "resource": "builder_gold"
+        },
+        "10": {
+          "cost": 2010656,
+          "duration": 28908,
+          "resource": "builder_gold"
+        }
+      }
+    },
+    "1000049": {
+      "id": 1000049,
+      "name": "Builder Barracks",
+      "villageType": "builderBase",
+      "category": "offense",
+      "resource": "builder_elixir",
+      "th_caps": {
+        "1": 1,
+        "2": 2,
+        "3": 3,
+        "4": 4,
+        "5": 5,
+        "6": 6,
+        "7": 7,
+        "8": 8,
+        "9": 9,
+        "10": 10,
+        "11": 11,
+        "12": 12
+      },
+      "levels": {
+        "1": {
+          "cost": 135000,
+          "duration": 2376,
+          "resource": "builder_elixir"
+        },
+        "2": {
+          "cost": 182250,
+          "duration": 3136,
+          "resource": "builder_elixir"
+        },
+        "3": {
+          "cost": 246038,
+          "duration": 4140,
+          "resource": "builder_elixir"
+        },
+        "4": {
+          "cost": 332151,
+          "duration": 5465,
+          "resource": "builder_elixir"
+        },
+        "5": {
+          "cost": 448403,
+          "duration": 7213,
+          "resource": "builder_elixir"
+        },
+        "6": {
+          "cost": 605345,
+          "duration": 9522,
+          "resource": "builder_elixir"
+        },
+        "7": {
+          "cost": 817215,
+          "duration": 12569,
+          "resource": "builder_elixir"
+        },
+        "8": {
+          "cost": 1103240,
+          "duration": 16591,
+          "resource": "builder_elixir"
+        },
+        "9": {
+          "cost": 1489375,
+          "duration": 21900,
+          "resource": "builder_elixir"
+        },
+        "10": {
+          "cost": 2010656,
+          "duration": 28908,
+          "resource": "builder_elixir"
+        },
+        "11": {
+          "cost": 2714385,
+          "duration": 38158,
+          "resource": "builder_elixir"
+        },
+        "12": {
+          "cost": 3664420,
+          "duration": 50369,
+          "resource": "builder_elixir"
+        }
+      }
+    },
+    "1000050": {
+      "id": 1000050,
+      "name": "Push Trap",
+      "villageType": "builderBase",
+      "category": "defense",
+      "resource": "builder_gold",
+      "th_caps": {
+        "1": 0,
+        "2": 0,
+        "3": 3,
+        "4": 3,
+        "5": 4,
+        "6": 5,
+        "7": 6,
+        "8": 7,
+        "9": 8,
+        "10": 8,
+        "11": 9,
+        "12": 10
+      },
+      "levels": {
+        "1": {
+          "cost": 135000,
+          "duration": 2376,
+          "resource": "builder_gold"
+        },
+        "2": {
+          "cost": 182250,
+          "duration": 3136,
+          "resource": "builder_gold"
+        },
+        "3": {
+          "cost": 246038,
+          "duration": 4140,
+          "resource": "builder_gold"
+        },
+        "4": {
+          "cost": 332151,
+          "duration": 5465,
+          "resource": "builder_gold"
+        },
+        "5": {
+          "cost": 448403,
+          "duration": 7213,
+          "resource": "builder_gold"
+        },
+        "6": {
+          "cost": 605345,
+          "duration": 9522,
+          "resource": "builder_gold"
+        },
+        "7": {
+          "cost": 817215,
+          "duration": 12569,
+          "resource": "builder_gold"
+        },
+        "8": {
+          "cost": 1103240,
+          "duration": 16591,
+          "resource": "builder_gold"
+        },
+        "9": {
+          "cost": 1489375,
+          "duration": 21900,
+          "resource": "builder_gold"
+        },
+        "10": {
+          "cost": 2010656,
+          "duration": 28908,
+          "resource": "builder_gold"
+        }
+      }
+    },
+    "1000051": {
+      "id": 1000051,
+      "name": "Multi Mortar",
+      "villageType": "builderBase",
+      "category": "defense",
+      "resource": "builder_gold",
+      "th_caps": {
+        "1": 0,
+        "2": 0,
+        "3": 3,
+        "4": 3,
+        "5": 4,
+        "6": 5,
+        "7": 6,
+        "8": 7,
+        "9": 8,
+        "10": 8,
+        "11": 9,
+        "12": 10
+      },
+      "levels": {
+        "1": {
+          "cost": 135000,
+          "duration": 2376,
+          "resource": "builder_gold"
+        },
+        "2": {
+          "cost": 182250,
+          "duration": 3136,
+          "resource": "builder_gold"
+        },
+        "3": {
+          "cost": 246038,
+          "duration": 4140,
+          "resource": "builder_gold"
+        },
+        "4": {
+          "cost": 332151,
+          "duration": 5465,
+          "resource": "builder_gold"
+        },
+        "5": {
+          "cost": 448403,
+          "duration": 7213,
+          "resource": "builder_gold"
+        },
+        "6": {
+          "cost": 605345,
+          "duration": 9522,
+          "resource": "builder_gold"
+        },
+        "7": {
+          "cost": 817215,
+          "duration": 12569,
+          "resource": "builder_gold"
+        },
+        "8": {
+          "cost": 1103240,
+          "duration": 16591,
+          "resource": "builder_gold"
+        },
+        "9": {
+          "cost": 1489375,
+          "duration": 21900,
+          "resource": "builder_gold"
+        },
+        "10": {
+          "cost": 2010656,
+          "duration": 28908,
+          "resource": "builder_gold"
+        }
+      }
+    },
+    "1000052": {
+      "id": 1000052,
+      "name": "Star Laboratory",
+      "villageType": "builderBase",
+      "category": "offense",
+      "resource": "builder_elixir",
+      "th_caps": {
+        "1": 1,
+        "2": 2,
+        "3": 3,
+        "4": 3,
+        "5": 4,
+        "6": 5,
+        "7": 6,
+        "8": 7,
+        "9": 8,
+        "10": 8,
+        "11": 9,
+        "12": 10
+      },
+      "levels": {
+        "1": {
+          "cost": 135000,
+          "duration": 2376,
+          "resource": "builder_elixir"
+        },
+        "2": {
+          "cost": 182250,
+          "duration": 3136,
+          "resource": "builder_elixir"
+        },
+        "3": {
+          "cost": 246038,
+          "duration": 4140,
+          "resource": "builder_elixir"
+        },
+        "4": {
+          "cost": 332151,
+          "duration": 5465,
+          "resource": "builder_elixir"
+        },
+        "5": {
+          "cost": 448403,
+          "duration": 7213,
+          "resource": "builder_elixir"
+        },
+        "6": {
+          "cost": 605345,
+          "duration": 9522,
+          "resource": "builder_elixir"
+        },
+        "7": {
+          "cost": 817215,
+          "duration": 12569,
+          "resource": "builder_elixir"
+        },
+        "8": {
+          "cost": 1103240,
+          "duration": 16591,
+          "resource": "builder_elixir"
+        },
+        "9": {
+          "cost": 1489375,
+          "duration": 21900,
+          "resource": "builder_elixir"
+        },
+        "10": {
+          "cost": 2010656,
+          "duration": 28908,
+          "resource": "builder_elixir"
+        }
+      }
+    },
+    "1000053": {
+      "id": 1000053,
+      "name": "Clock Tower",
+      "villageType": "builderBase",
+      "category": "resources",
+      "resource": "builder_gold",
+      "th_caps": {
+        "1": 1,
+        "2": 2,
+        "3": 3,
+        "4": 3,
+        "5": 4,
+        "6": 5,
+        "7": 6,
+        "8": 7,
+        "9": 8,
+        "10": 8,
+        "11": 9,
+        "12": 10
+      },
+      "levels": {
+        "1": {
+          "cost": 135000,
+          "duration": 2376,
+          "resource": "builder_gold"
+        },
+        "2": {
+          "cost": 182250,
+          "duration": 3136,
+          "resource": "builder_gold"
+        },
+        "3": {
+          "cost": 246038,
+          "duration": 4140,
+          "resource": "builder_gold"
+        },
+        "4": {
+          "cost": 332151,
+          "duration": 5465,
+          "resource": "builder_gold"
+        },
+        "5": {
+          "cost": 448403,
+          "duration": 7213,
+          "resource": "builder_gold"
+        },
+        "6": {
+          "cost": 605345,
+          "duration": 9522,
+          "resource": "builder_gold"
+        },
+        "7": {
+          "cost": 817215,
+          "duration": 12569,
+          "resource": "builder_gold"
+        },
+        "8": {
+          "cost": 1103240,
+          "duration": 16591,
+          "resource": "builder_gold"
+        },
+        "9": {
+          "cost": 1489375,
+          "duration": 21900,
+          "resource": "builder_gold"
+        },
+        "10": {
+          "cost": 2010656,
+          "duration": 28908,
+          "resource": "builder_gold"
+        }
+      }
+    },
+    "1000054": {
+      "id": 1000054,
+      "name": "Roaster",
+      "villageType": "builderBase",
+      "category": "defense",
+      "resource": "builder_gold",
+      "th_caps": {
+        "1": 0,
+        "2": 0,
+        "3": 3,
+        "4": 3,
+        "5": 4,
+        "6": 5,
+        "7": 6,
+        "8": 7,
+        "9": 8,
+        "10": 8,
+        "11": 9,
+        "12": 10
+      },
+      "levels": {
+        "1": {
+          "cost": 135000,
+          "duration": 2376,
+          "resource": "builder_gold"
+        },
+        "2": {
+          "cost": 182250,
+          "duration": 3136,
+          "resource": "builder_gold"
+        },
+        "3": {
+          "cost": 246038,
+          "duration": 4140,
+          "resource": "builder_gold"
+        },
+        "4": {
+          "cost": 332151,
+          "duration": 5465,
+          "resource": "builder_gold"
+        },
+        "5": {
+          "cost": 448403,
+          "duration": 7213,
+          "resource": "builder_gold"
+        },
+        "6": {
+          "cost": 605345,
+          "duration": 9522,
+          "resource": "builder_gold"
+        },
+        "7": {
+          "cost": 817215,
+          "duration": 12569,
+          "resource": "builder_gold"
+        },
+        "8": {
+          "cost": 1103240,
+          "duration": 16591,
+          "resource": "builder_gold"
+        },
+        "9": {
+          "cost": 1489375,
+          "duration": 21900,
+          "resource": "builder_gold"
+        },
+        "10": {
+          "cost": 2010656,
+          "duration": 28908,
+          "resource": "builder_gold"
+        }
+      }
+    },
+    "1000055": {
+      "id": 1000055,
+      "name": "Giant Cannon",
+      "villageType": "builderBase",
+      "category": "defense",
+      "resource": "builder_gold",
+      "th_caps": {
+        "1": 1,
+        "2": 2,
+        "3": 3,
+        "4": 3,
+        "5": 4,
+        "6": 5,
+        "7": 6,
+        "8": 7,
+        "9": 8,
+        "10": 8,
+        "11": 9,
+        "12": 10
+      },
+      "levels": {
+        "1": {
+          "cost": 135000,
+          "duration": 2376,
+          "resource": "builder_gold"
+        },
+        "2": {
+          "cost": 182250,
+          "duration": 3136,
+          "resource": "builder_gold"
+        },
+        "3": {
+          "cost": 246038,
+          "duration": 4140,
+          "resource": "builder_gold"
+        },
+        "4": {
+          "cost": 332151,
+          "duration": 5465,
+          "resource": "builder_gold"
+        },
+        "5": {
+          "cost": 448403,
+          "duration": 7213,
+          "resource": "builder_gold"
+        },
+        "6": {
+          "cost": 605345,
+          "duration": 9522,
+          "resource": "builder_gold"
+        },
+        "7": {
+          "cost": 817215,
+          "duration": 12569,
+          "resource": "builder_gold"
+        },
+        "8": {
+          "cost": 1103240,
+          "duration": 16591,
+          "resource": "builder_gold"
+        },
+        "9": {
+          "cost": 1489375,
+          "duration": 21900,
+          "resource": "builder_gold"
+        },
+        "10": {
+          "cost": 2010656,
+          "duration": 28908,
+          "resource": "builder_gold"
+        }
+      }
+    },
+    "1000056": {
+      "id": 1000056,
+      "name": "Mega Tesla",
+      "villageType": "builderBase",
+      "category": "defense",
+      "resource": "builder_gold",
+      "th_caps": {
+        "1": 0,
+        "2": 0,
+        "3": 3,
+        "4": 3,
+        "5": 4,
+        "6": 5,
+        "7": 6,
+        "8": 7,
+        "9": 8,
+        "10": 8,
+        "11": 9,
+        "12": 10
+      },
+      "levels": {
+        "1": {
+          "cost": 135000,
+          "duration": 2376,
+          "resource": "builder_gold"
+        },
+        "2": {
+          "cost": 182250,
+          "duration": 3136,
+          "resource": "builder_gold"
+        },
+        "3": {
+          "cost": 246038,
+          "duration": 4140,
+          "resource": "builder_gold"
+        },
+        "4": {
+          "cost": 332151,
+          "duration": 5465,
+          "resource": "builder_gold"
+        },
+        "5": {
+          "cost": 448403,
+          "duration": 7213,
+          "resource": "builder_gold"
+        },
+        "6": {
+          "cost": 605345,
+          "duration": 9522,
+          "resource": "builder_gold"
+        },
+        "7": {
+          "cost": 817215,
+          "duration": 12569,
+          "resource": "builder_gold"
+        },
+        "8": {
+          "cost": 1103240,
+          "duration": 16591,
+          "resource": "builder_gold"
+        },
+        "9": {
+          "cost": 1489375,
+          "duration": 21900,
+          "resource": "builder_gold"
+        },
+        "10": {
+          "cost": 2010656,
+          "duration": 28908,
+          "resource": "builder_gold"
+        }
+      }
+    },
+    "1000057": {
+      "id": 1000057,
+      "name": "Gem Mine",
+      "villageType": "builderBase",
+      "category": "resources",
+      "resource": "builder_elixir",
+      "th_caps": {
+        "1": 1,
+        "2": 2,
+        "3": 3,
+        "4": 3,
+        "5": 4,
+        "6": 5,
+        "7": 6,
+        "8": 7,
+        "9": 8,
+        "10": 8,
+        "11": 9,
+        "12": 10
+      },
+      "levels": {
+        "1": {
+          "cost": 135000,
+          "duration": 2376,
+          "resource": "builder_elixir"
+        },
+        "2": {
+          "cost": 182250,
+          "duration": 3136,
+          "resource": "builder_elixir"
+        },
+        "3": {
+          "cost": 246038,
+          "duration": 4140,
+          "resource": "builder_elixir"
+        },
+        "4": {
+          "cost": 332151,
+          "duration": 5465,
+          "resource": "builder_elixir"
+        },
+        "5": {
+          "cost": 448403,
+          "duration": 7213,
+          "resource": "builder_elixir"
+        },
+        "6": {
+          "cost": 605345,
+          "duration": 9522,
+          "resource": "builder_elixir"
+        },
+        "7": {
+          "cost": 817215,
+          "duration": 12569,
+          "resource": "builder_elixir"
+        },
+        "8": {
+          "cost": 1103240,
+          "duration": 16591,
+          "resource": "builder_elixir"
+        },
+        "9": {
+          "cost": 1489375,
+          "duration": 21900,
+          "resource": "builder_elixir"
+        },
+        "10": {
+          "cost": 2010656,
+          "duration": 28908,
+          "resource": "builder_elixir"
+        }
+      }
+    },
+    "1000058": {
+      "id": 1000058,
+      "name": "Lava Launcher",
+      "villageType": "builderBase",
+      "category": "defense",
+      "resource": "builder_gold",
+      "th_caps": {
+        "1": 0,
+        "2": 0,
+        "3": 3,
+        "4": 3,
+        "5": 4,
+        "6": 5,
+        "7": 6,
+        "8": 7,
+        "9": 8,
+        "10": 8,
+        "11": 9,
+        "12": 10
+      },
+      "levels": {
+        "1": {
+          "cost": 135000,
+          "duration": 2376,
+          "resource": "builder_gold"
+        },
+        "2": {
+          "cost": 182250,
+          "duration": 3136,
+          "resource": "builder_gold"
+        },
+        "3": {
+          "cost": 246038,
+          "duration": 4140,
+          "resource": "builder_gold"
+        },
+        "4": {
+          "cost": 332151,
+          "duration": 5465,
+          "resource": "builder_gold"
+        },
+        "5": {
+          "cost": 448403,
+          "duration": 7213,
+          "resource": "builder_gold"
+        },
+        "6": {
+          "cost": 605345,
+          "duration": 9522,
+          "resource": "builder_gold"
+        },
+        "7": {
+          "cost": 817215,
+          "duration": 12569,
+          "resource": "builder_gold"
+        },
+        "8": {
+          "cost": 1103240,
+          "duration": 16591,
+          "resource": "builder_gold"
+        },
+        "9": {
+          "cost": 1489375,
+          "duration": 21900,
+          "resource": "builder_gold"
+        },
+        "10": {
+          "cost": 2010656,
+          "duration": 28908,
+          "resource": "builder_gold"
+        }
+      }
+    },
     "1000059": {
       "id": 1000059,
       "name": "Workshop",
+      "villageType": "home",
       "category": "offense",
       "resource": "elixir",
       "th_caps": {
@@ -2843,15 +4723,15 @@
         "5": 2,
         "6": 3,
         "7": 3,
-        "8": 4,
+        "8": 3,
         "9": 4,
-        "10": 5,
+        "10": 4,
         "11": 5,
-        "12": 6,
-        "13": 6,
-        "14": 7,
-        "15": 7,
-        "16": 6,
+        "12": 5,
+        "13": 5,
+        "14": 6,
+        "15": 6,
+        "16": 7,
         "17": 7,
         "18": 8,
         "19": 8
@@ -2899,9 +4779,63 @@
         }
       }
     },
+    "1000063": {
+      "id": 1000063,
+      "name": "Healing Hut",
+      "villageType": "builderBase",
+      "category": "defense",
+      "resource": "builder_gold",
+      "th_caps": {
+        "1": 0,
+        "2": 0,
+        "3": 2,
+        "4": 2,
+        "5": 3,
+        "6": 3,
+        "7": 4,
+        "8": 4,
+        "9": 5,
+        "10": 5,
+        "11": 6,
+        "12": 6
+      },
+      "levels": {
+        "1": {
+          "cost": 135000,
+          "duration": 2376,
+          "resource": "builder_gold"
+        },
+        "2": {
+          "cost": 182250,
+          "duration": 3136,
+          "resource": "builder_gold"
+        },
+        "3": {
+          "cost": 246038,
+          "duration": 4140,
+          "resource": "builder_gold"
+        },
+        "4": {
+          "cost": 332151,
+          "duration": 5465,
+          "resource": "builder_gold"
+        },
+        "5": {
+          "cost": 448403,
+          "duration": 7213,
+          "resource": "builder_gold"
+        },
+        "6": {
+          "cost": 605345,
+          "duration": 9522,
+          "resource": "builder_gold"
+        }
+      }
+    },
     "1000064": {
       "id": 1000064,
       "name": "B.O.B Hut",
+      "villageType": "home",
       "category": "defense",
       "resource": "gold",
       "th_caps": {
@@ -2913,14 +4847,14 @@
         "6": 2,
         "7": 2,
         "8": 2,
-        "9": 3,
+        "9": 2,
         "10": 3,
         "11": 3,
-        "12": 4,
-        "13": 4,
+        "12": 3,
+        "13": 3,
         "14": 4,
         "15": 4,
-        "16": 3,
+        "16": 4,
         "17": 4,
         "18": 5,
         "19": 5
@@ -2953,9 +4887,83 @@
         }
       }
     },
+    "1000065": {
+      "id": 1000065,
+      "name": "O.T.T.O's Outpost",
+      "villageType": "builderBase",
+      "category": "defense",
+      "resource": "builder_gold",
+      "th_caps": {
+        "1": 0,
+        "2": 0,
+        "3": 3,
+        "4": 3,
+        "5": 4,
+        "6": 5,
+        "7": 6,
+        "8": 7,
+        "9": 8,
+        "10": 8,
+        "11": 9,
+        "12": 10
+      },
+      "levels": {
+        "1": {
+          "cost": 135000,
+          "duration": 2376,
+          "resource": "builder_gold"
+        },
+        "2": {
+          "cost": 182250,
+          "duration": 3136,
+          "resource": "builder_gold"
+        },
+        "3": {
+          "cost": 246038,
+          "duration": 4140,
+          "resource": "builder_gold"
+        },
+        "4": {
+          "cost": 332151,
+          "duration": 5465,
+          "resource": "builder_gold"
+        },
+        "5": {
+          "cost": 448403,
+          "duration": 7213,
+          "resource": "builder_gold"
+        },
+        "6": {
+          "cost": 605345,
+          "duration": 9522,
+          "resource": "builder_gold"
+        },
+        "7": {
+          "cost": 817215,
+          "duration": 12569,
+          "resource": "builder_gold"
+        },
+        "8": {
+          "cost": 1103240,
+          "duration": 16591,
+          "resource": "builder_gold"
+        },
+        "9": {
+          "cost": 1489375,
+          "duration": 21900,
+          "resource": "builder_gold"
+        },
+        "10": {
+          "cost": 2010656,
+          "duration": 28908,
+          "resource": "builder_gold"
+        }
+      }
+    },
     "1000067": {
       "id": 1000067,
       "name": "Scattershot",
+      "villageType": "home",
       "category": "defense",
       "resource": "gold",
       "th_caps": {
@@ -2968,13 +4976,13 @@
         "7": 2,
         "8": 3,
         "9": 3,
-        "10": 4,
-        "11": 4,
+        "10": 3,
+        "11": 3,
         "12": 4,
-        "13": 5,
-        "14": 5,
+        "13": 4,
+        "14": 4,
         "15": 5,
-        "16": 4,
+        "16": 5,
         "17": 5,
         "18": 6,
         "19": 6
@@ -3015,27 +5023,28 @@
     "1000068": {
       "id": 1000068,
       "name": "Pet House",
+      "villageType": "home",
       "category": "offense",
       "resource": "elixir",
       "th_caps": {
         "1": 1,
         "2": 1,
         "3": 2,
-        "4": 3,
+        "4": 2,
         "5": 3,
-        "6": 4,
-        "7": 5,
+        "6": 3,
+        "7": 4,
         "8": 5,
-        "9": 6,
+        "9": 5,
         "10": 6,
-        "11": 7,
-        "12": 8,
+        "11": 6,
+        "12": 7,
         "13": 8,
-        "14": 9,
-        "15": 10,
+        "14": 8,
+        "15": 9,
         "16": 9,
         "17": 10,
-        "18": 11,
+        "18": 10,
         "19": 11
       },
       "levels": {
@@ -3099,6 +5108,7 @@
     "1000070": {
       "id": 1000070,
       "name": "Blacksmith",
+      "villageType": "home",
       "category": "offense",
       "resource": "elixir",
       "th_caps": {
@@ -3107,19 +5117,19 @@
         "3": 2,
         "4": 2,
         "5": 3,
-        "6": 4,
+        "6": 3,
         "7": 4,
-        "8": 5,
+        "8": 4,
         "9": 5,
-        "10": 6,
+        "10": 5,
         "11": 6,
-        "12": 7,
-        "13": 8,
-        "14": 8,
-        "15": 9,
+        "12": 6,
+        "13": 7,
+        "14": 7,
+        "15": 8,
         "16": 8,
         "17": 9,
-        "18": 10,
+        "18": 9,
         "19": 10
       },
       "levels": {
@@ -3178,27 +5188,28 @@
     "1000071": {
       "id": 1000071,
       "name": "Hero Hall",
+      "villageType": "home",
       "category": "offense",
       "resource": "elixir",
       "th_caps": {
         "1": 1,
         "2": 1,
         "3": 2,
-        "4": 3,
+        "4": 2,
         "5": 3,
-        "6": 4,
-        "7": 5,
+        "6": 3,
+        "7": 4,
         "8": 5,
-        "9": 6,
+        "9": 5,
         "10": 6,
-        "11": 7,
-        "12": 8,
+        "11": 6,
+        "12": 7,
         "13": 8,
-        "14": 9,
-        "15": 10,
+        "14": 8,
+        "15": 9,
         "16": 9,
         "17": 10,
-        "18": 11,
+        "18": 10,
         "19": 11
       },
       "levels": {
@@ -3262,6 +5273,7 @@
     "1000072": {
       "id": 1000072,
       "name": "Spell Tower",
+      "villageType": "home",
       "category": "defense",
       "resource": "gold",
       "th_caps": {
@@ -3273,14 +5285,14 @@
         "6": 2,
         "7": 2,
         "8": 2,
-        "9": 3,
+        "9": 2,
         "10": 3,
         "11": 3,
-        "12": 4,
-        "13": 4,
+        "12": 3,
+        "13": 3,
         "14": 4,
         "15": 4,
-        "16": 3,
+        "16": 4,
         "17": 4,
         "18": 5,
         "19": 5
@@ -3316,6 +5328,7 @@
     "1000077": {
       "id": 1000077,
       "name": "Monolith",
+      "villageType": "home",
       "category": "defense",
       "resource": "dark_elixir",
       "th_caps": {
@@ -3325,17 +5338,17 @@
         "4": 1,
         "5": 1,
         "6": 1,
-        "7": 2,
+        "7": 1,
         "8": 2,
         "9": 2,
         "10": 2,
-        "11": 3,
+        "11": 2,
         "12": 3,
         "13": 3,
         "14": 3,
-        "15": 4,
-        "16": 2,
-        "17": 3,
+        "15": 3,
+        "16": 3,
+        "17": 4,
         "18": 4,
         "19": 4
       },
@@ -3362,29 +5375,184 @@
         }
       }
     },
-    "1000084": {
-      "id": 1000084,
-      "name": "Multi-Archer Tower",
+    "1000078": {
+      "id": 1000078,
+      "name": "X-Bow (BB)",
+      "villageType": "builderBase",
       "category": "defense",
-      "resource": "gold",
+      "resource": "builder_gold",
       "th_caps": {
         "1": 0,
         "2": 0,
+        "3": 2,
+        "4": 2,
+        "5": 3,
+        "6": 3,
+        "7": 4,
+        "8": 4,
+        "9": 5,
+        "10": 5,
+        "11": 6,
+        "12": 6
+      },
+      "levels": {
+        "1": {
+          "cost": 135000,
+          "duration": 2376,
+          "resource": "builder_gold"
+        },
+        "2": {
+          "cost": 182250,
+          "duration": 3136,
+          "resource": "builder_gold"
+        },
+        "3": {
+          "cost": 246038,
+          "duration": 4140,
+          "resource": "builder_gold"
+        },
+        "4": {
+          "cost": 332151,
+          "duration": 5465,
+          "resource": "builder_gold"
+        },
+        "5": {
+          "cost": 448403,
+          "duration": 7213,
+          "resource": "builder_gold"
+        },
+        "6": {
+          "cost": 605345,
+          "duration": 9522,
+          "resource": "builder_gold"
+        }
+      }
+    },
+    "1000080": {
+      "id": 1000080,
+      "name": "B.O.B Control",
+      "villageType": "builderBase",
+      "category": "offense",
+      "resource": "builder_elixir",
+      "th_caps": {
+        "1": 1,
+        "2": 1,
+        "3": 1,
+        "4": 2,
+        "5": 2,
+        "6": 3,
+        "7": 3,
+        "8": 3,
+        "9": 4,
+        "10": 4,
+        "11": 5,
+        "12": 5
+      },
+      "levels": {
+        "1": {
+          "cost": 135000,
+          "duration": 2376,
+          "resource": "builder_elixir"
+        },
+        "2": {
+          "cost": 182250,
+          "duration": 3136,
+          "resource": "builder_elixir"
+        },
+        "3": {
+          "cost": 246038,
+          "duration": 4140,
+          "resource": "builder_elixir"
+        },
+        "4": {
+          "cost": 332151,
+          "duration": 5465,
+          "resource": "builder_elixir"
+        },
+        "5": {
+          "cost": 448403,
+          "duration": 7213,
+          "resource": "builder_elixir"
+        }
+      }
+    },
+    "1000082": {
+      "id": 1000082,
+      "name": "Reinforcement Camp",
+      "villageType": "builderBase",
+      "category": "offense",
+      "resource": "builder_elixir",
+      "th_caps": {
+        "1": 1,
+        "2": 1,
+        "3": 2,
+        "4": 2,
+        "5": 3,
+        "6": 3,
+        "7": 4,
+        "8": 4,
+        "9": 5,
+        "10": 5,
+        "11": 6,
+        "12": 6
+      },
+      "levels": {
+        "1": {
+          "cost": 135000,
+          "duration": 2376,
+          "resource": "builder_elixir"
+        },
+        "2": {
+          "cost": 182250,
+          "duration": 3136,
+          "resource": "builder_elixir"
+        },
+        "3": {
+          "cost": 246038,
+          "duration": 4140,
+          "resource": "builder_elixir"
+        },
+        "4": {
+          "cost": 332151,
+          "duration": 5465,
+          "resource": "builder_elixir"
+        },
+        "5": {
+          "cost": 448403,
+          "duration": 7213,
+          "resource": "builder_elixir"
+        },
+        "6": {
+          "cost": 605345,
+          "duration": 9522,
+          "resource": "builder_elixir"
+        }
+      }
+    },
+    "1000084": {
+      "id": 1000084,
+      "name": "Multi-Archer Tower",
+      "villageType": "home",
+      "category": "defense",
+      "resource": "gold",
+      "th_caps": {
+        "1": 1,
+        "2": 1,
         "3": 1,
         "4": 1,
         "5": 1,
         "6": 1,
         "7": 1,
         "8": 1,
-        "9": 2,
+        "9": 1,
         "10": 2,
         "11": 2,
         "12": 2,
         "13": 2,
         "14": 2,
-        "15": 3,
-        "16": 1,
-        "17": 2,
+        "15": 2,
+        "16": 3,
+        "17": 3,
         "18": 3,
         "19": 3
       },
@@ -3409,26 +5577,27 @@
     "1000085": {
       "id": 1000085,
       "name": "Ricochet Cannon",
+      "villageType": "home",
       "category": "defense",
       "resource": "gold",
       "th_caps": {
-        "1": 0,
-        "2": 0,
+        "1": 1,
+        "2": 1,
         "3": 1,
         "4": 1,
         "5": 1,
         "6": 1,
         "7": 1,
         "8": 1,
-        "9": 2,
+        "9": 1,
         "10": 2,
         "11": 2,
         "12": 2,
         "13": 2,
         "14": 2,
-        "15": 3,
-        "16": 1,
-        "17": 2,
+        "15": 2,
+        "16": 3,
+        "17": 3,
         "18": 3,
         "19": 3
       },
@@ -3453,6 +5622,7 @@
     "1000089": {
       "id": 1000089,
       "name": "Firespitter",
+      "villageType": "home",
       "category": "defense",
       "resource": "gold",
       "th_caps": {
@@ -3497,6 +5667,7 @@
     "1000093": {
       "id": 1000093,
       "name": "Supercharge Station",
+      "villageType": "home",
       "category": "defense",
       "resource": "gold",
       "th_caps": {
@@ -3512,11 +5683,11 @@
         "10": 1,
         "11": 1,
         "12": 1,
-        "13": 2,
-        "14": 2,
+        "13": 1,
+        "14": 1,
         "15": 2,
-        "16": 1,
-        "17": 1,
+        "16": 2,
+        "17": 2,
         "18": 2,
         "19": 2
       },
@@ -3536,6 +5707,7 @@
     "1000097": {
       "id": 1000097,
       "name": "Crafted Defense",
+      "villageType": "home",
       "category": "defense",
       "resource": "gold",
       "th_caps": {
@@ -3547,14 +5719,14 @@
         "6": 2,
         "7": 2,
         "8": 2,
-        "9": 3,
+        "9": 2,
         "10": 3,
         "11": 3,
-        "12": 4,
-        "13": 4,
+        "12": 3,
+        "13": 3,
         "14": 4,
         "15": 4,
-        "16": 3,
+        "16": 4,
         "17": 4,
         "18": 5,
         "19": 5
@@ -3590,6 +5762,7 @@
     "1000098": {
       "id": 1000098,
       "name": "Revenge Tower",
+      "villageType": "home",
       "category": "defense",
       "resource": "dark_elixir",
       "th_caps": {
@@ -3634,27 +5807,28 @@
     "4000000": {
       "id": 4000000,
       "name": "Barbarian",
+      "villageType": "home",
       "category": "lab",
       "resource": "elixir",
       "th_caps": {
         "1": 1,
-        "2": 2,
+        "2": 1,
         "3": 2,
         "4": 3,
-        "5": 4,
-        "6": 5,
+        "5": 3,
+        "6": 4,
         "7": 5,
-        "8": 6,
-        "9": 7,
-        "10": 8,
+        "8": 5,
+        "9": 6,
+        "10": 7,
         "11": 8,
-        "12": 9,
-        "13": 10,
-        "14": 11,
-        "15": 11,
+        "12": 8,
+        "13": 9,
+        "14": 10,
+        "15": 10,
         "16": 11,
         "17": 12,
-        "18": 13,
+        "18": 12,
         "19": 13
       },
       "levels": {
@@ -3728,27 +5902,28 @@
     "4000001": {
       "id": 4000001,
       "name": "Archer",
+      "villageType": "home",
       "category": "lab",
       "resource": "elixir",
       "th_caps": {
         "1": 1,
-        "2": 2,
+        "2": 1,
         "3": 2,
         "4": 3,
-        "5": 4,
-        "6": 5,
+        "5": 3,
+        "6": 4,
         "7": 5,
-        "8": 6,
-        "9": 7,
-        "10": 8,
+        "8": 5,
+        "9": 6,
+        "10": 7,
         "11": 8,
-        "12": 9,
-        "13": 10,
-        "14": 11,
-        "15": 11,
+        "12": 8,
+        "13": 9,
+        "14": 10,
+        "15": 10,
         "16": 11,
         "17": 12,
-        "18": 13,
+        "18": 12,
         "19": 13
       },
       "levels": {
@@ -3822,6 +5997,7 @@
     "4000002": {
       "id": 4000002,
       "name": "Goblin",
+      "villageType": "home",
       "category": "lab",
       "resource": "elixir",
       "th_caps": {
@@ -3829,20 +6005,20 @@
         "2": 1,
         "3": 2,
         "4": 3,
-        "5": 4,
+        "5": 3,
         "6": 4,
-        "7": 5,
-        "8": 6,
+        "7": 4,
+        "8": 5,
         "9": 6,
-        "10": 7,
-        "11": 8,
+        "10": 6,
+        "11": 7,
         "12": 8,
-        "13": 9,
-        "14": 10,
-        "15": 11,
+        "13": 8,
+        "14": 9,
+        "15": 9,
         "16": 10,
         "17": 11,
-        "18": 12,
+        "18": 11,
         "19": 12
       },
       "levels": {
@@ -3911,27 +6087,28 @@
     "4000003": {
       "id": 4000003,
       "name": "Giant",
+      "villageType": "home",
       "category": "lab",
       "resource": "elixir",
       "th_caps": {
         "1": 1,
-        "2": 2,
+        "2": 1,
         "3": 2,
         "4": 3,
-        "5": 4,
-        "6": 5,
+        "5": 3,
+        "6": 4,
         "7": 5,
-        "8": 6,
-        "9": 7,
-        "10": 8,
+        "8": 5,
+        "9": 6,
+        "10": 7,
         "11": 8,
-        "12": 9,
-        "13": 10,
-        "14": 11,
-        "15": 11,
+        "12": 8,
+        "13": 9,
+        "14": 10,
+        "15": 10,
         "16": 11,
         "17": 12,
-        "18": 13,
+        "18": 12,
         "19": 13
       },
       "levels": {
@@ -4005,6 +6182,7 @@
     "4000004": {
       "id": 4000004,
       "name": "Wall Breaker",
+      "villageType": "home",
       "category": "lab",
       "resource": "elixir",
       "th_caps": {
@@ -4012,20 +6190,20 @@
         "2": 1,
         "3": 2,
         "4": 3,
-        "5": 4,
+        "5": 3,
         "6": 4,
-        "7": 5,
-        "8": 6,
+        "7": 4,
+        "8": 5,
         "9": 6,
-        "10": 7,
-        "11": 8,
+        "10": 6,
+        "11": 7,
         "12": 8,
-        "13": 9,
-        "14": 10,
-        "15": 11,
+        "13": 8,
+        "14": 9,
+        "15": 9,
         "16": 10,
         "17": 11,
-        "18": 12,
+        "18": 11,
         "19": 12
       },
       "levels": {
@@ -4094,27 +6272,28 @@
     "4000005": {
       "id": 4000005,
       "name": "Balloon",
+      "villageType": "home",
       "category": "lab",
       "resource": "elixir",
       "th_caps": {
         "1": 1,
-        "2": 2,
+        "2": 1,
         "3": 2,
         "4": 3,
-        "5": 4,
-        "6": 5,
+        "5": 3,
+        "6": 4,
         "7": 5,
-        "8": 6,
-        "9": 7,
-        "10": 8,
+        "8": 5,
+        "9": 6,
+        "10": 7,
         "11": 8,
-        "12": 9,
-        "13": 10,
-        "14": 11,
-        "15": 11,
+        "12": 8,
+        "13": 9,
+        "14": 10,
+        "15": 10,
         "16": 11,
         "17": 12,
-        "18": 13,
+        "18": 12,
         "19": 13
       },
       "levels": {
@@ -4188,27 +6367,28 @@
     "4000006": {
       "id": 4000006,
       "name": "Wizard",
+      "villageType": "home",
       "category": "lab",
       "resource": "elixir",
       "th_caps": {
         "1": 1,
-        "2": 2,
+        "2": 1,
         "3": 2,
         "4": 3,
-        "5": 4,
-        "6": 5,
+        "5": 3,
+        "6": 4,
         "7": 5,
-        "8": 6,
-        "9": 7,
-        "10": 8,
+        "8": 5,
+        "9": 6,
+        "10": 7,
         "11": 8,
-        "12": 9,
-        "13": 10,
-        "14": 11,
-        "15": 11,
+        "12": 8,
+        "13": 9,
+        "14": 10,
+        "15": 10,
         "16": 11,
         "17": 12,
-        "18": 13,
+        "18": 12,
         "19": 13
       },
       "levels": {
@@ -4282,6 +6462,7 @@
     "4000007": {
       "id": 4000007,
       "name": "Healer",
+      "villageType": "home",
       "category": "lab",
       "resource": "elixir",
       "th_caps": {
@@ -4290,19 +6471,19 @@
         "3": 2,
         "4": 2,
         "5": 3,
-        "6": 4,
+        "6": 3,
         "7": 4,
-        "8": 5,
+        "8": 4,
         "9": 5,
-        "10": 6,
+        "10": 5,
         "11": 6,
-        "12": 7,
-        "13": 8,
-        "14": 8,
-        "15": 9,
+        "12": 6,
+        "13": 7,
+        "14": 7,
+        "15": 8,
         "16": 8,
         "17": 9,
-        "18": 10,
+        "18": 9,
         "19": 10
       },
       "levels": {
@@ -4361,27 +6542,28 @@
     "4000008": {
       "id": 4000008,
       "name": "Dragon",
+      "villageType": "home",
       "category": "lab",
       "resource": "elixir",
       "th_caps": {
         "1": 1,
-        "2": 2,
+        "2": 1,
         "3": 2,
         "4": 3,
-        "5": 4,
-        "6": 5,
+        "5": 3,
+        "6": 4,
         "7": 5,
-        "8": 6,
-        "9": 7,
-        "10": 8,
+        "8": 5,
+        "9": 6,
+        "10": 7,
         "11": 8,
-        "12": 9,
-        "13": 10,
-        "14": 11,
-        "15": 11,
+        "12": 8,
+        "13": 9,
+        "14": 10,
+        "15": 10,
         "16": 11,
         "17": 12,
-        "18": 13,
+        "18": 12,
         "19": 13
       },
       "levels": {
@@ -4455,6 +6637,7 @@
     "4000009": {
       "id": 4000009,
       "name": "P.E.K.K.A",
+      "villageType": "home",
       "category": "lab",
       "resource": "elixir",
       "th_caps": {
@@ -4462,20 +6645,20 @@
         "2": 1,
         "3": 2,
         "4": 3,
-        "5": 4,
+        "5": 3,
         "6": 4,
-        "7": 5,
-        "8": 6,
+        "7": 4,
+        "8": 5,
         "9": 6,
-        "10": 7,
-        "11": 8,
+        "10": 6,
+        "11": 7,
         "12": 8,
-        "13": 9,
-        "14": 10,
-        "15": 11,
+        "13": 8,
+        "14": 9,
+        "15": 9,
         "16": 10,
         "17": 11,
-        "18": 12,
+        "18": 11,
         "19": 12
       },
       "levels": {
@@ -4544,6 +6727,7 @@
     "4000010": {
       "id": 4000010,
       "name": "Minion",
+      "villageType": "home",
       "category": "lab",
       "resource": "dark_elixir",
       "th_caps": {
@@ -4551,20 +6735,20 @@
         "2": 1,
         "3": 2,
         "4": 3,
-        "5": 4,
+        "5": 3,
         "6": 4,
-        "7": 5,
-        "8": 6,
+        "7": 4,
+        "8": 5,
         "9": 6,
-        "10": 7,
-        "11": 8,
+        "10": 6,
+        "11": 7,
         "12": 8,
-        "13": 9,
-        "14": 10,
-        "15": 11,
+        "13": 8,
+        "14": 9,
+        "15": 9,
         "16": 10,
         "17": 11,
-        "18": 12,
+        "18": 11,
         "19": 12
       },
       "levels": {
@@ -4633,27 +6817,28 @@
     "4000011": {
       "id": 4000011,
       "name": "Hog Rider",
+      "villageType": "home",
       "category": "lab",
       "resource": "dark_elixir",
       "th_caps": {
         "1": 1,
-        "2": 2,
+        "2": 1,
         "3": 2,
         "4": 3,
-        "5": 4,
-        "6": 5,
+        "5": 3,
+        "6": 4,
         "7": 5,
-        "8": 6,
-        "9": 7,
-        "10": 8,
+        "8": 5,
+        "9": 6,
+        "10": 7,
         "11": 8,
-        "12": 9,
-        "13": 10,
-        "14": 11,
-        "15": 11,
+        "12": 8,
+        "13": 9,
+        "14": 10,
+        "15": 10,
         "16": 11,
         "17": 12,
-        "18": 13,
+        "18": 12,
         "19": 13
       },
       "levels": {
@@ -4727,6 +6912,7 @@
     "4000012": {
       "id": 4000012,
       "name": "Valkyrie",
+      "villageType": "home",
       "category": "lab",
       "resource": "dark_elixir",
       "th_caps": {
@@ -4734,20 +6920,20 @@
         "2": 1,
         "3": 2,
         "4": 3,
-        "5": 4,
+        "5": 3,
         "6": 4,
-        "7": 5,
-        "8": 6,
+        "7": 4,
+        "8": 5,
         "9": 6,
-        "10": 7,
-        "11": 8,
+        "10": 6,
+        "11": 7,
         "12": 8,
-        "13": 9,
-        "14": 10,
-        "15": 11,
+        "13": 8,
+        "14": 9,
+        "15": 9,
         "16": 10,
         "17": 11,
-        "18": 12,
+        "18": 11,
         "19": 12
       },
       "levels": {
@@ -4816,27 +7002,28 @@
     "4000013": {
       "id": 4000013,
       "name": "Golem",
+      "villageType": "home",
       "category": "lab",
       "resource": "dark_elixir",
       "th_caps": {
         "1": 1,
-        "2": 2,
+        "2": 1,
         "3": 2,
         "4": 3,
-        "5": 4,
-        "6": 5,
+        "5": 3,
+        "6": 4,
         "7": 5,
-        "8": 6,
-        "9": 7,
-        "10": 8,
+        "8": 5,
+        "9": 6,
+        "10": 7,
         "11": 8,
-        "12": 9,
-        "13": 10,
-        "14": 11,
-        "15": 11,
+        "12": 8,
+        "13": 9,
+        "14": 10,
+        "15": 10,
         "16": 11,
         "17": 12,
-        "18": 13,
+        "18": 12,
         "19": 13
       },
       "levels": {
@@ -4910,6 +7097,7 @@
     "4000015": {
       "id": 4000015,
       "name": "Witch",
+      "villageType": "home",
       "category": "lab",
       "resource": "dark_elixir",
       "th_caps": {
@@ -4920,15 +7108,15 @@
         "5": 2,
         "6": 3,
         "7": 3,
-        "8": 4,
+        "8": 3,
         "9": 4,
-        "10": 5,
+        "10": 4,
         "11": 5,
-        "12": 6,
-        "13": 6,
-        "14": 7,
-        "15": 7,
-        "16": 6,
+        "12": 5,
+        "13": 5,
+        "14": 6,
+        "15": 6,
+        "16": 7,
         "17": 7,
         "18": 8,
         "19": 8
@@ -4979,6 +7167,7 @@
     "4000017": {
       "id": 4000017,
       "name": "Lava Hound",
+      "villageType": "home",
       "category": "lab",
       "resource": "dark_elixir",
       "th_caps": {
@@ -4989,15 +7178,15 @@
         "5": 2,
         "6": 3,
         "7": 3,
-        "8": 4,
+        "8": 3,
         "9": 4,
-        "10": 5,
+        "10": 4,
         "11": 5,
-        "12": 6,
-        "13": 6,
-        "14": 7,
-        "15": 7,
-        "16": 6,
+        "12": 5,
+        "13": 5,
+        "14": 6,
+        "15": 6,
+        "16": 7,
         "17": 7,
         "18": 8,
         "19": 8
@@ -5048,6 +7237,7 @@
     "4000022": {
       "id": 4000022,
       "name": "Bowler",
+      "villageType": "home",
       "category": "lab",
       "resource": "dark_elixir",
       "th_caps": {
@@ -5058,15 +7248,15 @@
         "5": 2,
         "6": 3,
         "7": 3,
-        "8": 4,
+        "8": 3,
         "9": 4,
-        "10": 5,
+        "10": 4,
         "11": 5,
-        "12": 6,
-        "13": 6,
-        "14": 7,
-        "15": 7,
-        "16": 6,
+        "12": 5,
+        "13": 5,
+        "14": 6,
+        "15": 6,
+        "16": 7,
         "17": 7,
         "18": 8,
         "19": 8
@@ -5117,6 +7307,7 @@
     "4000023": {
       "id": 4000023,
       "name": "Baby Dragon",
+      "villageType": "home",
       "category": "lab",
       "resource": "elixir",
       "th_caps": {
@@ -5125,19 +7316,19 @@
         "3": 2,
         "4": 2,
         "5": 3,
-        "6": 4,
+        "6": 3,
         "7": 4,
-        "8": 5,
+        "8": 4,
         "9": 5,
-        "10": 6,
+        "10": 5,
         "11": 6,
-        "12": 7,
-        "13": 8,
-        "14": 8,
-        "15": 9,
+        "12": 6,
+        "13": 7,
+        "14": 7,
+        "15": 8,
         "16": 8,
         "17": 9,
-        "18": 10,
+        "18": 9,
         "19": 10
       },
       "levels": {
@@ -5196,27 +7387,28 @@
     "4000024": {
       "id": 4000024,
       "name": "Miner",
+      "villageType": "home",
       "category": "lab",
       "resource": "elixir",
       "th_caps": {
         "1": 1,
         "2": 1,
         "3": 2,
-        "4": 3,
+        "4": 2,
         "5": 3,
-        "6": 4,
-        "7": 5,
+        "6": 3,
+        "7": 4,
         "8": 5,
-        "9": 6,
+        "9": 5,
         "10": 6,
-        "11": 7,
-        "12": 8,
+        "11": 6,
+        "12": 7,
         "13": 8,
-        "14": 9,
-        "15": 10,
+        "14": 8,
+        "15": 9,
         "16": 9,
         "17": 10,
-        "18": 11,
+        "18": 10,
         "19": 11
       },
       "levels": {
@@ -5277,9 +7469,1240 @@
         }
       }
     },
+    "4000031": {
+      "id": 4000031,
+      "name": "Raged Barbarian",
+      "villageType": "builderBase",
+      "category": "lab",
+      "resource": "builder_elixir",
+      "th_caps": {
+        "1": 2,
+        "2": 3,
+        "3": 5,
+        "4": 7,
+        "5": 8,
+        "6": 10,
+        "7": 12,
+        "8": 13,
+        "9": 15,
+        "10": 17,
+        "11": 18,
+        "12": 20
+      },
+      "levels": {
+        "1": {
+          "cost": 135000,
+          "duration": 2376,
+          "resource": "builder_elixir"
+        },
+        "2": {
+          "cost": 182250,
+          "duration": 3136,
+          "resource": "builder_elixir"
+        },
+        "3": {
+          "cost": 246038,
+          "duration": 4140,
+          "resource": "builder_elixir"
+        },
+        "4": {
+          "cost": 332151,
+          "duration": 5465,
+          "resource": "builder_elixir"
+        },
+        "5": {
+          "cost": 448403,
+          "duration": 7213,
+          "resource": "builder_elixir"
+        },
+        "6": {
+          "cost": 605345,
+          "duration": 9522,
+          "resource": "builder_elixir"
+        },
+        "7": {
+          "cost": 817215,
+          "duration": 12569,
+          "resource": "builder_elixir"
+        },
+        "8": {
+          "cost": 1103240,
+          "duration": 16591,
+          "resource": "builder_elixir"
+        },
+        "9": {
+          "cost": 1489375,
+          "duration": 21900,
+          "resource": "builder_elixir"
+        },
+        "10": {
+          "cost": 2010656,
+          "duration": 28908,
+          "resource": "builder_elixir"
+        },
+        "11": {
+          "cost": 2714385,
+          "duration": 38158,
+          "resource": "builder_elixir"
+        },
+        "12": {
+          "cost": 3664420,
+          "duration": 50369,
+          "resource": "builder_elixir"
+        },
+        "13": {
+          "cost": 4946967,
+          "duration": 66487,
+          "resource": "builder_elixir"
+        },
+        "14": {
+          "cost": 6678405,
+          "duration": 87762,
+          "resource": "builder_elixir"
+        },
+        "15": {
+          "cost": 9015847,
+          "duration": 115846,
+          "resource": "builder_elixir"
+        },
+        "16": {
+          "cost": 12171393,
+          "duration": 152917,
+          "resource": "builder_elixir"
+        },
+        "17": {
+          "cost": 16431381,
+          "duration": 201850,
+          "resource": "builder_elixir"
+        },
+        "18": {
+          "cost": 22000000,
+          "duration": 266442,
+          "resource": "builder_elixir"
+        },
+        "19": {
+          "cost": 22000000,
+          "duration": 351704,
+          "resource": "builder_elixir"
+        },
+        "20": {
+          "cost": 22000000,
+          "duration": 464249,
+          "resource": "builder_elixir"
+        }
+      }
+    },
+    "4000032": {
+      "id": 4000032,
+      "name": "Sneaky Archer",
+      "villageType": "builderBase",
+      "category": "lab",
+      "resource": "builder_elixir",
+      "th_caps": {
+        "1": 2,
+        "2": 3,
+        "3": 5,
+        "4": 7,
+        "5": 8,
+        "6": 10,
+        "7": 12,
+        "8": 13,
+        "9": 15,
+        "10": 17,
+        "11": 18,
+        "12": 20
+      },
+      "levels": {
+        "1": {
+          "cost": 135000,
+          "duration": 2376,
+          "resource": "builder_elixir"
+        },
+        "2": {
+          "cost": 182250,
+          "duration": 3136,
+          "resource": "builder_elixir"
+        },
+        "3": {
+          "cost": 246038,
+          "duration": 4140,
+          "resource": "builder_elixir"
+        },
+        "4": {
+          "cost": 332151,
+          "duration": 5465,
+          "resource": "builder_elixir"
+        },
+        "5": {
+          "cost": 448403,
+          "duration": 7213,
+          "resource": "builder_elixir"
+        },
+        "6": {
+          "cost": 605345,
+          "duration": 9522,
+          "resource": "builder_elixir"
+        },
+        "7": {
+          "cost": 817215,
+          "duration": 12569,
+          "resource": "builder_elixir"
+        },
+        "8": {
+          "cost": 1103240,
+          "duration": 16591,
+          "resource": "builder_elixir"
+        },
+        "9": {
+          "cost": 1489375,
+          "duration": 21900,
+          "resource": "builder_elixir"
+        },
+        "10": {
+          "cost": 2010656,
+          "duration": 28908,
+          "resource": "builder_elixir"
+        },
+        "11": {
+          "cost": 2714385,
+          "duration": 38158,
+          "resource": "builder_elixir"
+        },
+        "12": {
+          "cost": 3664420,
+          "duration": 50369,
+          "resource": "builder_elixir"
+        },
+        "13": {
+          "cost": 4946967,
+          "duration": 66487,
+          "resource": "builder_elixir"
+        },
+        "14": {
+          "cost": 6678405,
+          "duration": 87762,
+          "resource": "builder_elixir"
+        },
+        "15": {
+          "cost": 9015847,
+          "duration": 115846,
+          "resource": "builder_elixir"
+        },
+        "16": {
+          "cost": 12171393,
+          "duration": 152917,
+          "resource": "builder_elixir"
+        },
+        "17": {
+          "cost": 16431381,
+          "duration": 201850,
+          "resource": "builder_elixir"
+        },
+        "18": {
+          "cost": 22000000,
+          "duration": 266442,
+          "resource": "builder_elixir"
+        },
+        "19": {
+          "cost": 22000000,
+          "duration": 351704,
+          "resource": "builder_elixir"
+        },
+        "20": {
+          "cost": 22000000,
+          "duration": 464249,
+          "resource": "builder_elixir"
+        }
+      }
+    },
+    "4000033": {
+      "id": 4000033,
+      "name": "Boxer Giant",
+      "villageType": "builderBase",
+      "category": "lab",
+      "resource": "builder_elixir",
+      "th_caps": {
+        "1": 2,
+        "2": 3,
+        "3": 5,
+        "4": 7,
+        "5": 8,
+        "6": 10,
+        "7": 12,
+        "8": 13,
+        "9": 15,
+        "10": 17,
+        "11": 18,
+        "12": 20
+      },
+      "levels": {
+        "1": {
+          "cost": 135000,
+          "duration": 2376,
+          "resource": "builder_elixir"
+        },
+        "2": {
+          "cost": 182250,
+          "duration": 3136,
+          "resource": "builder_elixir"
+        },
+        "3": {
+          "cost": 246038,
+          "duration": 4140,
+          "resource": "builder_elixir"
+        },
+        "4": {
+          "cost": 332151,
+          "duration": 5465,
+          "resource": "builder_elixir"
+        },
+        "5": {
+          "cost": 448403,
+          "duration": 7213,
+          "resource": "builder_elixir"
+        },
+        "6": {
+          "cost": 605345,
+          "duration": 9522,
+          "resource": "builder_elixir"
+        },
+        "7": {
+          "cost": 817215,
+          "duration": 12569,
+          "resource": "builder_elixir"
+        },
+        "8": {
+          "cost": 1103240,
+          "duration": 16591,
+          "resource": "builder_elixir"
+        },
+        "9": {
+          "cost": 1489375,
+          "duration": 21900,
+          "resource": "builder_elixir"
+        },
+        "10": {
+          "cost": 2010656,
+          "duration": 28908,
+          "resource": "builder_elixir"
+        },
+        "11": {
+          "cost": 2714385,
+          "duration": 38158,
+          "resource": "builder_elixir"
+        },
+        "12": {
+          "cost": 3664420,
+          "duration": 50369,
+          "resource": "builder_elixir"
+        },
+        "13": {
+          "cost": 4946967,
+          "duration": 66487,
+          "resource": "builder_elixir"
+        },
+        "14": {
+          "cost": 6678405,
+          "duration": 87762,
+          "resource": "builder_elixir"
+        },
+        "15": {
+          "cost": 9015847,
+          "duration": 115846,
+          "resource": "builder_elixir"
+        },
+        "16": {
+          "cost": 12171393,
+          "duration": 152917,
+          "resource": "builder_elixir"
+        },
+        "17": {
+          "cost": 16431381,
+          "duration": 201850,
+          "resource": "builder_elixir"
+        },
+        "18": {
+          "cost": 22000000,
+          "duration": 266442,
+          "resource": "builder_elixir"
+        },
+        "19": {
+          "cost": 22000000,
+          "duration": 351704,
+          "resource": "builder_elixir"
+        },
+        "20": {
+          "cost": 22000000,
+          "duration": 464249,
+          "resource": "builder_elixir"
+        }
+      }
+    },
+    "4000034": {
+      "id": 4000034,
+      "name": "Beta Minion",
+      "villageType": "builderBase",
+      "category": "lab",
+      "resource": "builder_elixir",
+      "th_caps": {
+        "1": 2,
+        "2": 3,
+        "3": 5,
+        "4": 7,
+        "5": 8,
+        "6": 10,
+        "7": 12,
+        "8": 13,
+        "9": 15,
+        "10": 17,
+        "11": 18,
+        "12": 20
+      },
+      "levels": {
+        "1": {
+          "cost": 135000,
+          "duration": 2376,
+          "resource": "builder_elixir"
+        },
+        "2": {
+          "cost": 182250,
+          "duration": 3136,
+          "resource": "builder_elixir"
+        },
+        "3": {
+          "cost": 246038,
+          "duration": 4140,
+          "resource": "builder_elixir"
+        },
+        "4": {
+          "cost": 332151,
+          "duration": 5465,
+          "resource": "builder_elixir"
+        },
+        "5": {
+          "cost": 448403,
+          "duration": 7213,
+          "resource": "builder_elixir"
+        },
+        "6": {
+          "cost": 605345,
+          "duration": 9522,
+          "resource": "builder_elixir"
+        },
+        "7": {
+          "cost": 817215,
+          "duration": 12569,
+          "resource": "builder_elixir"
+        },
+        "8": {
+          "cost": 1103240,
+          "duration": 16591,
+          "resource": "builder_elixir"
+        },
+        "9": {
+          "cost": 1489375,
+          "duration": 21900,
+          "resource": "builder_elixir"
+        },
+        "10": {
+          "cost": 2010656,
+          "duration": 28908,
+          "resource": "builder_elixir"
+        },
+        "11": {
+          "cost": 2714385,
+          "duration": 38158,
+          "resource": "builder_elixir"
+        },
+        "12": {
+          "cost": 3664420,
+          "duration": 50369,
+          "resource": "builder_elixir"
+        },
+        "13": {
+          "cost": 4946967,
+          "duration": 66487,
+          "resource": "builder_elixir"
+        },
+        "14": {
+          "cost": 6678405,
+          "duration": 87762,
+          "resource": "builder_elixir"
+        },
+        "15": {
+          "cost": 9015847,
+          "duration": 115846,
+          "resource": "builder_elixir"
+        },
+        "16": {
+          "cost": 12171393,
+          "duration": 152917,
+          "resource": "builder_elixir"
+        },
+        "17": {
+          "cost": 16431381,
+          "duration": 201850,
+          "resource": "builder_elixir"
+        },
+        "18": {
+          "cost": 22000000,
+          "duration": 266442,
+          "resource": "builder_elixir"
+        },
+        "19": {
+          "cost": 22000000,
+          "duration": 351704,
+          "resource": "builder_elixir"
+        },
+        "20": {
+          "cost": 22000000,
+          "duration": 464249,
+          "resource": "builder_elixir"
+        }
+      }
+    },
+    "4000035": {
+      "id": 4000035,
+      "name": "Bomber",
+      "villageType": "builderBase",
+      "category": "lab",
+      "resource": "builder_elixir",
+      "th_caps": {
+        "1": 2,
+        "2": 3,
+        "3": 5,
+        "4": 7,
+        "5": 8,
+        "6": 10,
+        "7": 12,
+        "8": 13,
+        "9": 15,
+        "10": 17,
+        "11": 18,
+        "12": 20
+      },
+      "levels": {
+        "1": {
+          "cost": 135000,
+          "duration": 2376,
+          "resource": "builder_elixir"
+        },
+        "2": {
+          "cost": 182250,
+          "duration": 3136,
+          "resource": "builder_elixir"
+        },
+        "3": {
+          "cost": 246038,
+          "duration": 4140,
+          "resource": "builder_elixir"
+        },
+        "4": {
+          "cost": 332151,
+          "duration": 5465,
+          "resource": "builder_elixir"
+        },
+        "5": {
+          "cost": 448403,
+          "duration": 7213,
+          "resource": "builder_elixir"
+        },
+        "6": {
+          "cost": 605345,
+          "duration": 9522,
+          "resource": "builder_elixir"
+        },
+        "7": {
+          "cost": 817215,
+          "duration": 12569,
+          "resource": "builder_elixir"
+        },
+        "8": {
+          "cost": 1103240,
+          "duration": 16591,
+          "resource": "builder_elixir"
+        },
+        "9": {
+          "cost": 1489375,
+          "duration": 21900,
+          "resource": "builder_elixir"
+        },
+        "10": {
+          "cost": 2010656,
+          "duration": 28908,
+          "resource": "builder_elixir"
+        },
+        "11": {
+          "cost": 2714385,
+          "duration": 38158,
+          "resource": "builder_elixir"
+        },
+        "12": {
+          "cost": 3664420,
+          "duration": 50369,
+          "resource": "builder_elixir"
+        },
+        "13": {
+          "cost": 4946967,
+          "duration": 66487,
+          "resource": "builder_elixir"
+        },
+        "14": {
+          "cost": 6678405,
+          "duration": 87762,
+          "resource": "builder_elixir"
+        },
+        "15": {
+          "cost": 9015847,
+          "duration": 115846,
+          "resource": "builder_elixir"
+        },
+        "16": {
+          "cost": 12171393,
+          "duration": 152917,
+          "resource": "builder_elixir"
+        },
+        "17": {
+          "cost": 16431381,
+          "duration": 201850,
+          "resource": "builder_elixir"
+        },
+        "18": {
+          "cost": 22000000,
+          "duration": 266442,
+          "resource": "builder_elixir"
+        },
+        "19": {
+          "cost": 22000000,
+          "duration": 351704,
+          "resource": "builder_elixir"
+        },
+        "20": {
+          "cost": 22000000,
+          "duration": 464249,
+          "resource": "builder_elixir"
+        }
+      }
+    },
+    "4000036": {
+      "id": 4000036,
+      "name": "Baby Dragon (BB)",
+      "villageType": "builderBase",
+      "category": "lab",
+      "resource": "builder_elixir",
+      "th_caps": {
+        "1": 2,
+        "2": 3,
+        "3": 5,
+        "4": 7,
+        "5": 8,
+        "6": 10,
+        "7": 12,
+        "8": 13,
+        "9": 15,
+        "10": 17,
+        "11": 18,
+        "12": 20
+      },
+      "levels": {
+        "1": {
+          "cost": 135000,
+          "duration": 2376,
+          "resource": "builder_elixir"
+        },
+        "2": {
+          "cost": 182250,
+          "duration": 3136,
+          "resource": "builder_elixir"
+        },
+        "3": {
+          "cost": 246038,
+          "duration": 4140,
+          "resource": "builder_elixir"
+        },
+        "4": {
+          "cost": 332151,
+          "duration": 5465,
+          "resource": "builder_elixir"
+        },
+        "5": {
+          "cost": 448403,
+          "duration": 7213,
+          "resource": "builder_elixir"
+        },
+        "6": {
+          "cost": 605345,
+          "duration": 9522,
+          "resource": "builder_elixir"
+        },
+        "7": {
+          "cost": 817215,
+          "duration": 12569,
+          "resource": "builder_elixir"
+        },
+        "8": {
+          "cost": 1103240,
+          "duration": 16591,
+          "resource": "builder_elixir"
+        },
+        "9": {
+          "cost": 1489375,
+          "duration": 21900,
+          "resource": "builder_elixir"
+        },
+        "10": {
+          "cost": 2010656,
+          "duration": 28908,
+          "resource": "builder_elixir"
+        },
+        "11": {
+          "cost": 2714385,
+          "duration": 38158,
+          "resource": "builder_elixir"
+        },
+        "12": {
+          "cost": 3664420,
+          "duration": 50369,
+          "resource": "builder_elixir"
+        },
+        "13": {
+          "cost": 4946967,
+          "duration": 66487,
+          "resource": "builder_elixir"
+        },
+        "14": {
+          "cost": 6678405,
+          "duration": 87762,
+          "resource": "builder_elixir"
+        },
+        "15": {
+          "cost": 9015847,
+          "duration": 115846,
+          "resource": "builder_elixir"
+        },
+        "16": {
+          "cost": 12171393,
+          "duration": 152917,
+          "resource": "builder_elixir"
+        },
+        "17": {
+          "cost": 16431381,
+          "duration": 201850,
+          "resource": "builder_elixir"
+        },
+        "18": {
+          "cost": 22000000,
+          "duration": 266442,
+          "resource": "builder_elixir"
+        },
+        "19": {
+          "cost": 22000000,
+          "duration": 351704,
+          "resource": "builder_elixir"
+        },
+        "20": {
+          "cost": 22000000,
+          "duration": 464249,
+          "resource": "builder_elixir"
+        }
+      }
+    },
+    "4000037": {
+      "id": 4000037,
+      "name": "Cannon Cart",
+      "villageType": "builderBase",
+      "category": "lab",
+      "resource": "builder_elixir",
+      "th_caps": {
+        "1": 2,
+        "2": 3,
+        "3": 5,
+        "4": 7,
+        "5": 8,
+        "6": 10,
+        "7": 12,
+        "8": 13,
+        "9": 15,
+        "10": 17,
+        "11": 18,
+        "12": 20
+      },
+      "levels": {
+        "1": {
+          "cost": 135000,
+          "duration": 2376,
+          "resource": "builder_elixir"
+        },
+        "2": {
+          "cost": 182250,
+          "duration": 3136,
+          "resource": "builder_elixir"
+        },
+        "3": {
+          "cost": 246038,
+          "duration": 4140,
+          "resource": "builder_elixir"
+        },
+        "4": {
+          "cost": 332151,
+          "duration": 5465,
+          "resource": "builder_elixir"
+        },
+        "5": {
+          "cost": 448403,
+          "duration": 7213,
+          "resource": "builder_elixir"
+        },
+        "6": {
+          "cost": 605345,
+          "duration": 9522,
+          "resource": "builder_elixir"
+        },
+        "7": {
+          "cost": 817215,
+          "duration": 12569,
+          "resource": "builder_elixir"
+        },
+        "8": {
+          "cost": 1103240,
+          "duration": 16591,
+          "resource": "builder_elixir"
+        },
+        "9": {
+          "cost": 1489375,
+          "duration": 21900,
+          "resource": "builder_elixir"
+        },
+        "10": {
+          "cost": 2010656,
+          "duration": 28908,
+          "resource": "builder_elixir"
+        },
+        "11": {
+          "cost": 2714385,
+          "duration": 38158,
+          "resource": "builder_elixir"
+        },
+        "12": {
+          "cost": 3664420,
+          "duration": 50369,
+          "resource": "builder_elixir"
+        },
+        "13": {
+          "cost": 4946967,
+          "duration": 66487,
+          "resource": "builder_elixir"
+        },
+        "14": {
+          "cost": 6678405,
+          "duration": 87762,
+          "resource": "builder_elixir"
+        },
+        "15": {
+          "cost": 9015847,
+          "duration": 115846,
+          "resource": "builder_elixir"
+        },
+        "16": {
+          "cost": 12171393,
+          "duration": 152917,
+          "resource": "builder_elixir"
+        },
+        "17": {
+          "cost": 16431381,
+          "duration": 201850,
+          "resource": "builder_elixir"
+        },
+        "18": {
+          "cost": 22000000,
+          "duration": 266442,
+          "resource": "builder_elixir"
+        },
+        "19": {
+          "cost": 22000000,
+          "duration": 351704,
+          "resource": "builder_elixir"
+        },
+        "20": {
+          "cost": 22000000,
+          "duration": 464249,
+          "resource": "builder_elixir"
+        }
+      }
+    },
+    "4000038": {
+      "id": 4000038,
+      "name": "Night Witch",
+      "villageType": "builderBase",
+      "category": "lab",
+      "resource": "builder_elixir",
+      "th_caps": {
+        "1": 2,
+        "2": 3,
+        "3": 5,
+        "4": 7,
+        "5": 8,
+        "6": 10,
+        "7": 12,
+        "8": 13,
+        "9": 15,
+        "10": 17,
+        "11": 18,
+        "12": 20
+      },
+      "levels": {
+        "1": {
+          "cost": 135000,
+          "duration": 2376,
+          "resource": "builder_elixir"
+        },
+        "2": {
+          "cost": 182250,
+          "duration": 3136,
+          "resource": "builder_elixir"
+        },
+        "3": {
+          "cost": 246038,
+          "duration": 4140,
+          "resource": "builder_elixir"
+        },
+        "4": {
+          "cost": 332151,
+          "duration": 5465,
+          "resource": "builder_elixir"
+        },
+        "5": {
+          "cost": 448403,
+          "duration": 7213,
+          "resource": "builder_elixir"
+        },
+        "6": {
+          "cost": 605345,
+          "duration": 9522,
+          "resource": "builder_elixir"
+        },
+        "7": {
+          "cost": 817215,
+          "duration": 12569,
+          "resource": "builder_elixir"
+        },
+        "8": {
+          "cost": 1103240,
+          "duration": 16591,
+          "resource": "builder_elixir"
+        },
+        "9": {
+          "cost": 1489375,
+          "duration": 21900,
+          "resource": "builder_elixir"
+        },
+        "10": {
+          "cost": 2010656,
+          "duration": 28908,
+          "resource": "builder_elixir"
+        },
+        "11": {
+          "cost": 2714385,
+          "duration": 38158,
+          "resource": "builder_elixir"
+        },
+        "12": {
+          "cost": 3664420,
+          "duration": 50369,
+          "resource": "builder_elixir"
+        },
+        "13": {
+          "cost": 4946967,
+          "duration": 66487,
+          "resource": "builder_elixir"
+        },
+        "14": {
+          "cost": 6678405,
+          "duration": 87762,
+          "resource": "builder_elixir"
+        },
+        "15": {
+          "cost": 9015847,
+          "duration": 115846,
+          "resource": "builder_elixir"
+        },
+        "16": {
+          "cost": 12171393,
+          "duration": 152917,
+          "resource": "builder_elixir"
+        },
+        "17": {
+          "cost": 16431381,
+          "duration": 201850,
+          "resource": "builder_elixir"
+        },
+        "18": {
+          "cost": 22000000,
+          "duration": 266442,
+          "resource": "builder_elixir"
+        },
+        "19": {
+          "cost": 22000000,
+          "duration": 351704,
+          "resource": "builder_elixir"
+        },
+        "20": {
+          "cost": 22000000,
+          "duration": 464249,
+          "resource": "builder_elixir"
+        }
+      }
+    },
+    "4000041": {
+      "id": 4000041,
+      "name": "Drop Ship",
+      "villageType": "builderBase",
+      "category": "lab",
+      "resource": "builder_elixir",
+      "th_caps": {
+        "1": 2,
+        "2": 3,
+        "3": 5,
+        "4": 7,
+        "5": 8,
+        "6": 10,
+        "7": 12,
+        "8": 13,
+        "9": 15,
+        "10": 17,
+        "11": 18,
+        "12": 20
+      },
+      "levels": {
+        "1": {
+          "cost": 135000,
+          "duration": 2376,
+          "resource": "builder_elixir"
+        },
+        "2": {
+          "cost": 182250,
+          "duration": 3136,
+          "resource": "builder_elixir"
+        },
+        "3": {
+          "cost": 246038,
+          "duration": 4140,
+          "resource": "builder_elixir"
+        },
+        "4": {
+          "cost": 332151,
+          "duration": 5465,
+          "resource": "builder_elixir"
+        },
+        "5": {
+          "cost": 448403,
+          "duration": 7213,
+          "resource": "builder_elixir"
+        },
+        "6": {
+          "cost": 605345,
+          "duration": 9522,
+          "resource": "builder_elixir"
+        },
+        "7": {
+          "cost": 817215,
+          "duration": 12569,
+          "resource": "builder_elixir"
+        },
+        "8": {
+          "cost": 1103240,
+          "duration": 16591,
+          "resource": "builder_elixir"
+        },
+        "9": {
+          "cost": 1489375,
+          "duration": 21900,
+          "resource": "builder_elixir"
+        },
+        "10": {
+          "cost": 2010656,
+          "duration": 28908,
+          "resource": "builder_elixir"
+        },
+        "11": {
+          "cost": 2714385,
+          "duration": 38158,
+          "resource": "builder_elixir"
+        },
+        "12": {
+          "cost": 3664420,
+          "duration": 50369,
+          "resource": "builder_elixir"
+        },
+        "13": {
+          "cost": 4946967,
+          "duration": 66487,
+          "resource": "builder_elixir"
+        },
+        "14": {
+          "cost": 6678405,
+          "duration": 87762,
+          "resource": "builder_elixir"
+        },
+        "15": {
+          "cost": 9015847,
+          "duration": 115846,
+          "resource": "builder_elixir"
+        },
+        "16": {
+          "cost": 12171393,
+          "duration": 152917,
+          "resource": "builder_elixir"
+        },
+        "17": {
+          "cost": 16431381,
+          "duration": 201850,
+          "resource": "builder_elixir"
+        },
+        "18": {
+          "cost": 22000000,
+          "duration": 266442,
+          "resource": "builder_elixir"
+        },
+        "19": {
+          "cost": 22000000,
+          "duration": 351704,
+          "resource": "builder_elixir"
+        },
+        "20": {
+          "cost": 22000000,
+          "duration": 464249,
+          "resource": "builder_elixir"
+        }
+      }
+    },
+    "4000042": {
+      "id": 4000042,
+      "name": "Power P.E.K.K.A",
+      "villageType": "builderBase",
+      "category": "lab",
+      "resource": "builder_elixir",
+      "th_caps": {
+        "1": 2,
+        "2": 3,
+        "3": 5,
+        "4": 7,
+        "5": 8,
+        "6": 10,
+        "7": 12,
+        "8": 13,
+        "9": 15,
+        "10": 17,
+        "11": 18,
+        "12": 20
+      },
+      "levels": {
+        "1": {
+          "cost": 135000,
+          "duration": 2376,
+          "resource": "builder_elixir"
+        },
+        "2": {
+          "cost": 182250,
+          "duration": 3136,
+          "resource": "builder_elixir"
+        },
+        "3": {
+          "cost": 246038,
+          "duration": 4140,
+          "resource": "builder_elixir"
+        },
+        "4": {
+          "cost": 332151,
+          "duration": 5465,
+          "resource": "builder_elixir"
+        },
+        "5": {
+          "cost": 448403,
+          "duration": 7213,
+          "resource": "builder_elixir"
+        },
+        "6": {
+          "cost": 605345,
+          "duration": 9522,
+          "resource": "builder_elixir"
+        },
+        "7": {
+          "cost": 817215,
+          "duration": 12569,
+          "resource": "builder_elixir"
+        },
+        "8": {
+          "cost": 1103240,
+          "duration": 16591,
+          "resource": "builder_elixir"
+        },
+        "9": {
+          "cost": 1489375,
+          "duration": 21900,
+          "resource": "builder_elixir"
+        },
+        "10": {
+          "cost": 2010656,
+          "duration": 28908,
+          "resource": "builder_elixir"
+        },
+        "11": {
+          "cost": 2714385,
+          "duration": 38158,
+          "resource": "builder_elixir"
+        },
+        "12": {
+          "cost": 3664420,
+          "duration": 50369,
+          "resource": "builder_elixir"
+        },
+        "13": {
+          "cost": 4946967,
+          "duration": 66487,
+          "resource": "builder_elixir"
+        },
+        "14": {
+          "cost": 6678405,
+          "duration": 87762,
+          "resource": "builder_elixir"
+        },
+        "15": {
+          "cost": 9015847,
+          "duration": 115846,
+          "resource": "builder_elixir"
+        },
+        "16": {
+          "cost": 12171393,
+          "duration": 152917,
+          "resource": "builder_elixir"
+        },
+        "17": {
+          "cost": 16431381,
+          "duration": 201850,
+          "resource": "builder_elixir"
+        },
+        "18": {
+          "cost": 22000000,
+          "duration": 266442,
+          "resource": "builder_elixir"
+        },
+        "19": {
+          "cost": 22000000,
+          "duration": 351704,
+          "resource": "builder_elixir"
+        },
+        "20": {
+          "cost": 22000000,
+          "duration": 464249,
+          "resource": "builder_elixir"
+        }
+      }
+    },
     "4000053": {
       "id": 4000053,
       "name": "Yeti",
+      "villageType": "home",
       "category": "lab",
       "resource": "elixir",
       "th_caps": {
@@ -5292,13 +8715,13 @@
         "7": 2,
         "8": 3,
         "9": 3,
-        "10": 4,
-        "11": 4,
+        "10": 3,
+        "11": 3,
         "12": 4,
-        "13": 5,
-        "14": 5,
+        "13": 4,
+        "14": 4,
         "15": 5,
-        "16": 4,
+        "16": 5,
         "17": 5,
         "18": 6,
         "19": 6
@@ -5339,6 +8762,7 @@
     "4000058": {
       "id": 4000058,
       "name": "Ice Golem",
+      "villageType": "home",
       "category": "lab",
       "resource": "dark_elixir",
       "th_caps": {
@@ -5349,15 +8773,15 @@
         "5": 2,
         "6": 3,
         "7": 3,
-        "8": 4,
+        "8": 3,
         "9": 4,
-        "10": 5,
+        "10": 4,
         "11": 5,
-        "12": 6,
-        "13": 6,
-        "14": 7,
-        "15": 7,
-        "16": 6,
+        "12": 5,
+        "13": 5,
+        "14": 6,
+        "15": 6,
+        "16": 7,
         "17": 7,
         "18": 8,
         "19": 8
@@ -5408,6 +8832,7 @@
     "4000059": {
       "id": 4000059,
       "name": "Electro Dragon",
+      "villageType": "home",
       "category": "lab",
       "resource": "elixir",
       "th_caps": {
@@ -5418,15 +8843,15 @@
         "5": 2,
         "6": 3,
         "7": 3,
-        "8": 4,
+        "8": 3,
         "9": 4,
-        "10": 5,
+        "10": 4,
         "11": 5,
-        "12": 6,
-        "13": 6,
-        "14": 7,
-        "15": 7,
-        "16": 6,
+        "12": 5,
+        "13": 5,
+        "14": 6,
+        "15": 6,
+        "16": 7,
         "17": 7,
         "18": 8,
         "19": 8
@@ -5477,6 +8902,7 @@
     "4000065": {
       "id": 4000065,
       "name": "Dragon Rider",
+      "villageType": "home",
       "category": "lab",
       "resource": "elixir",
       "th_caps": {
@@ -5488,14 +8914,14 @@
         "6": 2,
         "7": 2,
         "8": 2,
-        "9": 3,
+        "9": 2,
         "10": 3,
         "11": 3,
-        "12": 4,
-        "13": 4,
+        "12": 3,
+        "13": 3,
         "14": 4,
         "15": 4,
-        "16": 3,
+        "16": 4,
         "17": 4,
         "18": 5,
         "19": 5
@@ -5528,9 +8954,133 @@
         }
       }
     },
+    "4000070": {
+      "id": 4000070,
+      "name": "Hog Glider",
+      "villageType": "builderBase",
+      "category": "lab",
+      "resource": "builder_elixir",
+      "th_caps": {
+        "1": 2,
+        "2": 3,
+        "3": 5,
+        "4": 7,
+        "5": 8,
+        "6": 10,
+        "7": 12,
+        "8": 13,
+        "9": 15,
+        "10": 17,
+        "11": 18,
+        "12": 20
+      },
+      "levels": {
+        "1": {
+          "cost": 135000,
+          "duration": 2376,
+          "resource": "builder_elixir"
+        },
+        "2": {
+          "cost": 182250,
+          "duration": 3136,
+          "resource": "builder_elixir"
+        },
+        "3": {
+          "cost": 246038,
+          "duration": 4140,
+          "resource": "builder_elixir"
+        },
+        "4": {
+          "cost": 332151,
+          "duration": 5465,
+          "resource": "builder_elixir"
+        },
+        "5": {
+          "cost": 448403,
+          "duration": 7213,
+          "resource": "builder_elixir"
+        },
+        "6": {
+          "cost": 605345,
+          "duration": 9522,
+          "resource": "builder_elixir"
+        },
+        "7": {
+          "cost": 817215,
+          "duration": 12569,
+          "resource": "builder_elixir"
+        },
+        "8": {
+          "cost": 1103240,
+          "duration": 16591,
+          "resource": "builder_elixir"
+        },
+        "9": {
+          "cost": 1489375,
+          "duration": 21900,
+          "resource": "builder_elixir"
+        },
+        "10": {
+          "cost": 2010656,
+          "duration": 28908,
+          "resource": "builder_elixir"
+        },
+        "11": {
+          "cost": 2714385,
+          "duration": 38158,
+          "resource": "builder_elixir"
+        },
+        "12": {
+          "cost": 3664420,
+          "duration": 50369,
+          "resource": "builder_elixir"
+        },
+        "13": {
+          "cost": 4946967,
+          "duration": 66487,
+          "resource": "builder_elixir"
+        },
+        "14": {
+          "cost": 6678405,
+          "duration": 87762,
+          "resource": "builder_elixir"
+        },
+        "15": {
+          "cost": 9015847,
+          "duration": 115846,
+          "resource": "builder_elixir"
+        },
+        "16": {
+          "cost": 12171393,
+          "duration": 152917,
+          "resource": "builder_elixir"
+        },
+        "17": {
+          "cost": 16431381,
+          "duration": 201850,
+          "resource": "builder_elixir"
+        },
+        "18": {
+          "cost": 22000000,
+          "duration": 266442,
+          "resource": "builder_elixir"
+        },
+        "19": {
+          "cost": 22000000,
+          "duration": 351704,
+          "resource": "builder_elixir"
+        },
+        "20": {
+          "cost": 22000000,
+          "duration": 464249,
+          "resource": "builder_elixir"
+        }
+      }
+    },
     "4000082": {
       "id": 4000082,
       "name": "Headhunter",
+      "villageType": "home",
       "category": "lab",
       "resource": "dark_elixir",
       "th_caps": {
@@ -5540,17 +9090,17 @@
         "4": 1,
         "5": 1,
         "6": 1,
-        "7": 2,
+        "7": 1,
         "8": 2,
         "9": 2,
         "10": 2,
-        "11": 3,
+        "11": 2,
         "12": 3,
         "13": 3,
         "14": 3,
-        "15": 4,
-        "16": 2,
-        "17": 3,
+        "15": 3,
+        "16": 3,
+        "17": 4,
         "18": 4,
         "19": 4
       },
@@ -5580,6 +9130,7 @@
     "4000095": {
       "id": 4000095,
       "name": "Electro Titan",
+      "villageType": "home",
       "category": "lab",
       "resource": "elixir",
       "th_caps": {
@@ -5589,17 +9140,17 @@
         "4": 1,
         "5": 1,
         "6": 1,
-        "7": 2,
+        "7": 1,
         "8": 2,
         "9": 2,
         "10": 2,
-        "11": 3,
+        "11": 2,
         "12": 3,
         "13": 3,
         "14": 3,
-        "15": 4,
-        "16": 2,
-        "17": 3,
+        "15": 3,
+        "16": 3,
+        "17": 4,
         "18": 4,
         "19": 4
       },
@@ -5629,6 +9180,7 @@
     "4000097": {
       "id": 4000097,
       "name": "Apprentice Warden",
+      "villageType": "home",
       "category": "lab",
       "resource": "dark_elixir",
       "th_caps": {
@@ -5640,14 +9192,14 @@
         "6": 2,
         "7": 2,
         "8": 2,
-        "9": 3,
+        "9": 2,
         "10": 3,
         "11": 3,
-        "12": 4,
-        "13": 4,
+        "12": 3,
+        "13": 3,
         "14": 4,
         "15": 4,
-        "16": 3,
+        "16": 4,
         "17": 4,
         "18": 5,
         "19": 5
@@ -5683,6 +9235,7 @@
     "4000110": {
       "id": 4000110,
       "name": "Root Rider",
+      "villageType": "home",
       "category": "lab",
       "resource": "dark_elixir",
       "th_caps": {
@@ -5692,17 +9245,17 @@
         "4": 1,
         "5": 1,
         "6": 1,
-        "7": 2,
+        "7": 1,
         "8": 2,
         "9": 2,
         "10": 2,
-        "11": 3,
+        "11": 2,
         "12": 3,
         "13": 3,
         "14": 3,
-        "15": 4,
-        "16": 2,
-        "17": 3,
+        "15": 3,
+        "16": 3,
+        "17": 4,
         "18": 4,
         "19": 4
       },
@@ -5732,6 +9285,7 @@
     "12000000": {
       "id": 12000000,
       "name": "Bomb",
+      "villageType": "home",
       "category": "defense",
       "resource": "gold",
       "th_caps": {
@@ -5739,20 +9293,20 @@
         "2": 0,
         "3": 2,
         "4": 3,
-        "5": 4,
-        "6": 5,
+        "5": 3,
+        "6": 4,
         "7": 5,
-        "8": 6,
-        "9": 7,
-        "10": 8,
+        "8": 5,
+        "9": 6,
+        "10": 7,
         "11": 8,
-        "12": 9,
-        "13": 10,
-        "14": 11,
-        "15": 11,
+        "12": 8,
+        "13": 9,
+        "14": 10,
+        "15": 10,
         "16": 11,
         "17": 12,
-        "18": 13,
+        "18": 12,
         "19": 13
       },
       "levels": {
@@ -5826,27 +9380,28 @@
     "12000001": {
       "id": 12000001,
       "name": "Spring Trap",
+      "villageType": "home",
       "category": "defense",
       "resource": "gold",
       "th_caps": {
         "1": 0,
         "2": 0,
         "3": 2,
-        "4": 3,
+        "4": 2,
         "5": 3,
-        "6": 4,
-        "7": 5,
+        "6": 3,
+        "7": 4,
         "8": 5,
-        "9": 6,
+        "9": 5,
         "10": 6,
-        "11": 7,
-        "12": 8,
+        "11": 6,
+        "12": 7,
         "13": 8,
-        "14": 9,
-        "15": 10,
+        "14": 8,
+        "15": 9,
         "16": 9,
         "17": 10,
-        "18": 11,
+        "18": 10,
         "19": 11
       },
       "levels": {
@@ -5910,27 +9465,28 @@
     "12000002": {
       "id": 12000002,
       "name": "Giant Bomb",
+      "villageType": "home",
       "category": "defense",
       "resource": "gold",
       "th_caps": {
         "1": 0,
         "2": 0,
         "3": 2,
-        "4": 3,
+        "4": 2,
         "5": 3,
-        "6": 4,
-        "7": 5,
+        "6": 3,
+        "7": 4,
         "8": 5,
-        "9": 6,
+        "9": 5,
         "10": 6,
-        "11": 7,
-        "12": 8,
+        "11": 6,
+        "12": 7,
         "13": 8,
-        "14": 9,
-        "15": 10,
+        "14": 8,
+        "15": 9,
         "16": 9,
         "17": 10,
-        "18": 11,
+        "18": 10,
         "19": 11
       },
       "levels": {
@@ -5994,6 +9550,7 @@
     "12000005": {
       "id": 12000005,
       "name": "Air Bomb",
+      "villageType": "home",
       "category": "defense",
       "resource": "gold",
       "th_caps": {
@@ -6001,20 +9558,20 @@
         "2": 0,
         "3": 2,
         "4": 3,
-        "5": 4,
+        "5": 3,
         "6": 4,
-        "7": 5,
-        "8": 6,
+        "7": 4,
+        "8": 5,
         "9": 6,
-        "10": 7,
-        "11": 8,
+        "10": 6,
+        "11": 7,
         "12": 8,
-        "13": 9,
-        "14": 10,
-        "15": 11,
+        "13": 8,
+        "14": 9,
+        "15": 9,
         "16": 10,
         "17": 11,
-        "18": 12,
+        "18": 11,
         "19": 12
       },
       "levels": {
@@ -6083,25 +9640,26 @@
     "12000006": {
       "id": 12000006,
       "name": "Seeking Air Mine",
+      "villageType": "home",
       "category": "defense",
       "resource": "gold",
       "th_caps": {
         "1": 0,
         "2": 0,
         "3": 1,
-        "4": 2,
+        "4": 1,
         "5": 2,
         "6": 2,
         "7": 3,
         "8": 3,
-        "9": 4,
+        "9": 3,
         "10": 4,
-        "11": 5,
-        "12": 5,
+        "11": 4,
+        "12": 4,
         "13": 5,
-        "14": 6,
+        "14": 5,
         "15": 6,
-        "16": 5,
+        "16": 6,
         "17": 6,
         "18": 7,
         "19": 7
@@ -6147,6 +9705,7 @@
     "12000008": {
       "id": 12000008,
       "name": "Skeleton Trap",
+      "villageType": "home",
       "category": "defense",
       "resource": "gold",
       "th_caps": {
@@ -6158,14 +9717,14 @@
         "6": 2,
         "7": 2,
         "8": 2,
-        "9": 3,
+        "9": 2,
         "10": 3,
         "11": 3,
-        "12": 4,
-        "13": 4,
+        "12": 3,
+        "13": 3,
         "14": 4,
         "15": 4,
-        "16": 3,
+        "16": 4,
         "17": 4,
         "18": 5,
         "19": 5
@@ -6198,9 +9757,322 @@
         }
       }
     },
+    "12000010": {
+      "id": 12000010,
+      "name": "Mine (BB)",
+      "villageType": "builderBase",
+      "category": "defense",
+      "resource": "builder_gold",
+      "th_caps": {
+        "1": 0,
+        "2": 0,
+        "3": 3,
+        "4": 4,
+        "5": 5,
+        "6": 6,
+        "7": 6,
+        "8": 7,
+        "9": 8,
+        "10": 9,
+        "11": 10,
+        "12": 11
+      },
+      "levels": {
+        "1": {
+          "cost": 135000,
+          "duration": 2376,
+          "resource": "builder_gold"
+        },
+        "2": {
+          "cost": 182250,
+          "duration": 3136,
+          "resource": "builder_gold"
+        },
+        "3": {
+          "cost": 246038,
+          "duration": 4140,
+          "resource": "builder_gold"
+        },
+        "4": {
+          "cost": 332151,
+          "duration": 5465,
+          "resource": "builder_gold"
+        },
+        "5": {
+          "cost": 448403,
+          "duration": 7213,
+          "resource": "builder_gold"
+        },
+        "6": {
+          "cost": 605345,
+          "duration": 9522,
+          "resource": "builder_gold"
+        },
+        "7": {
+          "cost": 817215,
+          "duration": 12569,
+          "resource": "builder_gold"
+        },
+        "8": {
+          "cost": 1103240,
+          "duration": 16591,
+          "resource": "builder_gold"
+        },
+        "9": {
+          "cost": 1489375,
+          "duration": 21900,
+          "resource": "builder_gold"
+        },
+        "10": {
+          "cost": 2010656,
+          "duration": 28908,
+          "resource": "builder_gold"
+        },
+        "11": {
+          "cost": 2714385,
+          "duration": 38158,
+          "resource": "builder_gold"
+        }
+      }
+    },
+    "12000011": {
+      "id": 12000011,
+      "name": "Mega Mine (BB)",
+      "villageType": "builderBase",
+      "category": "defense",
+      "resource": "builder_gold",
+      "th_caps": {
+        "1": 0,
+        "2": 0,
+        "3": 3,
+        "4": 4,
+        "5": 5,
+        "6": 6,
+        "7": 6,
+        "8": 7,
+        "9": 8,
+        "10": 9,
+        "11": 10,
+        "12": 11
+      },
+      "levels": {
+        "1": {
+          "cost": 135000,
+          "duration": 2376,
+          "resource": "builder_gold"
+        },
+        "2": {
+          "cost": 182250,
+          "duration": 3136,
+          "resource": "builder_gold"
+        },
+        "3": {
+          "cost": 246038,
+          "duration": 4140,
+          "resource": "builder_gold"
+        },
+        "4": {
+          "cost": 332151,
+          "duration": 5465,
+          "resource": "builder_gold"
+        },
+        "5": {
+          "cost": 448403,
+          "duration": 7213,
+          "resource": "builder_gold"
+        },
+        "6": {
+          "cost": 605345,
+          "duration": 9522,
+          "resource": "builder_gold"
+        },
+        "7": {
+          "cost": 817215,
+          "duration": 12569,
+          "resource": "builder_gold"
+        },
+        "8": {
+          "cost": 1103240,
+          "duration": 16591,
+          "resource": "builder_gold"
+        },
+        "9": {
+          "cost": 1489375,
+          "duration": 21900,
+          "resource": "builder_gold"
+        },
+        "10": {
+          "cost": 2010656,
+          "duration": 28908,
+          "resource": "builder_gold"
+        },
+        "11": {
+          "cost": 2714385,
+          "duration": 38158,
+          "resource": "builder_gold"
+        }
+      }
+    },
+    "12000013": {
+      "id": 12000013,
+      "name": "Push Trap",
+      "villageType": "builderBase",
+      "category": "defense",
+      "resource": "builder_gold",
+      "th_caps": {
+        "1": 0,
+        "2": 0,
+        "3": 3,
+        "4": 4,
+        "5": 5,
+        "6": 6,
+        "7": 6,
+        "8": 7,
+        "9": 8,
+        "10": 9,
+        "11": 10,
+        "12": 11
+      },
+      "levels": {
+        "1": {
+          "cost": 135000,
+          "duration": 2376,
+          "resource": "builder_gold"
+        },
+        "2": {
+          "cost": 182250,
+          "duration": 3136,
+          "resource": "builder_gold"
+        },
+        "3": {
+          "cost": 246038,
+          "duration": 4140,
+          "resource": "builder_gold"
+        },
+        "4": {
+          "cost": 332151,
+          "duration": 5465,
+          "resource": "builder_gold"
+        },
+        "5": {
+          "cost": 448403,
+          "duration": 7213,
+          "resource": "builder_gold"
+        },
+        "6": {
+          "cost": 605345,
+          "duration": 9522,
+          "resource": "builder_gold"
+        },
+        "7": {
+          "cost": 817215,
+          "duration": 12569,
+          "resource": "builder_gold"
+        },
+        "8": {
+          "cost": 1103240,
+          "duration": 16591,
+          "resource": "builder_gold"
+        },
+        "9": {
+          "cost": 1489375,
+          "duration": 21900,
+          "resource": "builder_gold"
+        },
+        "10": {
+          "cost": 2010656,
+          "duration": 28908,
+          "resource": "builder_gold"
+        },
+        "11": {
+          "cost": 2714385,
+          "duration": 38158,
+          "resource": "builder_gold"
+        }
+      }
+    },
+    "12000014": {
+      "id": 12000014,
+      "name": "Spring Trap (BB)",
+      "villageType": "builderBase",
+      "category": "defense",
+      "resource": "builder_gold",
+      "th_caps": {
+        "1": 0,
+        "2": 0,
+        "3": 3,
+        "4": 4,
+        "5": 5,
+        "6": 6,
+        "7": 6,
+        "8": 7,
+        "9": 8,
+        "10": 9,
+        "11": 10,
+        "12": 11
+      },
+      "levels": {
+        "1": {
+          "cost": 135000,
+          "duration": 2376,
+          "resource": "builder_gold"
+        },
+        "2": {
+          "cost": 182250,
+          "duration": 3136,
+          "resource": "builder_gold"
+        },
+        "3": {
+          "cost": 246038,
+          "duration": 4140,
+          "resource": "builder_gold"
+        },
+        "4": {
+          "cost": 332151,
+          "duration": 5465,
+          "resource": "builder_gold"
+        },
+        "5": {
+          "cost": 448403,
+          "duration": 7213,
+          "resource": "builder_gold"
+        },
+        "6": {
+          "cost": 605345,
+          "duration": 9522,
+          "resource": "builder_gold"
+        },
+        "7": {
+          "cost": 817215,
+          "duration": 12569,
+          "resource": "builder_gold"
+        },
+        "8": {
+          "cost": 1103240,
+          "duration": 16591,
+          "resource": "builder_gold"
+        },
+        "9": {
+          "cost": 1489375,
+          "duration": 21900,
+          "resource": "builder_gold"
+        },
+        "10": {
+          "cost": 2010656,
+          "duration": 28908,
+          "resource": "builder_gold"
+        },
+        "11": {
+          "cost": 2714385,
+          "duration": 38158,
+          "resource": "builder_gold"
+        }
+      }
+    },
     "12000016": {
       "id": 12000016,
       "name": "Tornado Trap",
+      "villageType": "home",
       "category": "defense",
       "resource": "gold",
       "th_caps": {
@@ -6210,17 +10082,17 @@
         "4": 1,
         "5": 1,
         "6": 1,
-        "7": 2,
+        "7": 1,
         "8": 2,
         "9": 2,
         "10": 2,
-        "11": 3,
+        "11": 2,
         "12": 3,
         "13": 3,
         "14": 3,
-        "15": 4,
-        "16": 2,
-        "17": 3,
+        "15": 3,
+        "16": 3,
+        "17": 4,
         "18": 4,
         "19": 4
       },
@@ -6250,27 +10122,28 @@
     "28000000": {
       "id": 28000000,
       "name": "Barbarian King",
+      "villageType": "home",
       "category": "heroes",
       "resource": "dark_elixir",
       "th_caps": {
         "1": 6,
-        "2": 12,
-        "3": 19,
-        "4": 25,
-        "5": 31,
-        "6": 37,
-        "7": 43,
-        "8": 49,
-        "9": 56,
-        "10": 62,
-        "11": 68,
-        "12": 74,
-        "13": 80,
-        "14": 86,
-        "15": 93,
-        "16": 103,
-        "17": 104,
-        "18": 105,
+        "2": 11,
+        "3": 17,
+        "4": 22,
+        "5": 28,
+        "6": 33,
+        "7": 39,
+        "8": 44,
+        "9": 50,
+        "10": 55,
+        "11": 61,
+        "12": 66,
+        "13": 72,
+        "14": 77,
+        "15": 83,
+        "16": 88,
+        "17": 94,
+        "18": 99,
         "19": 105
       },
       "levels": {
@@ -6804,27 +10677,28 @@
     "28000001": {
       "id": 28000001,
       "name": "Archer Queen",
+      "villageType": "home",
       "category": "heroes",
       "resource": "dark_elixir",
       "th_caps": {
         "1": 6,
-        "2": 12,
-        "3": 19,
-        "4": 25,
-        "5": 31,
-        "6": 37,
-        "7": 43,
-        "8": 49,
-        "9": 56,
-        "10": 62,
-        "11": 68,
-        "12": 74,
-        "13": 80,
-        "14": 86,
-        "15": 93,
-        "16": 103,
-        "17": 104,
-        "18": 105,
+        "2": 11,
+        "3": 17,
+        "4": 22,
+        "5": 28,
+        "6": 33,
+        "7": 39,
+        "8": 44,
+        "9": 50,
+        "10": 55,
+        "11": 61,
+        "12": 66,
+        "13": 72,
+        "14": 77,
+        "15": 83,
+        "16": 88,
+        "17": 94,
+        "18": 99,
         "19": 105
       },
       "levels": {
@@ -7358,27 +11232,28 @@
     "28000002": {
       "id": 28000002,
       "name": "Grand Warden",
+      "villageType": "home",
       "category": "heroes",
       "resource": "elixir",
       "th_caps": {
-        "1": 5,
-        "2": 9,
-        "3": 14,
-        "4": 19,
-        "5": 24,
-        "6": 28,
-        "7": 33,
-        "8": 38,
-        "9": 42,
-        "10": 47,
-        "11": 52,
-        "12": 56,
-        "13": 61,
-        "14": 66,
-        "15": 71,
-        "16": 78,
-        "17": 79,
-        "18": 80,
+        "1": 4,
+        "2": 8,
+        "3": 13,
+        "4": 17,
+        "5": 21,
+        "6": 25,
+        "7": 29,
+        "8": 34,
+        "9": 38,
+        "10": 42,
+        "11": 46,
+        "12": 51,
+        "13": 55,
+        "14": 59,
+        "15": 63,
+        "16": 67,
+        "17": 72,
+        "18": 76,
         "19": 80
       },
       "levels": {
@@ -7784,30 +11659,229 @@
         }
       }
     },
+    "28000003": {
+      "id": 28000003,
+      "name": "Battle Machine",
+      "villageType": "builderBase",
+      "category": "heroes",
+      "resource": "builder_elixir",
+      "th_caps": {
+        "1": 3,
+        "2": 6,
+        "3": 9,
+        "4": 12,
+        "5": 15,
+        "6": 18,
+        "7": 20,
+        "8": 23,
+        "9": 26,
+        "10": 29,
+        "11": 32,
+        "12": 35
+      },
+      "levels": {
+        "1": {
+          "cost": 135000,
+          "duration": 2376,
+          "resource": "builder_elixir"
+        },
+        "2": {
+          "cost": 182250,
+          "duration": 3136,
+          "resource": "builder_elixir"
+        },
+        "3": {
+          "cost": 246038,
+          "duration": 4140,
+          "resource": "builder_elixir"
+        },
+        "4": {
+          "cost": 332151,
+          "duration": 5465,
+          "resource": "builder_elixir"
+        },
+        "5": {
+          "cost": 448403,
+          "duration": 7213,
+          "resource": "builder_elixir"
+        },
+        "6": {
+          "cost": 605345,
+          "duration": 9522,
+          "resource": "builder_elixir"
+        },
+        "7": {
+          "cost": 817215,
+          "duration": 12569,
+          "resource": "builder_elixir"
+        },
+        "8": {
+          "cost": 1103240,
+          "duration": 16591,
+          "resource": "builder_elixir"
+        },
+        "9": {
+          "cost": 1489375,
+          "duration": 21900,
+          "resource": "builder_elixir"
+        },
+        "10": {
+          "cost": 2010656,
+          "duration": 28908,
+          "resource": "builder_elixir"
+        },
+        "11": {
+          "cost": 2714385,
+          "duration": 38158,
+          "resource": "builder_elixir"
+        },
+        "12": {
+          "cost": 3664420,
+          "duration": 50369,
+          "resource": "builder_elixir"
+        },
+        "13": {
+          "cost": 4946967,
+          "duration": 66487,
+          "resource": "builder_elixir"
+        },
+        "14": {
+          "cost": 6678405,
+          "duration": 87762,
+          "resource": "builder_elixir"
+        },
+        "15": {
+          "cost": 9015847,
+          "duration": 115846,
+          "resource": "builder_elixir"
+        },
+        "16": {
+          "cost": 12171393,
+          "duration": 152917,
+          "resource": "builder_elixir"
+        },
+        "17": {
+          "cost": 16431381,
+          "duration": 201850,
+          "resource": "builder_elixir"
+        },
+        "18": {
+          "cost": 22000000,
+          "duration": 266442,
+          "resource": "builder_elixir"
+        },
+        "19": {
+          "cost": 22000000,
+          "duration": 351704,
+          "resource": "builder_elixir"
+        },
+        "20": {
+          "cost": 22000000,
+          "duration": 464249,
+          "resource": "builder_elixir"
+        },
+        "21": {
+          "cost": 22000000,
+          "duration": 612809,
+          "resource": "builder_elixir"
+        },
+        "22": {
+          "cost": 22000000,
+          "duration": 808908,
+          "resource": "builder_elixir"
+        },
+        "23": {
+          "cost": 22000000,
+          "duration": 1067758,
+          "resource": "builder_elixir"
+        },
+        "24": {
+          "cost": 22000000,
+          "duration": 1296000,
+          "resource": "builder_elixir"
+        },
+        "25": {
+          "cost": 22000000,
+          "duration": 1296000,
+          "resource": "builder_elixir"
+        },
+        "26": {
+          "cost": 22000000,
+          "duration": 1296000,
+          "resource": "builder_elixir"
+        },
+        "27": {
+          "cost": 22000000,
+          "duration": 1296000,
+          "resource": "builder_elixir"
+        },
+        "28": {
+          "cost": 22000000,
+          "duration": 1296000,
+          "resource": "builder_elixir"
+        },
+        "29": {
+          "cost": 22000000,
+          "duration": 1296000,
+          "resource": "builder_elixir"
+        },
+        "30": {
+          "cost": 22000000,
+          "duration": 1296000,
+          "resource": "builder_elixir"
+        },
+        "31": {
+          "cost": 22000000,
+          "duration": 1296000,
+          "resource": "builder_elixir"
+        },
+        "32": {
+          "cost": 22000000,
+          "duration": 1296000,
+          "resource": "builder_elixir"
+        },
+        "33": {
+          "cost": 22000000,
+          "duration": 1296000,
+          "resource": "builder_elixir"
+        },
+        "34": {
+          "cost": 22000000,
+          "duration": 1296000,
+          "resource": "builder_elixir"
+        },
+        "35": {
+          "cost": 22000000,
+          "duration": 1296000,
+          "resource": "builder_elixir"
+        }
+      }
+    },
     "28000004": {
       "id": 28000004,
       "name": "Royal Champion",
+      "villageType": "home",
       "category": "heroes",
       "resource": "dark_elixir",
       "th_caps": {
         "1": 3,
         "2": 6,
-        "3": 10,
-        "4": 13,
-        "5": 16,
-        "6": 19,
-        "7": 23,
-        "8": 26,
-        "9": 29,
-        "10": 32,
-        "11": 36,
-        "12": 39,
-        "13": 42,
-        "14": 45,
-        "15": 49,
-        "16": 53,
-        "17": 54,
-        "18": 55,
+        "3": 9,
+        "4": 12,
+        "5": 14,
+        "6": 17,
+        "7": 20,
+        "8": 23,
+        "9": 26,
+        "10": 29,
+        "11": 32,
+        "12": 35,
+        "13": 38,
+        "14": 41,
+        "15": 43,
+        "16": 46,
+        "17": 49,
+        "18": 52,
         "19": 55
       },
       "levels": {
@@ -8088,30 +12162,229 @@
         }
       }
     },
+    "28000005": {
+      "id": 28000005,
+      "name": "Battle Copter",
+      "villageType": "builderBase",
+      "category": "heroes",
+      "resource": "builder_elixir",
+      "th_caps": {
+        "1": 3,
+        "2": 6,
+        "3": 9,
+        "4": 12,
+        "5": 15,
+        "6": 18,
+        "7": 20,
+        "8": 23,
+        "9": 26,
+        "10": 29,
+        "11": 32,
+        "12": 35
+      },
+      "levels": {
+        "1": {
+          "cost": 135000,
+          "duration": 2376,
+          "resource": "builder_elixir"
+        },
+        "2": {
+          "cost": 182250,
+          "duration": 3136,
+          "resource": "builder_elixir"
+        },
+        "3": {
+          "cost": 246038,
+          "duration": 4140,
+          "resource": "builder_elixir"
+        },
+        "4": {
+          "cost": 332151,
+          "duration": 5465,
+          "resource": "builder_elixir"
+        },
+        "5": {
+          "cost": 448403,
+          "duration": 7213,
+          "resource": "builder_elixir"
+        },
+        "6": {
+          "cost": 605345,
+          "duration": 9522,
+          "resource": "builder_elixir"
+        },
+        "7": {
+          "cost": 817215,
+          "duration": 12569,
+          "resource": "builder_elixir"
+        },
+        "8": {
+          "cost": 1103240,
+          "duration": 16591,
+          "resource": "builder_elixir"
+        },
+        "9": {
+          "cost": 1489375,
+          "duration": 21900,
+          "resource": "builder_elixir"
+        },
+        "10": {
+          "cost": 2010656,
+          "duration": 28908,
+          "resource": "builder_elixir"
+        },
+        "11": {
+          "cost": 2714385,
+          "duration": 38158,
+          "resource": "builder_elixir"
+        },
+        "12": {
+          "cost": 3664420,
+          "duration": 50369,
+          "resource": "builder_elixir"
+        },
+        "13": {
+          "cost": 4946967,
+          "duration": 66487,
+          "resource": "builder_elixir"
+        },
+        "14": {
+          "cost": 6678405,
+          "duration": 87762,
+          "resource": "builder_elixir"
+        },
+        "15": {
+          "cost": 9015847,
+          "duration": 115846,
+          "resource": "builder_elixir"
+        },
+        "16": {
+          "cost": 12171393,
+          "duration": 152917,
+          "resource": "builder_elixir"
+        },
+        "17": {
+          "cost": 16431381,
+          "duration": 201850,
+          "resource": "builder_elixir"
+        },
+        "18": {
+          "cost": 22000000,
+          "duration": 266442,
+          "resource": "builder_elixir"
+        },
+        "19": {
+          "cost": 22000000,
+          "duration": 351704,
+          "resource": "builder_elixir"
+        },
+        "20": {
+          "cost": 22000000,
+          "duration": 464249,
+          "resource": "builder_elixir"
+        },
+        "21": {
+          "cost": 22000000,
+          "duration": 612809,
+          "resource": "builder_elixir"
+        },
+        "22": {
+          "cost": 22000000,
+          "duration": 808908,
+          "resource": "builder_elixir"
+        },
+        "23": {
+          "cost": 22000000,
+          "duration": 1067758,
+          "resource": "builder_elixir"
+        },
+        "24": {
+          "cost": 22000000,
+          "duration": 1296000,
+          "resource": "builder_elixir"
+        },
+        "25": {
+          "cost": 22000000,
+          "duration": 1296000,
+          "resource": "builder_elixir"
+        },
+        "26": {
+          "cost": 22000000,
+          "duration": 1296000,
+          "resource": "builder_elixir"
+        },
+        "27": {
+          "cost": 22000000,
+          "duration": 1296000,
+          "resource": "builder_elixir"
+        },
+        "28": {
+          "cost": 22000000,
+          "duration": 1296000,
+          "resource": "builder_elixir"
+        },
+        "29": {
+          "cost": 22000000,
+          "duration": 1296000,
+          "resource": "builder_elixir"
+        },
+        "30": {
+          "cost": 22000000,
+          "duration": 1296000,
+          "resource": "builder_elixir"
+        },
+        "31": {
+          "cost": 22000000,
+          "duration": 1296000,
+          "resource": "builder_elixir"
+        },
+        "32": {
+          "cost": 22000000,
+          "duration": 1296000,
+          "resource": "builder_elixir"
+        },
+        "33": {
+          "cost": 22000000,
+          "duration": 1296000,
+          "resource": "builder_elixir"
+        },
+        "34": {
+          "cost": 22000000,
+          "duration": 1296000,
+          "resource": "builder_elixir"
+        },
+        "35": {
+          "cost": 22000000,
+          "duration": 1296000,
+          "resource": "builder_elixir"
+        }
+      }
+    },
     "28000006": {
       "id": 28000006,
       "name": "Minion Prince",
+      "villageType": "home",
       "category": "heroes",
       "resource": "dark_elixir",
       "th_caps": {
-        "1": 5,
-        "2": 9,
-        "3": 14,
-        "4": 19,
-        "5": 24,
-        "6": 28,
-        "7": 33,
-        "8": 38,
-        "9": 42,
-        "10": 47,
-        "11": 52,
-        "12": 56,
-        "13": 61,
-        "14": 66,
-        "15": 71,
-        "16": 78,
-        "17": 79,
-        "18": 80,
+        "1": 4,
+        "2": 8,
+        "3": 13,
+        "4": 17,
+        "5": 21,
+        "6": 25,
+        "7": 29,
+        "8": 34,
+        "9": 38,
+        "10": 42,
+        "11": 46,
+        "12": 51,
+        "13": 55,
+        "14": 59,
+        "15": 63,
+        "16": 67,
+        "17": 72,
+        "18": 76,
         "19": 80
       },
       "levels": {
@@ -8520,27 +12793,28 @@
     "28000007": {
       "id": 28000007,
       "name": "Dragon Duke",
+      "villageType": "home",
       "category": "heroes",
       "resource": "dark_elixir",
       "th_caps": {
         "1": 2,
-        "2": 5,
-        "3": 7,
-        "4": 9,
-        "5": 12,
-        "6": 14,
-        "7": 16,
-        "8": 19,
-        "9": 21,
-        "10": 24,
-        "11": 26,
-        "12": 28,
-        "13": 31,
-        "14": 33,
-        "15": 35,
-        "16": 38,
-        "17": 39,
-        "18": 40,
+        "2": 4,
+        "3": 6,
+        "4": 8,
+        "5": 11,
+        "6": 13,
+        "7": 15,
+        "8": 17,
+        "9": 19,
+        "10": 21,
+        "11": 23,
+        "12": 25,
+        "13": 27,
+        "14": 29,
+        "15": 32,
+        "16": 34,
+        "17": 36,
+        "18": 38,
         "19": 40
       },
       "levels": {
@@ -8749,27 +13023,28 @@
     "73000000": {
       "id": 73000000,
       "name": "L.A.S.S.I",
+      "villageType": "home",
       "category": "pets",
       "resource": "dark_elixir",
       "th_caps": {
         "1": 1,
         "2": 2,
-        "3": 3,
-        "4": 4,
+        "3": 2,
+        "4": 3,
         "5": 4,
         "6": 5,
         "7": 6,
-        "8": 7,
-        "9": 8,
-        "10": 9,
-        "11": 10,
-        "12": 11,
-        "13": 11,
-        "14": 12,
-        "15": 13,
+        "8": 6,
+        "9": 7,
+        "10": 8,
+        "11": 9,
+        "12": 9,
+        "13": 10,
+        "14": 11,
+        "15": 12,
         "16": 13,
-        "17": 14,
-        "18": 15,
+        "17": 13,
+        "18": 14,
         "19": 15
       },
       "levels": {
@@ -8853,27 +13128,28 @@
     "73000001": {
       "id": 73000001,
       "name": "Electro Owl",
+      "villageType": "home",
       "category": "pets",
       "resource": "dark_elixir",
       "th_caps": {
         "1": 1,
         "2": 2,
-        "3": 3,
-        "4": 4,
+        "3": 2,
+        "4": 3,
         "5": 4,
         "6": 5,
         "7": 6,
-        "8": 7,
-        "9": 8,
-        "10": 9,
-        "11": 10,
-        "12": 11,
-        "13": 11,
-        "14": 12,
-        "15": 13,
+        "8": 6,
+        "9": 7,
+        "10": 8,
+        "11": 9,
+        "12": 9,
+        "13": 10,
+        "14": 11,
+        "15": 12,
         "16": 13,
-        "17": 14,
-        "18": 15,
+        "17": 13,
+        "18": 14,
         "19": 15
       },
       "levels": {
@@ -8957,27 +13233,28 @@
     "73000002": {
       "id": 73000002,
       "name": "Mighty Yak",
+      "villageType": "home",
       "category": "pets",
       "resource": "dark_elixir",
       "th_caps": {
         "1": 1,
         "2": 2,
-        "3": 3,
-        "4": 4,
+        "3": 2,
+        "4": 3,
         "5": 4,
         "6": 5,
         "7": 6,
-        "8": 7,
-        "9": 8,
-        "10": 9,
-        "11": 10,
-        "12": 11,
-        "13": 11,
-        "14": 12,
-        "15": 13,
+        "8": 6,
+        "9": 7,
+        "10": 8,
+        "11": 9,
+        "12": 9,
+        "13": 10,
+        "14": 11,
+        "15": 12,
         "16": 13,
-        "17": 14,
-        "18": 15,
+        "17": 13,
+        "18": 14,
         "19": 15
       },
       "levels": {
@@ -9061,27 +13338,28 @@
     "73000003": {
       "id": 73000003,
       "name": "Unicorn",
+      "villageType": "home",
       "category": "pets",
       "resource": "dark_elixir",
       "th_caps": {
         "1": 1,
         "2": 2,
-        "3": 3,
-        "4": 4,
+        "3": 2,
+        "4": 3,
         "5": 4,
         "6": 5,
         "7": 6,
-        "8": 7,
-        "9": 8,
-        "10": 9,
-        "11": 10,
-        "12": 11,
-        "13": 11,
-        "14": 12,
-        "15": 13,
+        "8": 6,
+        "9": 7,
+        "10": 8,
+        "11": 9,
+        "12": 9,
+        "13": 10,
+        "14": 11,
+        "15": 12,
         "16": 13,
-        "17": 14,
-        "18": 15,
+        "17": 13,
+        "18": 14,
         "19": 15
       },
       "levels": {
@@ -9165,27 +13443,28 @@
     "73000004": {
       "id": 73000004,
       "name": "Phoenix",
+      "villageType": "home",
       "category": "pets",
       "resource": "dark_elixir",
       "th_caps": {
         "1": 1,
         "2": 2,
-        "3": 3,
-        "4": 4,
+        "3": 2,
+        "4": 3,
         "5": 4,
         "6": 5,
         "7": 6,
-        "8": 7,
-        "9": 8,
-        "10": 9,
-        "11": 10,
-        "12": 11,
-        "13": 11,
-        "14": 12,
-        "15": 13,
+        "8": 6,
+        "9": 7,
+        "10": 8,
+        "11": 9,
+        "12": 9,
+        "13": 10,
+        "14": 11,
+        "15": 12,
         "16": 13,
-        "17": 14,
-        "18": 15,
+        "17": 13,
+        "18": 14,
         "19": 15
       },
       "levels": {
@@ -9269,27 +13548,28 @@
     "73000007": {
       "id": 73000007,
       "name": "Poison Lizard",
+      "villageType": "home",
       "category": "pets",
       "resource": "dark_elixir",
       "th_caps": {
         "1": 1,
         "2": 2,
-        "3": 3,
-        "4": 4,
+        "3": 2,
+        "4": 3,
         "5": 4,
         "6": 5,
         "7": 6,
-        "8": 7,
-        "9": 8,
-        "10": 9,
-        "11": 10,
-        "12": 11,
-        "13": 11,
-        "14": 12,
-        "15": 13,
+        "8": 6,
+        "9": 7,
+        "10": 8,
+        "11": 9,
+        "12": 9,
+        "13": 10,
+        "14": 11,
+        "15": 12,
         "16": 13,
-        "17": 14,
-        "18": 15,
+        "17": 13,
+        "18": 14,
         "19": 15
       },
       "levels": {
@@ -9373,27 +13653,28 @@
     "73000008": {
       "id": 73000008,
       "name": "Diggy",
+      "villageType": "home",
       "category": "pets",
       "resource": "dark_elixir",
       "th_caps": {
         "1": 1,
         "2": 2,
-        "3": 3,
-        "4": 4,
+        "3": 2,
+        "4": 3,
         "5": 4,
         "6": 5,
         "7": 6,
-        "8": 7,
-        "9": 8,
-        "10": 9,
-        "11": 10,
-        "12": 11,
-        "13": 11,
-        "14": 12,
-        "15": 13,
+        "8": 6,
+        "9": 7,
+        "10": 8,
+        "11": 9,
+        "12": 9,
+        "13": 10,
+        "14": 11,
+        "15": 12,
         "16": 13,
-        "17": 14,
-        "18": 15,
+        "17": 13,
+        "18": 14,
         "19": 15
       },
       "levels": {
@@ -9477,27 +13758,28 @@
     "73000009": {
       "id": 73000009,
       "name": "Frosty",
+      "villageType": "home",
       "category": "pets",
       "resource": "dark_elixir",
       "th_caps": {
         "1": 1,
         "2": 2,
-        "3": 3,
-        "4": 4,
+        "3": 2,
+        "4": 3,
         "5": 4,
         "6": 5,
         "7": 6,
-        "8": 7,
-        "9": 8,
-        "10": 9,
-        "11": 10,
-        "12": 11,
-        "13": 11,
-        "14": 12,
-        "15": 13,
+        "8": 6,
+        "9": 7,
+        "10": 8,
+        "11": 9,
+        "12": 9,
+        "13": 10,
+        "14": 11,
+        "15": 12,
         "16": 13,
-        "17": 14,
-        "18": 15,
+        "17": 13,
+        "18": 14,
         "19": 15
       },
       "levels": {
@@ -9581,27 +13863,28 @@
     "73000010": {
       "id": 73000010,
       "name": "Spirit Fox",
+      "villageType": "home",
       "category": "pets",
       "resource": "dark_elixir",
       "th_caps": {
         "1": 1,
         "2": 2,
-        "3": 3,
-        "4": 4,
+        "3": 2,
+        "4": 3,
         "5": 4,
         "6": 5,
         "7": 6,
-        "8": 7,
-        "9": 8,
-        "10": 9,
-        "11": 10,
-        "12": 11,
-        "13": 11,
-        "14": 12,
-        "15": 13,
+        "8": 6,
+        "9": 7,
+        "10": 8,
+        "11": 9,
+        "12": 9,
+        "13": 10,
+        "14": 11,
+        "15": 12,
         "16": 13,
-        "17": 14,
-        "18": 15,
+        "17": 13,
+        "18": 14,
         "19": 15
       },
       "levels": {
@@ -9685,27 +13968,28 @@
     "73000011": {
       "id": 73000011,
       "name": "Angry Jelly",
+      "villageType": "home",
       "category": "pets",
       "resource": "dark_elixir",
       "th_caps": {
         "1": 1,
         "2": 2,
-        "3": 3,
-        "4": 4,
+        "3": 2,
+        "4": 3,
         "5": 4,
         "6": 5,
         "7": 6,
-        "8": 7,
-        "9": 8,
-        "10": 9,
-        "11": 10,
-        "12": 11,
-        "13": 11,
-        "14": 12,
-        "15": 13,
+        "8": 6,
+        "9": 7,
+        "10": 8,
+        "11": 9,
+        "12": 9,
+        "13": 10,
+        "14": 11,
+        "15": 12,
         "16": 13,
-        "17": 14,
-        "18": 15,
+        "17": 13,
+        "18": 14,
         "19": 15
       },
       "levels": {

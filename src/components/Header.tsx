@@ -1,12 +1,15 @@
 import React from 'react';
 import type { AccountProfile, GlobalEvent } from '../db/db';
-import { getTownHallAsset } from '../services/catalog';
+import type { VillageMode } from '../types';
+import { getTownHallAsset, getBuilderHallAsset } from '../services/catalog';
 import { Users, Upload, Zap, ChevronDown, Plus } from 'lucide-react';
 
 interface HeaderProps {
   currentAccount: AccountProfile | null;
+  currentVillageMode: VillageMode;
   progressPercent: number;
   activeEvents: GlobalEvent[];
+  onSelectVillageMode: (mode: VillageMode) => void;
   onOpenAccountModal: () => void;
   onOpenImportModal: () => void;
   onToggleHammerJam: () => void;
@@ -14,8 +17,10 @@ interface HeaderProps {
 
 export const Header: React.FC<HeaderProps> = ({
   currentAccount,
+  currentVillageMode,
   progressPercent,
   activeEvents,
+  onSelectVillageMode,
   onOpenAccountModal,
   onOpenImportModal,
   onToggleHammerJam
@@ -24,22 +29,26 @@ export const Header: React.FC<HeaderProps> = ({
     e => e.isActive && (e.discountCost > 0 || e.name.toLowerCase().includes('hammer jam'))
   );
 
-  const thLevel = currentAccount?.townHallLevel || 16;
-  const thAsset = getTownHallAsset(thLevel);
+  const isHome = currentVillageMode === 'home';
+  const hallLevel = isHome
+    ? (currentAccount?.townHallLevel || 16)
+    : (currentAccount?.builderHallLevel || 10);
+  const hallAsset = isHome ? getTownHallAsset(hallLevel) : getBuilderHallAsset(hallLevel);
+  const hallLabel = isHome ? `TH${hallLevel}` : `BH${hallLevel}`;
 
   return (
     <header className="sticky top-0 z-40 bg-[#0F172A]/90 backdrop-blur-md border-b border-slate-800 safe-area-top shadow-lg">
-      <div className="max-w-7xl mx-auto px-4 py-3 sm:px-6 flex flex-col md:flex-row items-center justify-between gap-3">
-        {/* Left: Account & Townhall Info */}
+      <div className="max-w-7xl mx-auto px-4 py-2.5 sm:px-6 flex flex-col md:flex-row items-center justify-between gap-3">
+        {/* Left: Account & Hall Info */}
         <div className="flex items-center gap-3 w-full md:w-auto justify-between md:justify-start">
           <div className="relative group cursor-pointer" onClick={onOpenAccountModal}>
             <img
-              src={thAsset}
-              alt={`Town Hall ${thLevel}`}
+              src={hallAsset}
+              alt={`${isHome ? 'Town Hall' : 'Builder Hall'} ${hallLevel}`}
               className="w-12 h-12 object-contain drop-shadow-[0_4px_8px_rgba(0,0,0,0.5)] transition-transform group-hover:scale-105"
             />
             <span className="absolute -bottom-1 -right-1 bg-amber-500 text-slate-950 font-black text-[10px] px-1.5 py-0.2 rounded-full shadow">
-              {thLevel}
+              {hallLevel}
             </span>
           </div>
 
@@ -48,7 +57,7 @@ export const Header: React.FC<HeaderProps> = ({
               onClick={onOpenAccountModal}
               className="flex items-center gap-1.5 text-left font-bold text-slate-100 hover:text-amber-400 transition-colors"
             >
-              <span className="truncate max-w-[160px] sm:max-w-[220px]">
+              <span className="truncate max-w-[150px] sm:max-w-[200px]">
                 {currentAccount ? currentAccount.name : 'Kein Account gewählt'}
               </span>
               <span className="text-xs text-slate-400 font-mono">
@@ -58,9 +67,9 @@ export const Header: React.FC<HeaderProps> = ({
             </button>
             <div className="flex items-center gap-2 mt-0.5">
               <span className="text-[11px] font-semibold text-slate-400">
-                Progress TH{thLevel}:
+                Progress {hallLabel}:
               </span>
-              <div className="w-24 sm:w-32 bg-slate-800 rounded-full h-2 overflow-hidden border border-slate-700">
+              <div className="w-20 sm:w-28 bg-slate-800 rounded-full h-2 overflow-hidden border border-slate-700">
                 <div
                   className="bg-gradient-to-r from-amber-500 to-emerald-400 h-full rounded-full transition-all duration-500"
                   style={{ width: `${Math.min(100, Math.max(0, progressPercent))}%` }}
@@ -82,6 +91,30 @@ export const Header: React.FC<HeaderProps> = ({
               <Upload className="w-4 h-4" />
             </button>
           </div>
+        </div>
+
+        {/* Center: Village Mode Tabs */}
+        <div className="flex items-center bg-slate-900/90 p-1 rounded-xl border border-slate-800 shadow-inner w-full md:w-auto justify-center">
+          <button
+            onClick={() => onSelectVillageMode('home')}
+            className={`flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg text-xs font-bold transition-all ${
+              isHome
+                ? 'bg-amber-500 text-slate-950 shadow-md font-extrabold scale-102'
+                : 'text-slate-400 hover:text-slate-200 hover:bg-slate-800/60'
+            }`}
+          >
+            <span>🏛️ Heimatdorf</span>
+          </button>
+          <button
+            onClick={() => onSelectVillageMode('builderBase')}
+            className={`flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg text-xs font-bold transition-all ${
+              !isHome
+                ? 'bg-amber-500 text-slate-950 shadow-md font-extrabold scale-102'
+                : 'text-slate-400 hover:text-slate-200 hover:bg-slate-800/60'
+            }`}
+          >
+            <span>⚙️ Bauarbeiterbasis</span>
+          </button>
         </div>
 
         {/* Right: Actions, Hammer Jam & Multi-Account Switcher */}

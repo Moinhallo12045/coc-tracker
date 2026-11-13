@@ -5,13 +5,17 @@ import type { RecommendationScore, ResourceType } from '../types';
 export interface RecommendationContext {
   accountTag: string;
   townHallLevel: number;
+  builderHallLevel?: number;
+  villageType?: 'home' | 'builderBase';
   activeTimers: ActiveTimer[];
   entities: VillageEntity[];
   activeEvents: GlobalEvent[];
 }
 
 export function calculateRecommendationScores(ctx: RecommendationContext): RecommendationScore[] {
-  const { townHallLevel, activeTimers, entities, activeEvents } = ctx;
+  const { townHallLevel, builderHallLevel, activeTimers, entities, activeEvents } = ctx;
+  const villageType = ctx.villageType || 'home';
+  const effectiveHallLevel = villageType === 'builderBase' ? (builderHallLevel || 10) : townHallLevel;
   const nowMs = Date.now();
 
   // Find active discount events (e.g. Hammer Jam 50% cost discount)
@@ -21,8 +25,10 @@ export function calculateRecommendationScores(ctx: RecommendationContext): Recom
   const costMultiplier = hammerJamEvent ? (1 - hammerJamEvent.discountCost) : 1;
   const timeMultiplier = hammerJamEvent ? hammerJamEvent.discountTime : 1;
 
-  // Active builder timers end times
-  const builderTimers = activeTimers.filter(t => t.slotType === 'builder');
+  // Active builder timers end times for this village
+  const builderTimers = activeTimers.filter(
+    t => t.slotType === 'builder' && (t.villageType || 'home') === villageType
+  );
   const runningEndTimesMs = builderTimers.map(t => t.endsAt);
 
   // Check running builders' resources
@@ -34,8 +40,8 @@ export function calculateRecommendationScores(ctx: RecommendationContext): Recom
   for (const timer of builderTimers) {
     const ent = getEntityById(timer.entityId);
     if (ent) {
-      if (ent.resource === 'gold') goldBuildersCount++;
-      if (ent.resource === 'elixir') elixirBuildersCount++;
+      if (ent.resource === 'gold' || ent.resource === 'builder_gold') goldBuildersCount++;
+      if (ent.resource === 'elixir' || ent.resource === 'builder_elixir') elixirBuildersCount++;
       if (ent.resource === 'dark_elixir') darkElixirBuildersCount++;
     }
     // Check if hero timer finishes in less than 24 hours
@@ -47,22 +53,32 @@ export function calculateRecommendationScores(ctx: RecommendationContext): Recom
   }
 
   // Calculate free builders count
-  const maxBuilders = catalog.townhalls[townHallLevel]?.max_builder_count || 6;
+  const maxBuilders = villageType === 'builderBase' ? 2 : (catalog.townhalls[townHallLevel]?.max_builder_count || 6);
   const freeBuildersCount = Math.max(0, maxBuilders - builderTimers.length);
 
   // Entity map for current levels
   const entityMap = new Map<number, VillageEntity>();
   for (const ent of entities) {
-    entityMap.set(ent.dataId, ent);
+    if ((ent.villageType || 'home') === villageType) {
+      entityMap.set(ent.dataId, ent);
+    }
   }
 
   // Set of entity IDs currently being upgraded
-  const ongoingUpgradeIds = new Set<number>(activeTimers.map(t => t.entityId));
+  const ongoingUpgradeIds = new Set<number>(
+    activeTimers
+      .filter(t => (t.villageType || 'home') === villageType)
+      .map(t => t.entityId)
+  );
 
   const candidateRecommendations: RecommendationScore[] = [];
 
-  // Iterate over all entities in catalog
+  // Iterate over all entities in catalog matching villageType
   for (const entityDef of Object.values(catalog.entities)) {
+    if ((entityDef.villageType || 'home') !== villageType) {
+      continue;
+    }
+
     // Skip if already being upgraded in a slot
     if (ongoingUpgradeIds.has(entityDef.id)) {
       continue;
@@ -70,7 +86,7 @@ export function calculateRecommendationScores(ctx: RecommendationContext): Recom
 
     const currentEntity = entityMap.get(entityDef.id);
     const currentLevel = currentEntity ? currentEntity.level : 0;
-    const maxLevelForTH = getMaxLevelForTH(entityDef.id, townHallLevel);
+    const maxLevelForTH = getMaxLevelForTH(entityDef.id, effectiveHallLevel);
 
     // Skip if already maxed for current Town Hall or if not unlocked yet
     if (currentLevel >= maxLevelForTH || maxLevelForTH === 0) {
@@ -243,18 +259,22 @@ export function calculateRecommendationScores(ctx: RecommendationContext): Recom
 }
 
 // Helper to start an upgrade timer for a recommendation
-export async function startUpgradeTimer(accountTag: string, recommendation: RecommendationScore): Promise<void> {
+export async function startUpgradeTimer(
+  accountTag: string,
+  recommendation: RecommendationScore,
+  villageType: 'home' | 'builderBase' = 'home'
+): Promise<void> {
   const nowMs = Date.now();
   const endsAt = nowMs + recommendation.duration * 1000;
   const isLab = recommendation.category === 'lab';
   const isPet = recommendation.category === 'pets';
   const slotType = isLab ? 'lab' : (isPet ? 'pet' : 'builder');
 
-  // Find next free slot number
+  // Find next free slot number for this village
   const existingTimers = await db.timers
     .where('accountTag')
     .equals(accountTag)
-    .filter(t => t.slotType === slotType)
+    .filter(t => t.slotType === slotType && (t.villageType || 'home') === villageType)
     .toArray();
 
   const usedSlots = new Set(existingTimers.map(t => t.slotNumber || 1));
@@ -266,6 +286,7 @@ export async function startUpgradeTimer(accountTag: string, recommendation: Reco
   const newTimer: ActiveTimer = {
     id: crypto.randomUUID(),
     accountTag,
+    villageType,
     entityId: recommendation.entityId,
     targetLevel: recommendation.targetLevel,
     endsAt,

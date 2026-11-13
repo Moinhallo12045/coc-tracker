@@ -14,6 +14,7 @@ interface BuilderLabDockProps {
   timers: ActiveTimer[];
   currentTimestamp: number;
   maxBuilders: number;
+  village?: 'home' | 'builderBase';
   onFinishTimer: (timer: ActiveTimer) => void;
   onCancelTimer: (timerId: string) => void;
   onSelectFreeSlot?: (slotType: 'builder' | 'lab' | 'pet') => void;
@@ -23,6 +24,7 @@ export const BuilderLabDock: React.FC<BuilderLabDockProps> = ({
   timers,
   currentTimestamp,
   maxBuilders,
+  village = 'home',
   onFinishTimer,
   onCancelTimer,
   onSelectFreeSlot
@@ -40,13 +42,16 @@ export const BuilderLabDock: React.FC<BuilderLabDockProps> = ({
     });
   };
 
-  // Organize slots
-  const builderTimers = timers.filter(t => t.slotType === 'builder');
-  const labTimer = timers.find(t => t.slotType === 'lab');
-  const petTimer = timers.find(t => t.slotType === 'pet');
+  const isBB = village === 'builderBase';
+
+  // Filter timers for active village
+  const villageTimers = timers.filter(t => (t.villageType || 'home') === village);
+  const builderTimers = villageTimers.filter(t => t.slotType === 'builder');
+  const labTimer = villageTimers.find(t => t.slotType === 'lab');
+  const petTimer = isBB ? undefined : villageTimers.find(t => t.slotType === 'pet');
 
   // Generate builder slots array
-  const totalBuilders = Math.max(2, Math.min(6, maxBuilders || 6));
+  const totalBuilders = isBB ? 2 : Math.max(2, Math.min(6, maxBuilders || 6));
   const builderSlots = [];
 
   for (let slotNum = 1; slotNum <= totalBuilders; slotNum++) {
@@ -54,7 +59,7 @@ export const BuilderLabDock: React.FC<BuilderLabDockProps> = ({
     builderSlots.push({
       slotNumber: slotNum,
       slotType: 'builder' as const,
-      isMasterBuilder: slotNum === 6,
+      isMasterBuilder: isBB ? slotNum === 1 : slotNum === 6,
       timer: activeTimer
     });
   }
@@ -227,10 +232,10 @@ export const BuilderLabDock: React.FC<BuilderLabDockProps> = ({
         <div className="flex items-center gap-2">
           <Hammer className="w-5 h-5 text-amber-400" />
           <h2 className="text-base sm:text-lg font-black tracking-wide uppercase text-slate-200">
-            Bauarbeiter & Labor Dock
+            {isBB ? 'Bauarbeiterbasis Bauhütten & Sternenlabor' : 'Bauarbeiter & Labor Dock'}
           </h2>
           <span className="text-xs font-semibold px-2 py-0.5 rounded-full bg-slate-800 text-slate-400 border border-slate-700">
-            {timers.length} aktiv
+            {villageTimers.length} aktiv
           </span>
         </div>
         <div className="text-xs text-slate-400 hidden sm:block">
@@ -240,22 +245,44 @@ export const BuilderLabDock: React.FC<BuilderLabDockProps> = ({
 
       {/* Snap Carousel */}
       <div className="flex gap-3.5 overflow-x-auto pb-4 pt-1 snap-x-mandatory no-scrollbar px-1">
-        {/* Builder Slots #1 through #6 */}
-        {builderSlots.map(slot =>
-          renderSlotCard(
-            slot.isMasterBuilder ? 'B.O.B #6' : `Builder #${slot.slotNumber}`,
-            getBuilderAsset('builder', slot.slotNumber),
+        {/* Builder Slots */}
+        {builderSlots.map(slot => {
+          let slotName = `Builder #${slot.slotNumber}`;
+          let badge: string | undefined = undefined;
+
+          if (isBB) {
+            if (slot.slotNumber === 1) {
+              slotName = 'Meisterbauarbeiter';
+              badge = 'Meister';
+            } else {
+              slotName = 'B.O.B';
+              badge = 'Roboter';
+            }
+          } else if (slot.isMasterBuilder) {
+            slotName = 'B.O.B #6';
+            badge = 'Master Builder';
+          }
+
+          return renderSlotCard(
+            slotName,
+            getBuilderAsset('builder', slot.slotNumber, false, village),
             slot.timer,
             'builder',
-            slot.isMasterBuilder ? 'Master Builder' : undefined
-          )
-        )}
+            badge
+          );
+        })}
 
         {/* Laboratory Slot */}
-        {renderSlotCard('Laboratorium', getBuilderAsset('lab'), labTimer, 'lab', 'Forschung')}
+        {renderSlotCard(
+          isBB ? 'Sternenlabor' : 'Laboratorium',
+          getBuilderAsset('lab', undefined, false, village),
+          labTimer,
+          'lab',
+          isBB ? 'BB Truppen' : 'Forschung'
+        )}
 
-        {/* Pet House Slot */}
-        {renderSlotCard('Haustierhaus', getBuilderAsset('pet'), petTimer, 'pet', 'Pets')}
+        {/* Pet House Slot (Home Village only) */}
+        {!isBB && renderSlotCard('Haustierhaus', getBuilderAsset('pet'), petTimer, 'pet', 'Pets')}
       </div>
     </section>
   );

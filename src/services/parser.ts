@@ -1,4 +1,5 @@
 import { db, type AccountProfile, type VillageEntity, type ActiveTimer } from '../db/db';
+import userExportRaw from '../data/user_export.json';
 
 export interface ClashNinjaExportItem {
   data?: number;
@@ -28,6 +29,11 @@ export interface ClashNinjaExportFull {
   siege_machines?: ClashNinjaExportItem[];
   equipment?: ClashNinjaExportItem[];
   helpers?: ClashNinjaExportItem[];
+  buildings2?: ClashNinjaExportItem[];
+  traps2?: ClashNinjaExportItem[];
+  heroes2?: ClashNinjaExportItem[];
+  units2?: ClashNinjaExportItem[];
+  boosts?: Record<string, unknown>;
 }
 
 export interface ParseResult {
@@ -57,6 +63,15 @@ export async function parseAndIngestClashNinjaJson(rawJson: string | object): Pr
     }
   }
 
+  // Deduce Builder Hall level from buildings2 array (ID 1000040)
+  let builderHallLevel = 10;
+  if (Array.isArray(json.buildings2)) {
+    const bhItem = json.buildings2.find(b => (b.data || b.id) === 1000040);
+    if (bhItem && (bhItem.lvl || bhItem.level)) {
+      builderHallLevel = Number(bhItem.lvl || bhItem.level);
+    }
+  }
+
   await db.transaction('rw', db.accounts, db.entities, db.timers, async () => {
     await db.accounts.toCollection().modify({ isActive: false });
 
@@ -65,6 +80,7 @@ export async function parseAndIngestClashNinjaJson(rawJson: string | object): Pr
       tag,
       name,
       townHallLevel,
+      builderHallLevel,
       lastSyncTimestamp: nowMs,
       isActive: true
     };
@@ -82,9 +98,14 @@ export async function parseAndIngestClashNinjaJson(rawJson: string | object): Pr
     const entitiesToInsert: VillageEntity[] = [];
     const timersToInsert: ActiveTimer[] = [];
 
-    let builderSlotCounter = 1;
+    let homeBuilderSlotCounter = 1;
+    let bbBuilderSlotCounter = 1;
 
-    const processItem = (item: ClashNinjaExportItem, slotType: 'builder' | 'lab' | 'pet') => {
+    const processItem = (
+      item: ClashNinjaExportItem,
+      slotType: 'builder' | 'lab' | 'pet',
+      villageType: 'home' | 'builderBase' = 'home'
+    ) => {
       const dataId = Number(item.data || item.id || item.dataId || 0);
       if (!dataId) return;
 
@@ -94,8 +115,9 @@ export async function parseAndIngestClashNinjaJson(rawJson: string | object): Pr
       const weaponLevel = item.weapon ? Number(item.weapon) : undefined;
 
       entitiesToInsert.push({
-        id: `${tag}_${dataId}_${level}_${entitiesToInsert.length}`,
+        id: `${tag}_${villageType}_${dataId}_${level}_${entitiesToInsert.length}`,
         accountTag: tag,
+        villageType,
         dataId,
         level,
         count,
@@ -112,12 +134,17 @@ export async function parseAndIngestClashNinjaJson(rawJson: string | object): Pr
 
           let slotNumber = 1;
           if (slotType === 'builder') {
-            slotNumber = builderSlotCounter++;
+            if (villageType === 'builderBase') {
+              slotNumber = bbBuilderSlotCounter++;
+            } else {
+              slotNumber = homeBuilderSlotCounter++;
+            }
           }
 
           timersToInsert.push({
             id: crypto.randomUUID(),
             accountTag: tag,
+            villageType,
             entityId: dataId,
             targetLevel,
             endsAt,
@@ -129,27 +156,41 @@ export async function parseAndIngestClashNinjaJson(rawJson: string | object): Pr
       }
     };
 
-    // Parse all Clash Ninja categories
+    // Parse Home Village categories
     if (Array.isArray(json.buildings)) {
-      for (const b of json.buildings) processItem(b, 'builder');
+      for (const b of json.buildings) processItem(b, 'builder', 'home');
     }
     if (Array.isArray(json.traps)) {
-      for (const t of json.traps) processItem(t, 'builder');
+      for (const t of json.traps) processItem(t, 'builder', 'home');
     }
     if (Array.isArray(json.heroes)) {
-      for (const h of json.heroes) processItem(h, 'builder');
+      for (const h of json.heroes) processItem(h, 'builder', 'home');
     }
     if (Array.isArray(json.units)) {
-      for (const u of json.units) processItem(u, 'lab');
+      for (const u of json.units) processItem(u, 'lab', 'home');
     }
     if (Array.isArray(json.spells)) {
-      for (const s of json.spells) processItem(s, 'lab');
+      for (const s of json.spells) processItem(s, 'lab', 'home');
     }
     if (Array.isArray(json.siege_machines)) {
-      for (const sm of json.siege_machines) processItem(sm, 'lab');
+      for (const sm of json.siege_machines) processItem(sm, 'lab', 'home');
     }
     if (Array.isArray(json.pets)) {
-      for (const p of json.pets) processItem(p, 'pet');
+      for (const p of json.pets) processItem(p, 'pet', 'home');
+    }
+
+    // Parse Builder Base categories
+    if (Array.isArray(json.buildings2)) {
+      for (const b of json.buildings2) processItem(b, 'builder', 'builderBase');
+    }
+    if (Array.isArray(json.traps2)) {
+      for (const t of json.traps2) processItem(t, 'builder', 'builderBase');
+    }
+    if (Array.isArray(json.heroes2)) {
+      for (const h of json.heroes2) processItem(h, 'builder', 'builderBase');
+    }
+    if (Array.isArray(json.units2)) {
+      for (const u of json.units2) processItem(u, 'lab', 'builderBase');
     }
 
     if (entitiesToInsert.length > 0) {
@@ -172,92 +213,7 @@ export async function parseAndIngestClashNinjaJson(rawJson: string | object): Pr
   };
 }
 
-// User export as default demo sample
+// User export as default demo sample (contains full Home Village & Builder Base)
 export function getSampleClashNinjaJson(): string {
-  return JSON.stringify(
-    {
-      "tag": "#Q9C0YQYJR",
-      "name": "Main (#Q9C0YQYJR)",
-      "timestamp": Math.floor(Date.now() / 1000) - 120,
-      "buildings": [
-        {"data": 1000001, "lvl": 16, "weapon": 1},
-        {"data": 1000008, "lvl": 21, "gear_up": 1},
-        {"data": 1000009, "lvl": 21, "gear_up": 1},
-        {"data": 1000013, "lvl": 16, "gear_up": 1},
-        {"data": 1000000, "lvl": 12, "cnt": 4},
-        {"data": 1000002, "lvl": 17, "cnt": 7},
-        {"data": 1000003, "lvl": 17, "cnt": 4},
-        {"data": 1000004, "lvl": 17, "cnt": 7},
-        {"data": 1000005, "lvl": 17, "cnt": 4},
-        {"data": 1000006, "lvl": 18, "cnt": 1},
-        {"data": 1000007, "lvl": 14, "cnt": 1},
-        {"data": 1000008, "lvl": 21, "cnt": 2},
-        {"data": 1000009, "lvl": 21, "cnt": 3},
-        {"data": 1000010, "lvl": 17, "cnt": 325},
-        {"data": 1000011, "lvl": 16, "cnt": 5},
-        {"data": 1000012, "lvl": 14, "cnt": 4},
-        {"data": 1000013, "lvl": 16, "cnt": 3},
-        {"data": 1000014, "lvl": 12, "cnt": 1},
-        {"data": 1000015, "lvl": 6, "cnt": 5},
-        {"data": 1000019, "lvl": 15, "cnt": 5},
-        {"data": 1000020, "lvl": 9, "cnt": 1},
-        {"data": 1000021, "lvl": 11, "cnt": 4},
-        {"data": 1000023, "lvl": 11, "cnt": 3},
-        {"data": 1000024, "lvl": 11, "cnt": 1},
-        {"data": 1000026, "lvl": 13, "cnt": 1},
-        {"data": 1000027, "lvl": 10, "cnt": 3},
-        {"data": 1000028, "lvl": 7, "cnt": 2},
-        {"data": 1000029, "lvl": 8, "cnt": 1},
-        {"data": 1000031, "lvl": 7, "cnt": 1},
-        {"data": 1000032, "lvl": 11, "cnt": 2},
-        {"data": 1000059, "lvl": 8, "cnt": 1},
-        {"data": 1000067, "lvl": 5, "cnt": 2},
-        {"data": 1000068, "lvl": 10, "cnt": 1},
-        {"data": 1000070, "lvl": 9, "cnt": 1},
-        {"data": 1000071, "lvl": 10, "cnt": 1},
-        {"data": 1000072, "lvl": 3, "cnt": 2},
-        {"data": 1000077, "lvl": 3, "cnt": 1},
-        {"data": 1000084, "lvl": 2, "cnt": 2},
-        {"data": 1000085, "lvl": 2, "cnt": 2}
-      ],
-      "traps": [
-        {"data": 12000002, "lvl": 9, "timer": 100251},
-        {"data": 12000001, "lvl": 10, "timer": 23488},
-        {"data": 12000006, "lvl": 5, "timer": 5134},
-        {"data": 12000006, "lvl": 5, "timer": 31556},
-        {"data": 12000000, "lvl": 12, "cnt": 8},
-        {"data": 12000001, "lvl": 10, "cnt": 1},
-        {"data": 12000001, "lvl": 11, "cnt": 7},
-        {"data": 12000002, "lvl": 9, "cnt": 3},
-        {"data": 12000002, "lvl": 10, "cnt": 3},
-        {"data": 12000005, "lvl": 10, "cnt": 3},
-        {"data": 12000005, "lvl": 11, "cnt": 4},
-        {"data": 12000006, "lvl": 5, "cnt": 1},
-        {"data": 12000006, "lvl": 6, "cnt": 5},
-        {"data": 12000008, "lvl": 4, "cnt": 4},
-        {"data": 12000016, "lvl": 3, "cnt": 1}
-      ],
-      "heroes": [
-        {"data": 28000000, "lvl": 90, "timer": 31138},
-        {"data": 28000001, "lvl": 91, "timer": 7256},
-        {"data": 28000002, "lvl": 66},
-        {"data": 28000004, "lvl": 41},
-        {"data": 28000006, "lvl": 72},
-        {"data": 28000007, "lvl": 12}
-      ],
-      "units": [
-        {"data": 4000006, "lvl": 10, "timer": 192982},
-        {"data": 4000000, "lvl": 10},
-        {"data": 4000008, "lvl": 11},
-        {"data": 4000095, "lvl": 2}
-      ],
-      "pets": [
-        {"data": 73000011, "lvl": 5, "timer": 208671},
-        {"data": 73000000, "lvl": 11},
-        {"data": 73000001, "lvl": 10}
-      ]
-    },
-    null,
-    2
-  );
+  return JSON.stringify(userExportRaw, null, 2);
 }

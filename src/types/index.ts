@@ -2,6 +2,8 @@ export type ResourceType = 'gold' | 'elixir' | 'dark_elixir' | 'ore_shiny' | 'or
 
 export type EntityCategory = 'defense' | 'offense' | 'resources' | 'heroes' | 'walls' | 'lab' | 'pets';
 
+export type VillageMode = 'home' | 'builderBase';
+
 export interface EntityLevelData {
   cost: number;
   duration: number; // in seconds
@@ -11,10 +13,11 @@ export interface EntityLevelData {
 export interface CatalogEntity {
   id: number;
   name: string;
+  villageType: VillageMode;
   category: EntityCategory;
   resource: ResourceType;
-  maxCounts?: Record<number, number>; // townHallLevel -> max count of this building
-  th_caps: Record<string | number, number>; // townHallLevel -> max level at that TH
+  maxCounts?: Record<number, number>; // hallLevel -> max count
+  th_caps: Record<string | number, number>; // hallLevel -> max level
   levels: Record<string | number, EntityLevelData>;
 }
 
@@ -26,6 +29,7 @@ export interface TownHallCapData {
 
 export interface CatalogData {
   townhalls: Record<string | number, TownHallCapData>;
+  builderhalls: Record<string | number, TownHallCapData>;
   entities: Record<string | number, CatalogEntity>;
 }
 

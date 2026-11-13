@@ -1,8 +1,8 @@
 const fs = require('fs');
 const path = require('path');
 
-// Complete CoC mapping with all buildings up to TH17 and TH18
-const entityDefinitions = [
+// Home Village & Builder Base entities
+const homeEntities = [
   // Town Hall & Infrastructure
   { id: 1000001, name: 'Town Hall', category: 'defense', resource: 'gold', slug: 'town_hall', maxLvl: 18 },
   { id: 1000000, name: 'Army Camp', category: 'offense', resource: 'elixir', slug: 'army_camp', maxLvl: 14 },
@@ -67,7 +67,7 @@ const entityDefinitions = [
   { id: 28000006, name: 'Minion Prince', category: 'heroes', resource: 'dark_elixir', slug: 'minion_prince', maxLvl: 80 },
   { id: 28000007, name: 'Dragon Duke', category: 'heroes', resource: 'dark_elixir', slug: 'dragon_duke', maxLvl: 40 },
 
-  // Key Lab Units
+  // Lab
   { id: 4000000, name: 'Barbarian', category: 'lab', resource: 'elixir', slug: 'barbarian', maxLvl: 13 },
   { id: 4000001, name: 'Archer', category: 'lab', resource: 'elixir', slug: 'archer', maxLvl: 13 },
   { id: 4000002, name: 'Goblin', category: 'lab', resource: 'elixir', slug: 'goblin', maxLvl: 12 },
@@ -109,8 +109,66 @@ const entityDefinitions = [
   { id: 73000011, name: 'Angry Jelly', category: 'pets', resource: 'dark_elixir', slug: 'angry_jelly', maxLvl: 15 }
 ];
 
+// Builder Base entities (exact IDs from export buildings2)
+const builderBaseEntities = [
+  { id: 1000040, name: 'Builder Hall', category: 'defense', resource: 'builder_gold', slug: 'builder_hall', maxLvl: 10 },
+  { id: 1000033, name: 'Walls (BB)', category: 'walls', resource: 'builder_gold', slug: 'wall', maxLvl: 10 },
+  { id: 1000034, name: 'Cannon (BB)', category: 'defense', resource: 'builder_gold', slug: 'cannon', maxLvl: 10 },
+  { id: 1000035, name: 'Archer Tower (BB)', category: 'defense', resource: 'builder_gold', slug: 'archer_tower', maxLvl: 10 },
+  { id: 1000036, name: 'Double Cannon', category: 'defense', resource: 'builder_gold', slug: 'double_cannon', maxLvl: 10 },
+  { id: 1000037, name: 'Hidden Tesla (BB)', category: 'defense', resource: 'builder_gold', slug: 'hidden_tesla', maxLvl: 10 },
+  { id: 1000038, name: 'Firecrackers', category: 'defense', resource: 'builder_gold', slug: 'firecrackers', maxLvl: 10 },
+  { id: 1000039, name: 'Crusher', category: 'defense', resource: 'builder_gold', slug: 'crusher', maxLvl: 10 },
+  { id: 1000041, name: 'Guard Post', category: 'defense', resource: 'builder_gold', slug: 'guard_post', maxLvl: 10 },
+  { id: 1000042, name: 'Army Camp (BB)', category: 'offense', resource: 'builder_elixir', slug: 'army_camp', maxLvl: 1 },
+  { id: 1000043, name: 'Elixir Collector (BB)', category: 'resources', resource: 'builder_gold', slug: 'elixir_collector', maxLvl: 10 },
+  { id: 1000044, name: 'Gold Mine (BB)', category: 'resources', resource: 'builder_elixir', slug: 'gold_mine', maxLvl: 10 },
+  { id: 1000045, name: 'Elixir Storage (BB)', category: 'resources', resource: 'builder_gold', slug: 'elixir_storage', maxLvl: 10 },
+  { id: 1000046, name: 'Gold Storage (BB)', category: 'resources', resource: 'builder_elixir', slug: 'gold_storage', maxLvl: 10 },
+  { id: 1000048, name: 'Air Bombs (BB)', category: 'defense', resource: 'builder_gold', slug: 'air_bombs', maxLvl: 10 },
+  { id: 1000049, name: 'Builder Barracks', category: 'offense', resource: 'builder_elixir', slug: 'builder_barracks', maxLvl: 12 },
+  { id: 1000050, name: 'Push Trap', category: 'defense', resource: 'builder_gold', slug: 'push_trap', maxLvl: 10 },
+  { id: 1000051, name: 'Multi Mortar', category: 'defense', resource: 'builder_gold', slug: 'multi_mortar', maxLvl: 10 },
+  { id: 1000052, name: 'Star Laboratory', category: 'offense', resource: 'builder_elixir', slug: 'star_laboratory', maxLvl: 10 },
+  { id: 1000053, name: 'Clock Tower', category: 'resources', resource: 'builder_gold', slug: 'clock_tower', maxLvl: 10 },
+  { id: 1000054, name: 'Roaster', category: 'defense', resource: 'builder_gold', slug: 'roaster', maxLvl: 10 },
+  { id: 1000055, name: 'Giant Cannon', category: 'defense', resource: 'builder_gold', slug: 'giant_cannon', maxLvl: 10 },
+  { id: 1000056, name: 'Mega Tesla', category: 'defense', resource: 'builder_gold', slug: 'mega_tesla', maxLvl: 10 },
+  { id: 1000057, name: 'Gem Mine', category: 'resources', resource: 'builder_elixir', slug: 'gem_mine', maxLvl: 10 },
+  { id: 1000058, name: 'Lava Launcher', category: 'defense', resource: 'builder_gold', slug: 'lava_launcher', maxLvl: 10 },
+  { id: 1000063, name: 'Healing Hut', category: 'defense', resource: 'builder_gold', slug: 'healing_hut', maxLvl: 6 },
+  { id: 1000065, name: "O.T.T.O's Outpost", category: 'defense', resource: 'builder_gold', slug: "otto's_outpost", maxLvl: 10 },
+  { id: 1000078, name: 'X-Bow (BB)', category: 'defense', resource: 'builder_gold', slug: 'x-bow', maxLvl: 6 },
+  { id: 1000080, name: 'B.O.B Control', category: 'offense', resource: 'builder_elixir', slug: 'bob_control', maxLvl: 5 },
+  { id: 1000082, name: 'Reinforcement Camp', category: 'offense', resource: 'builder_elixir', slug: 'army_camp', maxLvl: 6 },
+
+  // BB Heroes
+  { id: 28000003, name: 'Battle Machine', category: 'heroes', resource: 'builder_elixir', slug: 'battle_machine', maxLvl: 35 },
+  { id: 28000005, name: 'Battle Copter', category: 'heroes', resource: 'builder_elixir', slug: 'battle_copter', maxLvl: 35 },
+
+  // BB Troops (units2)
+  { id: 4000031, name: 'Raged Barbarian', category: 'lab', resource: 'builder_elixir', slug: 'raged_barbarian', maxLvl: 20 },
+  { id: 4000032, name: 'Sneaky Archer', category: 'lab', resource: 'builder_elixir', slug: 'sneaky_archer', maxLvl: 20 },
+  { id: 4000033, name: 'Boxer Giant', category: 'lab', resource: 'builder_elixir', slug: 'boxer_giant', maxLvl: 20 },
+  { id: 4000034, name: 'Beta Minion', category: 'lab', resource: 'builder_elixir', slug: 'beta_minion', maxLvl: 20 },
+  { id: 4000035, name: 'Bomber', category: 'lab', resource: 'builder_elixir', slug: 'bomber', maxLvl: 20 },
+  { id: 4000036, name: 'Baby Dragon (BB)', category: 'lab', resource: 'builder_elixir', slug: 'baby_dragon', maxLvl: 20 },
+  { id: 4000037, name: 'Cannon Cart', category: 'lab', resource: 'builder_elixir', slug: 'cannon_cart', maxLvl: 20 },
+  { id: 4000038, name: 'Night Witch', category: 'lab', resource: 'builder_elixir', slug: 'night_witch', maxLvl: 20 },
+  { id: 4000041, name: 'Drop Ship', category: 'lab', resource: 'builder_elixir', slug: 'drop_ship', maxLvl: 20 },
+  { id: 4000042, name: 'Power P.E.K.K.A', category: 'lab', resource: 'builder_elixir', slug: 'power_P.E.K.K.A', maxLvl: 20 },
+  { id: 4000070, name: 'Hog Glider', category: 'lab', resource: 'builder_elixir', slug: 'hog_glider', maxLvl: 20 },
+
+  // BB Traps (traps2)
+  { id: 12000010, name: 'Mine (BB)', category: 'defense', resource: 'builder_gold', slug: 'mine', maxLvl: 11 },
+  { id: 12000011, name: 'Mega Mine (BB)', category: 'defense', resource: 'builder_gold', slug: 'mega_mine', maxLvl: 11 },
+  { id: 12000013, name: 'Push Trap', category: 'defense', resource: 'builder_gold', slug: 'push_trap', maxLvl: 11 },
+  { id: 12000014, name: 'Spring Trap (BB)', category: 'defense', resource: 'builder_gold', slug: 'spring_trap', maxLvl: 11 }
+];
+
 const catalog = {
   townhalls: {},
+  builderhalls: {},
   entities: {}
 };
 
@@ -122,63 +180,70 @@ for (let th = 1; th <= 19; th++) {
   };
 }
 
-for (const ent of entityDefinitions) {
-  const levels = {};
-  const th_caps = {};
-
-  for (let l = 1; l <= ent.maxLvl; l++) {
-    // Generate realistic base costs and durations
-    const isDark = ent.resource === 'dark_elixir';
-    const baseCost = isDark ? 20000 + l * 8000 : Math.min(22000000, 100000 * Math.pow(1.35, l));
-    const duration = Math.min(15 * 86400, Math.round(1800 * Math.pow(1.32, l)));
-
-    levels[l] = {
-      cost: Math.round(baseCost),
-      duration: Math.round(duration),
-      resource: ent.resource
-    };
-  }
-
-  // TH Caps distribution up to TH18/TH19
-  for (let th = 1; th <= 19; th++) {
-    if (th < 3 && ent.category === 'defense' && ent.name !== 'Cannon' && ent.name !== 'Archer Tower') {
-      th_caps[th] = 0;
-    } else if (th === 16) {
-      th_caps[th] = Math.max(1, ent.maxLvl - 2);
-    } else if (th === 17) {
-      th_caps[th] = Math.max(1, ent.maxLvl - 1);
-    } else if (th >= 18) {
-      th_caps[th] = ent.maxLvl;
-    } else {
-      th_caps[th] = Math.max(1, Math.min(ent.maxLvl, Math.round(ent.maxLvl * (th / 17))));
-    }
-  }
-
-  // TH17 specific: Firespitter only unlocks at TH17+
-  if (ent.id === 1000089) {
-    for (let th = 1; th <= 16; th++) th_caps[th] = 0;
-    th_caps[17] = 2;
-    th_caps[18] = 3;
-    th_caps[19] = 3;
-  }
-
-  // TH18 specific: Revenge Tower only unlocks at TH18+
-  if (ent.id === 1000098) {
-    for (let th = 1; th <= 17; th++) th_caps[th] = 0;
-    th_caps[18] = 2;
-    th_caps[19] = 3;
-  }
-
-  catalog.entities[ent.id] = {
-    id: ent.id,
-    name: ent.name,
-    category: ent.category,
-    resource: ent.resource,
-    th_caps,
-    levels
+for (let bh = 1; bh <= 12; bh++) {
+  catalog.builderhalls[bh] = {
+    max_walls: bh * 25,
+    giga_weapon_levels: 0,
+    max_builder_count: 2
   };
 }
 
+function processList(list, villageType) {
+  for (const ent of list) {
+    const levels = {};
+    const th_caps = {};
+
+    for (let l = 1; l <= ent.maxLvl; l++) {
+      const isDark = ent.resource === 'dark_elixir';
+      const baseCost = isDark ? 20000 + l * 8000 : Math.min(22000000, 100000 * Math.pow(1.35, l));
+      const duration = Math.min(15 * 86400, Math.round(1800 * Math.pow(1.32, l)));
+
+      levels[l] = {
+        cost: Math.round(baseCost),
+        duration: Math.round(duration),
+        resource: ent.resource
+      };
+    }
+
+    const maxHalls = villageType === 'builderBase' ? 12 : 19;
+    for (let h = 1; h <= maxHalls; h++) {
+      if (h < 3 && ent.category === 'defense' && !ent.name.includes('Cannon') && !ent.name.includes('Archer Tower')) {
+        th_caps[h] = 0;
+      } else {
+        th_caps[h] = Math.max(1, Math.min(ent.maxLvl, Math.round(ent.maxLvl * (h / maxHalls))));
+      }
+    }
+
+    // TH17 specific
+    if (ent.id === 1000089) {
+      for (let th = 1; th <= 16; th++) th_caps[th] = 0;
+      th_caps[17] = 2;
+      th_caps[18] = 3;
+      th_caps[19] = 3;
+    }
+
+    // TH18 specific
+    if (ent.id === 1000098) {
+      for (let th = 1; th <= 17; th++) th_caps[th] = 0;
+      th_caps[18] = 2;
+      th_caps[19] = 3;
+    }
+
+    catalog.entities[ent.id] = {
+      id: ent.id,
+      name: ent.name,
+      villageType,
+      category: ent.category,
+      resource: ent.resource,
+      th_caps,
+      levels
+    };
+  }
+}
+
+processList(homeEntities, 'home');
+processList(builderBaseEntities, 'builderBase');
+
 const outPath = path.join(__dirname, '..', 'src', 'data', 'catalog.json');
 fs.writeFileSync(outPath, JSON.stringify(catalog, null, 2), 'utf-8');
-console.log('✓ Successfully generated complete catalog.json with all', entityDefinitions.length, 'entities!');
+console.log('✓ Successfully generated catalog.json with Home Village AND Builder Base!');
